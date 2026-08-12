@@ -45,7 +45,7 @@
       "symbol": "MAHABANK",
       "companyName": "Bank of Maharashtra",
       "sector": "Financial Services",
-      "closePrice": 81.79,
+      "closePrice": 81.87,
       "projectedEntry": 82.29,
       "buyZone": "81.5 - 83.1",
       "stopLoss": 79.79,
@@ -56,24 +56,24 @@
       "target1Pct": 3.8,
       "potentialPct": 6.3,
       "resistance": 82.29,
-      "distToResistancePct": 0.61,
-      "triggerReadiness": 80,
+      "distToResistancePct": 0.51,
+      "triggerReadiness": 83,
       "emaSpreadPct": 9.62,
-      "williamsR": -9.8,
+      "williamsR": -8.3,
       "avgRejectionPct": 8.1,
       "daysSinceLastTouch": 11,
       "williamsRLabel": "Overbought",
-      "macdHist": 0.286,
+      "macdHist": 0.291,
       "macdRising": true,
       "emaConvergenceLabel": "Spread out - already trending",
-      "ret1mo": 2.1,
-      "ret3mo": 4.8,
-      "ret6mo": 21.5,
+      "ret1mo": 2.2,
+      "ret3mo": 4.9,
+      "ret6mo": 21.6,
       "volumeGapText": "Volume at 2.4x - meets the 1.5x bar",
       "estDaysToTrigger": 1,
       "nearestSupport": 77.2,
-      "rvol": 2.38,
-      "ema20Level": 80.24,
+      "rvol": 2.4,
+      "ema20Level": 80.25,
       "atrValue": 2.09,
       "atrPct": 2.534512889851415,
       "adxValue": 10.6,
@@ -81,8 +81,8 @@
       "distFrom52wHighPct": -12.9,
       "near52wLabel": "Below ATH",
       "near52wStars": 2,
-      "avgDailyValueCr": 90.7,
-      "closingRangePct": 94,
+      "avgDailyValueCr": 90.8,
+      "closingRangePct": 96,
       "horizon": "2d",
       "horizonLabel": "2 days",
       "estDays": 1,
@@ -94,7 +94,7 @@
       "percentile": 94,
       "rsRankAtSignal": 82,
       "adxAtSignal": 10.6,
-      "volRatioAtSignal": 2.38,
+      "volRatioAtSignal": 2.4,
       "rawRank": 7,
       "scoredCount": 93,
       "gradeLabel": "B",
@@ -153,7 +153,7 @@
         ]
       },
       "rsRank": 82.0,
-      "summary": "B (70/100): trading 0.6% below its pivot Rs82.3 after a 21-day base. Volume 2.4x average (P81), RS Rank 82, weekly and daily trends aligned. About 6.3% upside to T2 at 1.25:1 risk-reward, target expected in ~1 trading days once it triggers.",
+      "summary": "B (70/100): trading 0.5% below its pivot Rs82.3 after a 21-day base. Volume 2.4x average (P82), RS Rank 82, weekly and daily trends aligned. About 6.3% upside to T2 at 1.25:1 risk-reward, target expected in ~1 trading days once it triggers.",
       "scoreBreakdown": [
         {
           "label": "Volume 2.4x normal",
@@ -198,7 +198,7 @@
           "key": "rsrank"
         },
         {
-          "label": "Not extended (today +3.6%)",
+          "label": "Not extended (today +3.7%)",
           "points": 5.0,
           "max": 5,
           "key": "notext"
@@ -226,7 +226,7 @@
       "failedFilters": [
         "EMA20 below EMA50"
       ],
-      "aiExplanation": "Volume 2.4x normal\nRight at the breakout level\nToday's move is bigger than normal\nMACD improving\nClosed strong, near the day's high — Bullish engulfing\nRS Rank 82\nNot extended (today +3.6%)\nResistance tested 4x - well-defined level\nHistory: 11 breakouts past year - 55% reached +4% before -3%, 45% hit -3% first (averaged +4.8% when it worked, -3.8% when it stopped out)\nPattern: Bullish engulfing",
+      "aiExplanation": "Volume 2.4x normal\nRight at the breakout level\nToday's move is bigger than normal\nMACD improving\nClosed strong, near the day's high — Bullish engulfing\nRS Rank 82\nNot extended (today +3.7%)\nResistance tested 4x - well-defined level\nHistory: 11 breakouts past year - 55% reached +4% before -3%, 45% hit -3% first (averaged +4.8% when it worked, -3.8% when it stopped out)\nPattern: Bullish engulfing",
       "watchUntil": "2026-08-14",
       "triggerAbove": 82.29,
       "invalidBelow": 79.79,
@@ -235,7 +235,7 @@
       "recentNews": [
         {
           "title": "Banking sector stocks today, August 12: PNB jumps 4.60%, Bank of Maharashtra gains 3%; CSB Bank falls 2%",
-          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNeG1WY2ZBaTlmdm5rbWdCYlc5TVpXT0pGUkR0bUZpeUF3bTllMGZ2TUxGQmxGbzBMSkJwbHZyaXdnb0hWNW9yYVBRRGhCT1BKY0NEMGd3OXQyNVVfel9DQ3JMRWM1blZtbHFDeUlHNjM0d3pBSWxZNzBURjNLUVB1dkxPblhJSVNxNE5DMlZPdFN6clJDb2tPeUxBMGxhTzI1WV85enc2blhhZHdmWVA0VHdmYTZGYU1iVG9XVDRuYmVsdWd6UlRwREtBY1duTmd1RGpPaEFlMklqRDV1MkRV?oc=5",
+          "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPWk5MTXlaZjd1VmpWRDhERkY1c1R4SnJiUFJsZUpuMkJtRlF2akxkNFRhWWZJWV95T1ZGTzJUVXBQRG43S3lKcmVOcTk1UDJxaDQ3aGZ2MVBQcmZXYjV5bW9OWmJxTWVsWWhOc3lyUGJuVUhEMzI4STNpdE90cWxWZmlqanBnRjh5MkluTlpXbmtKU05lOW1zZi0xbU1tOC1HYi1pZXFhamdTVUlmZ2k3d09Mblo5dkFNeGFXX29CN25zTV9RS0Zvb3RRckJYOFZaV0dmaHVTNmtZTlI3Tnl4cVJnY3c?oc=5",
           "source": "Business Upturn",
           "date": "2026-08-12"
         }
@@ -247,44 +247,44 @@
       "symbol": "BELRISE",
       "companyName": "Belrise Industries Ltd.",
       "sector": "Automobile and Auto Components",
-      "closePrice": 259.75,
-      "projectedEntry": 259.75,
-      "buyZone": "257.2 - 262.3",
-      "stopLoss": 237.39,
-      "target": 297.02,
-      "target1": 297.02,
-      "target2": 319.39,
+      "closePrice": 262.2,
+      "projectedEntry": 262.2,
+      "buyZone": "259.6 - 264.8",
+      "stopLoss": 239.84,
+      "target": 299.47,
+      "target1": 299.47,
+      "target2": 321.84,
       "riskReward": 1.67,
-      "target1Pct": 14.3,
-      "potentialPct": 23.0,
+      "target1Pct": 14.2,
+      "potentialPct": 22.7,
       "resistance": 257.75,
-      "distToResistancePct": -0.77,
+      "distToResistancePct": -1.7,
       "triggerReadiness": null,
-      "emaSpreadPct": 14.84,
-      "williamsR": -18.8,
+      "emaSpreadPct": 14.79,
+      "williamsR": -13.2,
       "avgRejectionPct": null,
       "daysSinceLastTouch": 0,
       "williamsRLabel": "Overbought",
-      "macdHist": 2.499,
+      "macdHist": 2.656,
       "macdRising": true,
       "emaConvergenceLabel": "Spread out - already trending",
-      "ret1mo": 10.5,
-      "ret3mo": 24.0,
-      "ret6mo": 38.3,
+      "ret1mo": 11.6,
+      "ret3mo": 25.2,
+      "ret6mo": 39.6,
       "volumeGapText": null,
       "estDaysToTrigger": null,
       "nearestSupport": 224.0,
       "rvol": 2.15,
-      "ema20Level": 241.65,
+      "ema20Level": 241.89,
       "atrValue": 7.45,
-      "atrPct": 2.8698488039641634,
+      "atrPct": 2.843032769354316,
       "adxValue": 23.4,
       "adxLabel": "Moderate trend",
-      "distFrom52wHighPct": 0.8,
+      "distFrom52wHighPct": 1.7,
       "near52wLabel": "At ATH",
       "near52wStars": 5,
-      "avgDailyValueCr": 113.0,
-      "closingRangePct": 37,
+      "avgDailyValueCr": 114.1,
+      "closingRangePct": 56,
       "horizon": "1m",
       "horizonLabel": "1 month",
       "estDays": 9,
@@ -355,7 +355,7 @@
         ]
       },
       "rsRank": 94.0,
-      "summary": "A (81/100): trading 0.8% above its pivot after a 43-day base. Volume 2.1x average (P93), RS Rank 94, weekly and daily trends aligned. About 23.0% upside to T2 at 1.67:1 risk-reward, target expected in ~9 trading days once it triggers.",
+      "summary": "A (81/100): trading 1.7% above its pivot after a 43-day base. Volume 2.1x average (P93), RS Rank 94, weekly and daily trends aligned. About 22.7% upside to T2 at 1.67:1 risk-reward, target expected in ~9 trading days once it triggers.",
       "scoreBreakdown": [
         {
           "label": "RS Rank 94 - market leader",
@@ -376,7 +376,7 @@
           "key": "weekly"
         },
         {
-          "label": "At/near new 52w high (101%)",
+          "label": "At/near new 52w high (102%)",
           "points": 11.0,
           "max": 11,
           "key": "prox52"
@@ -400,13 +400,13 @@
           "key": "hhhl"
         },
         {
-          "label": "Base tightening nicely (15% down to 11% range), quiet for 43 sessions",
+          "label": "Base tightening nicely (14% down to 11% range), quiet for 43 sessions",
           "points": 3.6,
           "max": 6,
           "key": "vcp"
         },
         {
-          "label": "RSI 72 acceptable",
+          "label": "RSI 74 acceptable",
           "points": 2.0,
           "max": 4,
           "key": "rsi"
@@ -421,12 +421,12 @@
       "riskRating": "Medium",
       "grade": "B",
       "failedFilters": [
-        "RSI 72 outside 50-70"
+        "RSI 74 outside 50-70"
       ],
-      "aiExplanation": "RS Rank 94 - market leader\nEMA20 > EMA50 > EMA200 aligned\nWeekly chart also trending up\nAt/near new 52w high (101%)\nSteady buying: buying volume rising, money flowing in, trading above its average cost basis\nSector among market leaders\nBase tightening nicely (15% down to 11% range), quiet for 43 sessions\nRSI 72 acceptable\nHistory: 9 breakouts past year - 33% reached +4% before -3%, 67% hit -3% first (averaged +4.8% when it worked, -3.9% when it stopped out)",
+      "aiExplanation": "RS Rank 94 - market leader\nEMA20 > EMA50 > EMA200 aligned\nWeekly chart also trending up\nAt/near new 52w high (102%)\nSteady buying: buying volume rising, money flowing in, trading above its average cost basis\nSector among market leaders\nBase tightening nicely (14% down to 11% range), quiet for 43 sessions\nRSI 74 acceptable\nHistory: 9 breakouts past year - 33% reached +4% before -3%, 67% hit -3% first (averaged +4.8% when it worked, -3.9% when it stopped out)",
       "watchUntil": "2026-08-21",
-      "triggerAbove": 259.75,
-      "invalidBelow": 237.39,
+      "triggerAbove": 262.2,
+      "invalidBelow": 239.84,
       "status": "WATCH",
       "marketMood": "Neutral",
       "recentNews": []
@@ -437,44 +437,44 @@
       "symbol": "PPLPHARMA",
       "companyName": "Piramal Pharma Ltd.",
       "sector": "Healthcare",
-      "closePrice": 210.32,
+      "closePrice": 210.24,
       "projectedEntry": 218.5,
       "buyZone": "216.3 - 220.7",
-      "stopLoss": 196.23,
-      "target": 255.62,
-      "target1": 255.62,
-      "target2": 277.89,
+      "stopLoss": 196.1,
+      "target": 255.83,
+      "target1": 255.83,
+      "target2": 278.23,
       "riskReward": 1.67,
-      "target1Pct": 17.0,
-      "potentialPct": 27.2,
+      "target1Pct": 17.1,
+      "potentialPct": 27.3,
       "resistance": 218.5,
-      "distToResistancePct": 3.89,
+      "distToResistancePct": 3.93,
       "triggerReadiness": 0,
       "emaSpreadPct": 11.05,
-      "williamsR": -20.3,
+      "williamsR": -20.5,
       "avgRejectionPct": null,
       "daysSinceLastTouch": 0,
       "williamsRLabel": "Neutral",
-      "macdHist": 1.451,
+      "macdHist": 1.446,
       "macdRising": false,
       "emaConvergenceLabel": "Spread out - already trending",
       "ret1mo": 22.5,
-      "ret3mo": 20.3,
+      "ret3mo": 20.2,
       "ret6mo": 27.7,
       "volumeGapText": "Volume at 0.3x - needs 1.5x to confirm",
       "estDaysToTrigger": 1,
       "nearestSupport": 175.2,
-      "rvol": 0.29,
-      "ema20Level": 197.35,
-      "atrValue": 7.42,
-      "atrPct": 3.3974549467766213,
-      "adxValue": 55.0,
+      "rvol": 0.33,
+      "ema20Level": 197.34,
+      "atrValue": 7.47,
+      "atrPct": 3.417069399326986,
+      "adxValue": 54.8,
       "adxLabel": "Strong trend",
       "distFrom52wHighPct": 0.0,
       "near52wLabel": "At ATH",
       "near52wStars": 5,
-      "avgDailyValueCr": 175.2,
-      "closingRangePct": 5,
+      "avgDailyValueCr": 175.6,
+      "closingRangePct": 11,
       "horizon": "1m",
       "horizonLabel": "1 month",
       "estDays": 9,
@@ -484,9 +484,9 @@
       "breakoutScore": 79,
       "confidenceScore": 79,
       "percentile": 99,
-      "rsRankAtSignal": 80,
-      "adxAtSignal": 55.0,
-      "volRatioAtSignal": 0.29,
+      "rsRankAtSignal": 79,
+      "adxAtSignal": 54.8,
+      "volRatioAtSignal": 0.33,
       "rawRank": 2,
       "scoredCount": 93,
       "gradeLabel": "B",
@@ -544,11 +544,11 @@
           }
         ]
       },
-      "rsRank": 80.0,
-      "summary": "B (79/100): trading 3.9% below its pivot Rs218.5 after a 11-day base. Volume 0.3x average (P21), RS Rank 80, weekly and daily trends aligned. About 27.2% upside to T2 at 1.67:1 risk-reward, target expected in ~9 trading days once it triggers.",
+      "rsRank": 79.0,
+      "summary": "B (79/100): trading 3.9% below its pivot Rs218.5 after a 11-day base. Volume 0.3x average (P32), RS Rank 79, weekly and daily trends aligned. About 27.3% upside to T2 at 1.67:1 risk-reward, target expected in ~9 trading days once it triggers.",
       "scoreBreakdown": [
         {
-          "label": "RS Rank 80",
+          "label": "RS Rank 79",
           "points": 8.5,
           "max": 17,
           "key": "rsrank"
@@ -614,10 +614,10 @@
         "RSI 72 outside 50-70",
         "volume below 1.5x average"
       ],
-      "aiExplanation": "RS Rank 80\nEMA20 > EMA50 > EMA200 aligned\nWeekly chart also trending up\nAt/near new 52w high (96%)\nSteady buying: buying volume rising, money flowing in, trading above its average cost basis\nSector among market leaders\nEach pullback held higher than the last\nBase tightening nicely (25% down to 12% range), quiet for 11 sessions\nRSI 72 acceptable\nHistory: 7 breakouts past year - 43% reached +4% before -3%, 57% hit -3% first (averaged +6.9% when it worked, -4.5% when it stopped out)",
+      "aiExplanation": "RS Rank 79\nEMA20 > EMA50 > EMA200 aligned\nWeekly chart also trending up\nAt/near new 52w high (96%)\nSteady buying: buying volume rising, money flowing in, trading above its average cost basis\nSector among market leaders\nEach pullback held higher than the last\nBase tightening nicely (25% down to 12% range), quiet for 11 sessions\nRSI 72 acceptable\nHistory: 7 breakouts past year - 43% reached +4% before -3%, 57% hit -3% first (averaged +6.9% when it worked, -4.5% when it stopped out)",
       "watchUntil": "2026-08-21",
       "triggerAbove": 218.5,
-      "invalidBelow": 196.23,
+      "invalidBelow": 196.1,
       "status": "WATCH",
       "marketMood": "Neutral",
       "recentNews": [
@@ -647,7 +647,7 @@
       "symbol": "HFCL",
       "companyName": "HFCL Ltd.",
       "sector": "Telecommunication",
-      "closePrice": 221.61,
+      "closePrice": 221.52,
       "projectedEntry": 229.4,
       "buyZone": "227.1 - 231.7",
       "stopLoss": 199.1,
@@ -658,24 +658,24 @@
       "target1Pct": 22.0,
       "potentialPct": 35.2,
       "resistance": 229.4,
-      "distToResistancePct": 3.52,
+      "distToResistancePct": 3.56,
       "triggerReadiness": 0,
-      "emaSpreadPct": 32.18,
-      "williamsR": -4.4,
+      "emaSpreadPct": 32.19,
+      "williamsR": -4.6,
       "avgRejectionPct": 13.4,
       "daysSinceLastTouch": 14,
       "williamsRLabel": "Overbought",
-      "macdHist": 1.631,
+      "macdHist": 1.626,
       "macdRising": true,
       "emaConvergenceLabel": "Spread out - already trending",
       "ret1mo": -0.7,
       "ret3mo": 49.8,
-      "ret6mo": 207.3,
+      "ret6mo": 207.2,
       "volumeGapText": "Volume at 1.0x - needs 1.5x to confirm",
       "estDaysToTrigger": 1,
       "nearestSupport": 181.05,
-      "rvol": 0.97,
-      "ema20Level": 207.18,
+      "rvol": 1.0,
+      "ema20Level": 207.17,
       "atrValue": 10.1,
       "atrPct": 4.402750679743385,
       "adxValue": 17.9,
@@ -683,8 +683,8 @@
       "distFrom52wHighPct": -0.0,
       "near52wLabel": "At ATH",
       "near52wStars": 5,
-      "avgDailyValueCr": 622.2,
-      "closingRangePct": 78,
+      "avgDailyValueCr": 623.3,
+      "closingRangePct": 77,
       "horizon": "1m",
       "horizonLabel": "1 month",
       "estDays": 9,
@@ -696,7 +696,7 @@
       "percentile": 98,
       "rsRankAtSignal": 100,
       "adxAtSignal": 17.9,
-      "volRatioAtSignal": 0.97,
+      "volRatioAtSignal": 1.0,
       "rawRank": 3,
       "scoredCount": 93,
       "gradeLabel": "B",
@@ -755,7 +755,7 @@
         ]
       },
       "rsRank": 100.0,
-      "summary": "B (78/100): trading 3.5% below its pivot Rs229.4. Volume 1.0x average (P45), RS Rank 100, weekly and daily trends aligned. About 35.2% upside to T2 at 1.67:1 risk-reward, target expected in ~9 trading days once it triggers.",
+      "summary": "B (78/100): trading 3.6% below its pivot Rs229.4. Volume 1.0x average (P47), RS Rank 100, weekly and daily trends aligned. About 35.2% upside to T2 at 1.67:1 risk-reward, target expected in ~9 trading days once it triggers.",
       "scoreBreakdown": [
         {
           "label": "RS Rank 100 - market leader",
@@ -844,44 +844,44 @@
       "symbol": "MOTHERSON",
       "companyName": "Samvardhana Motherson International Ltd.",
       "sector": "Automobile and Auto Components",
-      "closePrice": 169.2,
+      "closePrice": 169.5,
       "projectedEntry": 172.0,
       "buyZone": "170.3 - 173.7",
-      "stopLoss": 157.11,
-      "target": 196.81,
-      "target1": 196.81,
-      "target2": 211.7,
+      "stopLoss": 157.07,
+      "target": 196.89,
+      "target1": 196.89,
+      "target2": 211.82,
       "riskReward": 1.67,
-      "target1Pct": 14.4,
-      "potentialPct": 23.1,
+      "target1Pct": 14.5,
+      "potentialPct": 23.2,
       "resistance": 172.0,
-      "distToResistancePct": 1.65,
-      "triggerReadiness": 45,
-      "emaSpreadPct": 15.18,
-      "williamsR": -9.7,
+      "distToResistancePct": 1.47,
+      "triggerReadiness": 51,
+      "emaSpreadPct": 15.17,
+      "williamsR": -8.6,
       "avgRejectionPct": 2.8,
       "daysSinceLastTouch": 1,
       "williamsRLabel": "Overbought",
-      "macdHist": 2.282,
+      "macdHist": 2.301,
       "macdRising": false,
       "emaConvergenceLabel": "Spread out - already trending",
-      "ret1mo": 19.1,
-      "ret3mo": 30.2,
-      "ret6mo": 27.5,
-      "volumeGapText": "Volume at 0.6x - needs 1.5x to confirm",
+      "ret1mo": 19.3,
+      "ret3mo": 30.5,
+      "ret6mo": 27.8,
+      "volumeGapText": "Volume at 0.7x - needs 1.5x to confirm",
       "estDaysToTrigger": 1,
       "nearestSupport": 142.2,
-      "rvol": 0.65,
-      "ema20Level": 155.18,
-      "atrValue": 4.96,
-      "atrPct": 2.885308028618186,
+      "rvol": 0.67,
+      "ema20Level": 155.21,
+      "atrValue": 4.98,
+      "atrPct": 2.8940292376658268,
       "adxValue": 28.3,
       "adxLabel": "Strong trend",
       "distFrom52wHighPct": 0.0,
       "near52wLabel": "At ATH",
       "near52wStars": 5,
-      "avgDailyValueCr": 398.5,
-      "closingRangePct": 10,
+      "avgDailyValueCr": 398.9,
+      "closingRangePct": 26,
       "horizon": "1m",
       "horizonLabel": "1 month",
       "estDays": 9,
@@ -891,9 +891,9 @@
       "breakoutScore": 76,
       "confidenceScore": 76,
       "percentile": 97,
-      "rsRankAtSignal": 93,
+      "rsRankAtSignal": 94,
       "adxAtSignal": 28.3,
-      "volRatioAtSignal": 0.65,
+      "volRatioAtSignal": 0.67,
       "rawRank": 4,
       "scoredCount": 93,
       "gradeLabel": "B",
@@ -951,11 +951,11 @@
           }
         ]
       },
-      "rsRank": 93.0,
-      "summary": "B (76/100): trading 1.7% below its pivot Rs172.0. Volume 0.6x average (P30), RS Rank 93, weekly and daily trends aligned. About 23.1% upside to T2 at 1.67:1 risk-reward, target expected in ~9 trading days once it triggers.",
+      "rsRank": 94.0,
+      "summary": "B (76/100): trading 1.5% below its pivot Rs172.0. Volume 0.7x average (P32), RS Rank 94, weekly and daily trends aligned. About 23.2% upside to T2 at 1.67:1 risk-reward, target expected in ~9 trading days once it triggers.",
       "scoreBreakdown": [
         {
-          "label": "RS Rank 93 - market leader",
+          "label": "RS Rank 94 - market leader",
           "points": 17.0,
           "max": 17,
           "key": "rsrank"
@@ -973,7 +973,7 @@
           "key": "weekly"
         },
         {
-          "label": "At/near new 52w high (98%)",
+          "label": "At/near new 52w high (99%)",
           "points": 11.0,
           "max": 11,
           "key": "prox52"
@@ -1021,10 +1021,10 @@
         "RSI 76 outside 50-70",
         "volume below 1.5x average"
       ],
-      "aiExplanation": "RS Rank 93 - market leader\nEMA20 > EMA50 > EMA200 aligned\nWeekly chart also trending up\nAt/near new 52w high (98%)\nSteady buying: buying volume rising, money flowing in, trading above its average cost basis\nSector among market leaders\nTrading in a tight range (17%)\nHistory: 9 breakouts past year - 44% reached +4% before -3%, 44% hit -3% first (averaged +6.1% when it worked, -4.3% when it stopped out)",
+      "aiExplanation": "RS Rank 94 - market leader\nEMA20 > EMA50 > EMA200 aligned\nWeekly chart also trending up\nAt/near new 52w high (99%)\nSteady buying: buying volume rising, money flowing in, trading above its average cost basis\nSector among market leaders\nTrading in a tight range (17%)\nHistory: 9 breakouts past year - 44% reached +4% before -3%, 44% hit -3% first (averaged +6.1% when it worked, -4.3% when it stopped out)",
       "watchUntil": "2026-08-21",
       "triggerAbove": 172.0,
-      "invalidBelow": 157.11,
+      "invalidBelow": 157.07,
       "status": "WATCH",
       "marketMood": "Neutral",
       "recentNews": []
@@ -1035,44 +1035,44 @@
       "symbol": "JINDALSAW",
       "companyName": "Jindal Saw Ltd.",
       "sector": "Capital Goods",
-      "closePrice": 270.0,
+      "closePrice": 269.55,
       "projectedEntry": 281.0,
       "buyZone": "278.2 - 283.8",
-      "stopLoss": 254.93,
-      "target": 324.45,
-      "target1": 324.45,
-      "target2": 350.52,
+      "stopLoss": 254.7,
+      "target": 324.83,
+      "target1": 324.83,
+      "target2": 351.12,
       "riskReward": 1.67,
-      "target1Pct": 15.5,
-      "potentialPct": 24.7,
+      "target1Pct": 15.6,
+      "potentialPct": 25.0,
       "resistance": 281.0,
-      "distToResistancePct": 4.07,
+      "distToResistancePct": 4.25,
       "triggerReadiness": 0,
-      "emaSpreadPct": 15.2,
-      "williamsR": -31.9,
+      "emaSpreadPct": 15.22,
+      "williamsR": -33.2,
       "avgRejectionPct": 10.9,
       "daysSinceLastTouch": 0,
       "williamsRLabel": "Neutral",
-      "macdHist": 1.171,
+      "macdHist": 1.143,
       "macdRising": false,
       "emaConvergenceLabel": "Spread out - already trending",
-      "ret1mo": 5.7,
-      "ret3mo": 17.9,
-      "ret6mo": 43.2,
+      "ret1mo": 5.5,
+      "ret3mo": 17.7,
+      "ret6mo": 43.0,
       "volumeGapText": "Volume at 0.6x - needs 1.5x to confirm",
       "estDaysToTrigger": 1,
       "nearestSupport": 246.5,
-      "rvol": 0.57,
-      "ema20Level": 264.84,
-      "atrValue": 8.69,
-      "atrPct": 3.0926141807271357,
-      "adxValue": 15.2,
+      "rvol": 0.61,
+      "ema20Level": 264.8,
+      "atrValue": 8.77,
+      "atrPct": 3.11930426189055,
+      "adxValue": 15.0,
       "adxLabel": "Weak trend",
       "distFrom52wHighPct": 0.0,
       "near52wLabel": "At ATH",
       "near52wStars": 5,
-      "avgDailyValueCr": 40.7,
-      "closingRangePct": 7,
+      "avgDailyValueCr": 40.8,
+      "closingRangePct": 14,
       "horizon": "1m",
       "horizonLabel": "1 month",
       "estDays": 9,
@@ -1083,8 +1083,8 @@
       "confidenceScore": 75,
       "percentile": 96,
       "rsRankAtSignal": 89,
-      "adxAtSignal": 15.2,
-      "volRatioAtSignal": 0.57,
+      "adxAtSignal": 15.0,
+      "volRatioAtSignal": 0.61,
       "rawRank": 5,
       "scoredCount": 93,
       "gradeLabel": "B",
@@ -1143,7 +1143,7 @@
         ]
       },
       "rsRank": 89.0,
-      "summary": "B (75/100): trading 4.1% below its pivot Rs281.0 after a 42-day base. Volume 0.6x average (P5), RS Rank 89, weekly and daily trends aligned. About 24.7% upside to T2 at 1.67:1 risk-reward, target expected in ~9 trading days once it triggers.",
+      "summary": "B (75/100): trading 4.2% below its pivot Rs281.0 after a 42-day base. Volume 0.6x average (P7), RS Rank 89, weekly and daily trends aligned. About 25.0% upside to T2 at 1.67:1 risk-reward, target expected in ~9 trading days once it triggers.",
       "scoreBreakdown": [
         {
           "label": "RS Rank 89",
@@ -1214,7 +1214,7 @@
       "aiExplanation": "RS Rank 89\nEMA20 > EMA50 > EMA200 aligned\nWeekly chart also trending up\nAt/near new 52w high (96%)\nSteady buying: buying volume rising, money flowing in, trading above its average cost basis\nSector among market leaders\nRSI 56 in sweet spot\nHistory: 6 breakouts past year - 33% reached +4% before -3%, 67% hit -3% first (averaged +7.5% when it worked, -5.6% when it stopped out)",
       "watchUntil": "2026-08-21",
       "triggerAbove": 281.0,
-      "invalidBelow": 254.93,
+      "invalidBelow": 254.7,
       "status": "WATCH",
       "marketMood": "Neutral",
       "recentNews": [
@@ -1232,44 +1232,44 @@
       "symbol": "IDFCFIRSTB",
       "companyName": "IDFC First Bank Ltd.",
       "sector": "Financial Services",
-      "closePrice": 85.28,
+      "closePrice": 85.8,
       "projectedEntry": 88.76,
       "buyZone": "87.9 - 89.6",
-      "stopLoss": 83.71,
-      "target": 97.18,
-      "target1": 97.18,
-      "target2": 102.23,
+      "stopLoss": 83.62,
+      "target": 97.32,
+      "target1": 97.32,
+      "target2": 102.46,
       "riskReward": 1.67,
-      "target1Pct": 9.5,
-      "potentialPct": 15.2,
+      "target1Pct": 9.6,
+      "potentialPct": 15.4,
       "resistance": 88.76,
-      "distToResistancePct": 4.08,
+      "distToResistancePct": 3.45,
       "triggerReadiness": 0,
       "emaSpreadPct": 9.52,
-      "williamsR": -35.2,
+      "williamsR": -30.0,
       "avgRejectionPct": 5.7,
       "daysSinceLastTouch": 11,
       "williamsRLabel": "Neutral",
-      "macdHist": -0.177,
-      "macdRising": false,
+      "macdHist": -0.144,
+      "macdRising": true,
       "emaConvergenceLabel": "Spread out - already trending",
-      "ret1mo": 7.3,
-      "ret3mo": 26.1,
-      "ret6mo": 2.3,
-      "volumeGapText": "Volume at 0.5x - needs 1.5x to confirm",
+      "ret1mo": 8.0,
+      "ret3mo": 26.8,
+      "ret6mo": 2.9,
+      "volumeGapText": "Volume at 0.7x - needs 1.5x to confirm",
       "estDaysToTrigger": 2,
       "nearestSupport": 78.88,
-      "rvol": 0.46,
-      "ema20Level": 83.65,
-      "atrValue": 1.68,
-      "atrPct": 1.8973546104479064,
-      "adxValue": 37.1,
+      "rvol": 0.68,
+      "ema20Level": 83.7,
+      "atrValue": 1.71,
+      "atrPct": 1.9295442652054315,
+      "adxValue": 37.2,
       "adxLabel": "Strong trend",
       "distFrom52wHighPct": 0.0,
       "near52wLabel": "At ATH",
       "near52wStars": 5,
-      "avgDailyValueCr": 212.9,
-      "closingRangePct": 92,
+      "avgDailyValueCr": 215.3,
+      "closingRangePct": 100,
       "horizon": "1m",
       "horizonLabel": "1 month",
       "estDays": 9,
@@ -1280,8 +1280,8 @@
       "confidenceScore": 74,
       "percentile": 95,
       "rsRankAtSignal": 75,
-      "adxAtSignal": 37.1,
-      "volRatioAtSignal": 0.46,
+      "adxAtSignal": 37.2,
+      "volRatioAtSignal": 0.68,
       "rawRank": 6,
       "scoredCount": 93,
       "gradeLabel": "B",
@@ -1340,7 +1340,7 @@
         ]
       },
       "rsRank": 75.0,
-      "summary": "B (74/100): trading 4.1% below its pivot Rs88.8 after a 42-day base. Volume 0.5x average (P5), RS Rank 75, weekly and daily trends aligned. About 15.2% upside to T2 at 1.67:1 risk-reward, target expected in ~9 trading days once it triggers.",
+      "summary": "B (74/100): trading 3.4% below its pivot Rs88.8 after a 42-day base. Volume 0.7x average (P28), RS Rank 75, weekly and daily trends aligned. About 15.4% upside to T2 at 1.67:1 risk-reward, target expected in ~9 trading days once it triggers.",
       "scoreBreakdown": [
         {
           "label": "RS Rank 75",
@@ -1361,7 +1361,7 @@
           "key": "weekly"
         },
         {
-          "label": "At/near new 52w high (96%)",
+          "label": "At/near new 52w high (97%)",
           "points": 11.0,
           "max": 11,
           "key": "prox52"
@@ -1391,7 +1391,7 @@
           "key": "vcp"
         },
         {
-          "label": "RSI 62 in sweet spot",
+          "label": "RSI 63 in sweet spot",
           "points": 4.0,
           "max": 4,
           "key": "rsi"
@@ -1411,13 +1411,12 @@
       "riskRating": "Low",
       "grade": "B",
       "failedFilters": [
-        "MACD not bullish or improving",
         "volume below 1.5x average"
       ],
-      "aiExplanation": "RS Rank 75\nEMA20 > EMA50 > EMA200 aligned\nWeekly chart also trending up\nAt/near new 52w high (96%)\nSteady buying: buying volume rising, trading above its average cost basis\nEach pullback held higher than the last\nBase tightening nicely (13% down to 3% range), quiet for 42 sessions\nRSI 62 in sweet spot\nHistory: 15 breakouts past year - 13% reached +4% before -3%, 33% hit -3% first (averaged +4.6% when it worked, -3.4% when it stopped out)\nPattern: Bullish engulfing",
+      "aiExplanation": "RS Rank 75\nEMA20 > EMA50 > EMA200 aligned\nWeekly chart also trending up\nAt/near new 52w high (97%)\nSteady buying: buying volume rising, trading above its average cost basis\nEach pullback held higher than the last\nBase tightening nicely (13% down to 3% range), quiet for 42 sessions\nRSI 63 in sweet spot\nHistory: 15 breakouts past year - 13% reached +4% before -3%, 33% hit -3% first (averaged +4.6% when it worked, -3.4% when it stopped out)\nPattern: Bullish engulfing",
       "watchUntil": "2026-08-21",
       "triggerAbove": 88.76,
-      "invalidBelow": 83.71,
+      "invalidBelow": 83.62,
       "status": "WATCH",
       "marketMood": "Neutral",
       "recentNews": []
@@ -1471,7 +1470,7 @@
           "key": "rsrank"
         },
         {
-          "label": "Not extended (today +3.6%)",
+          "label": "Not extended (today +3.7%)",
           "points": 5.0,
           "max": 5,
           "key": "notext"
@@ -1518,7 +1517,7 @@
           "key": "weekly"
         },
         {
-          "label": "At/near new 52w high (101%)",
+          "label": "At/near new 52w high (102%)",
           "points": 11.0,
           "max": 11,
           "key": "prox52"
@@ -1542,13 +1541,13 @@
           "key": "hhhl"
         },
         {
-          "label": "Base tightening nicely (15% down to 11% range), quiet for 43 sessions",
+          "label": "Base tightening nicely (14% down to 11% range), quiet for 43 sessions",
           "points": 3.6,
           "max": 6,
           "key": "vcp"
         },
         {
-          "label": "RSI 72 acceptable",
+          "label": "RSI 74 acceptable",
           "points": 2.0,
           "max": 4,
           "key": "rsi"
@@ -1566,7 +1565,7 @@
       "score": 79,
       "breakdown": [
         {
-          "label": "RS Rank 80",
+          "label": "RS Rank 79",
           "points": 8.5,
           "max": 17,
           "key": "rsrank"
@@ -1698,7 +1697,7 @@
       "score": 76,
       "breakdown": [
         {
-          "label": "RS Rank 93 - market leader",
+          "label": "RS Rank 94 - market leader",
           "points": 17.0,
           "max": 17,
           "key": "rsrank"
@@ -1716,7 +1715,7 @@
           "key": "weekly"
         },
         {
-          "label": "At/near new 52w high (98%)",
+          "label": "At/near new 52w high (99%)",
           "points": 11.0,
           "max": 11,
           "key": "prox52"
@@ -1848,7 +1847,7 @@
           "key": "weekly"
         },
         {
-          "label": "At/near new 52w high (96%)",
+          "label": "At/near new 52w high (97%)",
           "points": 11.0,
           "max": 11,
           "key": "prox52"
@@ -1878,7 +1877,7 @@
           "key": "vcp"
         },
         {
-          "label": "RSI 62 in sweet spot",
+          "label": "RSI 63 in sweet spot",
           "points": 4.0,
           "max": 4,
           "key": "rsi"
@@ -1996,92 +1995,92 @@
   "lastScan": {
     "date": "2026-08-12",
     "mood": "Neutral",
-    "quoteTime": "14:45",
+    "quoteTime": "15:15",
     "dataDate": "2026-08-12",
     "nifty": {
-      "level": 24325.55,
-      "changePts": -146.15,
-      "changePct": -0.6,
-      "aboveEma20": false,
+      "level": 24435.95,
+      "changePts": -35.75,
+      "changePct": -0.15,
+      "aboveEma20": true,
       "aboveEma50": true,
-      "technicalRead": "Slipped below its 20-day average while still above the 50-day - short-term wobble inside a longer uptrend."
+      "technicalRead": "Trading above both its 20-day and 50-day average - the near-term trend is constructive."
     },
     "sectorRanking": [
       {
         "sector": "Automobile and Auto Components",
-        "avgReturn20d": 7.3
+        "avgReturn20d": 7.4
       },
       {
         "sector": "Information Technology",
-        "avgReturn20d": 4.8
+        "avgReturn20d": 4.99
       },
       {
         "sector": "Metals & Mining",
-        "avgReturn20d": 3.11
+        "avgReturn20d": 3.45
       },
       {
         "sector": "Consumer Services",
-        "avgReturn20d": 2.61
+        "avgReturn20d": 2.57
       },
       {
         "sector": "Capital Goods",
-        "avgReturn20d": 2.16
+        "avgReturn20d": 2.28
       },
       {
         "sector": "Healthcare",
-        "avgReturn20d": 2.14
-      },
-      {
-        "sector": "Oil Gas & Consumable Fuels",
-        "avgReturn20d": 1.63
-      },
-      {
-        "sector": "Consumer Durables",
-        "avgReturn20d": 1.37
-      },
-      {
-        "sector": "Services",
-        "avgReturn20d": 1.21
-      },
-      {
-        "sector": "Chemicals",
-        "avgReturn20d": 1.11
+        "avgReturn20d": 2.18
       },
       {
         "sector": "Media Entertainment & Publication",
-        "avgReturn20d": 0.89
+        "avgReturn20d": 1.81
+      },
+      {
+        "sector": "Oil Gas & Consumable Fuels",
+        "avgReturn20d": 1.66
+      },
+      {
+        "sector": "Consumer Durables",
+        "avgReturn20d": 1.6
+      },
+      {
+        "sector": "Services",
+        "avgReturn20d": 1.11
+      },
+      {
+        "sector": "Chemicals",
+        "avgReturn20d": 1.08
       },
       {
         "sector": "Fast Moving Consumer Goods",
-        "avgReturn20d": -0.27
+        "avgReturn20d": -0.07
       },
       {
         "sector": "Financial Services",
-        "avgReturn20d": -0.48
+        "avgReturn20d": -0.24
       },
       {
         "sector": "Construction Materials",
-        "avgReturn20d": -2.52
-      },
-      {
-        "sector": "Construction",
-        "avgReturn20d": -2.91
+        "avgReturn20d": -2.19
       },
       {
         "sector": "Realty",
-        "avgReturn20d": -2.94
+        "avgReturn20d": -2.34
+      },
+      {
+        "sector": "Construction",
+        "avgReturn20d": -3.16
       },
       {
         "sector": "Power",
-        "avgReturn20d": -3.45
-      },
-      {
-        "sector": "Textiles",
-        "avgReturn20d": -3.9
+        "avgReturn20d": -3.43
       },
       {
         "sector": "Telecommunication",
-        "avgReturn20d": -4.54
+        "avgReturn20d": -3.82
+      },
+      {
+        "sector": "Textiles",
+        "avgReturn20d": -3.94
       }
     ],
     "nextFoExpiry": "2026-08-27",
@@ -2089,7 +2088,7 @@
     "passed": 0,
     "shown": 7,
     "topSector": "Automobile and Auto Components",
-    "weakSector": "Telecommunication",
-    "at": "2026-08-12T09:16:05"
+    "weakSector": "Textiles",
+    "at": "2026-08-12T14:32:36"
   }
 }
