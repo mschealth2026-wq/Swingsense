@@ -1,0 +1,1610 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SwingSense AI</title>
+<meta name="theme-color" content="#16211C">
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="SwingSense">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  @property --sc { syntax: '<number>'; inherits: true; initial-value: 0; }
+  :root{
+    --paper:#F6F5F0; --card:#FFFFFF; --ink:#16211C; --ink-soft:#3C4A43;
+    --slate:#64706A; --line:#DCD9CE; --gain:#0B7A4B; --loss:#BF3B3B;
+    --marigold:#E39A1F; --marigold-deep:#8A5B08; --chip:#EFEDE4;
+  }
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ *{transition:none!important;animation:none!important} }
+  body{margin:0;background:var(--paper);color:var(--ink);
+       font:15px/1.55 'Inter',system-ui,sans-serif;}
+  .mono{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;}
+  button{font:inherit;cursor:pointer}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--marigold);outline-offset:2px;border-radius:2px;}
+  @keyframes cardIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes pulse{0%,100%{opacity:.35;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
+  @keyframes toastIn{from{opacity:0;transform:translate(-50%,8px)}to{opacity:1;transform:translate(-50%,0)}}
+
+  /* masthead */
+  header{background:var(--ink);color:#F2F1EA;padding:16px 24px;
+         display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+         border-bottom:2px solid var(--marigold);}
+  .brand{font-family:'Archivo',sans-serif;font-weight:800;font-size:19px;
+         letter-spacing:.05em;}
+  .brand em{color:var(--marigold);font-style:normal;}
+  .mood{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:600;
+        padding:5px 12px;border:1px solid rgba(255,255,255,.35);border-radius:20px;
+        letter-spacing:.03em;transition:background .2s ease;}
+  .mood.Bullish{color:#7FD8AC;border-color:#4C8A6B;background:rgba(127,216,172,.1);}
+  .mood.Bearish{color:#F2A0A0;border-color:#9A5B5B;background:rgba(242,160,160,.1);}
+  .mood.Neutral{color:#E8D9A0;border-color:#96854E;background:rgba(232,217,160,.1);}
+  #scanBtn{margin-left:auto;background:var(--marigold);color:var(--ink);
+           border:0;border-radius:5px;padding:10px 20px;font-weight:700;
+           font-size:13px;letter-spacing:.02em;
+           transition:filter .15s ease, transform .08s ease, box-shadow .15s ease;
+           box-shadow:0 2px 8px rgba(227,154,31,.25);}
+  #scanBtn:hover:not([disabled]){filter:brightness(1.08);box-shadow:0 4px 14px rgba(227,154,31,.35);}
+  #scanBtn:active:not([disabled]){transform:scale(.96);}
+  #scanBtn[disabled]{opacity:.55;cursor:default;box-shadow:none;}
+
+  /* the day tape - contract-note strip */
+  .tape{border-top:3px double var(--line);border-bottom:3px double var(--line);
+        background:var(--card);padding:8px 22px;font-family:'IBM Plex Mono',monospace;
+        font-size:12.5px;color:var(--ink-soft);display:flex;gap:22px;flex-wrap:wrap;}
+  .tape b{color:var(--ink);font-weight:600}
+  .tape .g{color:var(--gain)} .tape .m{color:var(--marigold-deep)}
+  .niftylabel{letter-spacing:.04em;font-size:11.5px;color:var(--slate);font-weight:700;}
+  .legend{background:var(--chip);border-bottom:1px solid var(--line);padding:9px 22px;
+          display:flex;gap:20px;flex-wrap:wrap;align-items:center;font-size:12px;
+          color:var(--ink-soft);}
+  .legend .tag{padding:2px 7px;border-radius:3px;}
+  .legend-note{margin-left:auto;color:var(--slate);font-family:'IBM Plex Mono',monospace;font-size:11px;}
+  .legend button{background:none;border:0;color:var(--slate);font-size:16px;line-height:1;
+                 cursor:pointer;padding:0 2px;}
+  .legend button:hover{color:var(--ink);}
+  @media (max-width:700px){.legend-note{display:none;} .legend{gap:10px;}}
+
+  nav{display:flex;gap:4px;padding:14px 22px 0;}
+  nav button{background:none;border:0;border-bottom:2px solid transparent;
+             padding:8px 14px;color:var(--slate);font-weight:500;cursor:pointer;
+             transition:color .15s ease, border-color .15s ease;}
+  nav button:hover{color:var(--ink-soft);}
+  nav button.on{color:var(--ink);border-bottom-color:var(--marigold);}
+    .hz{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--marigold-deep);
+      border:1px solid #E5D9A8;background:#FBF4DE;border-radius:3px;padding:2px 7px;}
+    .stagetrack{display:flex;align-items:center;gap:0;margin-top:-2px;margin-bottom:2px;}
+    .stagedot{width:7px;height:7px;border-radius:50%;background:var(--line);flex-shrink:0;}
+    .stagedot.filled{background:var(--marigold);}
+    .stageline{width:20px;height:1.5px;background:var(--line);}
+    .stageline.filled{background:var(--marigold);}
+    .stagelabel{font-size:10px;color:var(--slate);margin-left:6px;letter-spacing:.02em;}
+  main{max-width:1100px;margin:0 auto;padding:18px 22px 60px;}
+
+  /* signal chits */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;}
+  .chit{background:var(--card);border:1px solid var(--line);border-radius:8px;
+        padding:18px 18px 16px;display:flex;flex-direction:column;gap:11px;
+        position:relative;overflow:hidden;
+        animation:cardIn .4s cubic-bezier(.16,1,.3,1) backwards;
+        transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;}
+  .chit::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+  .chit.stripe-strong::before{background:linear-gradient(90deg,var(--marigold),#F0B94A);}
+  .chit.stripe-buy::before{background:var(--marigold);}
+  .chit.stripe-watch::before{background:var(--line);}
+  .chit:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(22,33,28,.10);
+              border-color:#CBC7B8;}
+  .chit-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
+  .reschip{font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;
+          padding:3px 8px;border-radius:4px;white-space:nowrap;}
+  .reschip.broke{background:#E3F3E9;color:var(--gain);}
+  .reschip.chase{background:#FBF0DA;color:var(--marigold-deep);}
+  .qbadge{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;
+         padding:3px 9px;border-radius:12px;white-space:nowrap;letter-spacing:.02em;}
+  .qbadge.qb-elite{background:linear-gradient(135deg,#FFF3D6,#FBE4A8);color:#8A6416;
+                   border:1px solid #E5C989;}
+  .qbadge.qb-high{background:#E3F3E9;color:var(--gain);border:1px solid #C9E3D1;}
+  .qbadge.qb-std{background:var(--chip);color:var(--slate);border:1px solid var(--line);}
+  .eventchip{font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;
+            padding:3px 9px;border-radius:4px;white-space:nowrap;
+            background:#FBE7E7;color:var(--loss);}
+  .intrachip{font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;
+            padding:3px 9px;border-radius:4px;white-space:normal;
+            background:var(--chip);color:var(--slate);border:1px dashed var(--line);}
+  .intrachip.crossed{background:#FBF0DA;color:var(--marigold-deep);border:1px dashed #E5C989;}
+  .trendchip{font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:700;
+            padding:3px 9px;border-radius:4px;white-space:nowrap;}
+  .trendchip.trend-improving{background:#E3F3E9;color:var(--gain);}
+  .trendchip.trend-weakening{background:#FBE7E7;color:var(--loss);}
+  .trendchip.trend-unchanged{background:var(--chip);color:var(--slate);}
+  .expchip{font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:700;
+          padding:3px 9px;border-radius:4px;white-space:nowrap;
+          background:var(--loss);color:#fff;}
+  .expwarn{background:#FBE7E7;border:1.5px solid var(--loss);border-radius:8px;
+          padding:10px 14px;margin:8px 0;font-size:12px;color:#7A1F1F;line-height:1.5;}
+  .scorechg{font-size:12px;margin-bottom:9px;padding-bottom:9px;border-bottom:1px dashed var(--line);
+           display:flex;gap:8px;flex-wrap:wrap;align-items:baseline;}
+  .scdelta{font-family:'IBM Plex Mono',monospace;font-size:10.5px;background:var(--chip);
+          padding:2px 7px;border-radius:4px;}
+  .scdelta.pos{color:var(--gain);} .scdelta.neg{color:var(--loss);}
+  .reschip.near{background:var(--chip);color:var(--ink-soft);border:1px solid var(--line);}
+  .sym{font-family:'Archivo',sans-serif;font-weight:700;font-size:22px;letter-spacing:.01em;}
+  .co{font-size:12px;color:var(--slate);flex:1;min-width:0;
+      white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;
+       padding:3px 8px;border-radius:3px;white-space:nowrap;}
+  .chit-head .tag{font-size:13px;padding:5px 12px;border-radius:5px;font-weight:700;
+                  letter-spacing:.02em;}
+  .tag.A{background:var(--marigold);color:var(--ink);}
+  .tag.B{background:none;border:1px solid var(--line);color:var(--slate);}
+  .tag.act-buy{background:var(--gain);color:#fff;}
+  .tag.act-wait{background:var(--marigold);color:var(--ink);}
+  .tag.act-watch{background:#DCE8F5;color:#2E5C8A;border:1px solid #B8D0E8;}
+  .tag.act-building{background:none;border:1px solid var(--line);color:var(--slate);}
+  .actwhy{font-size:11.5px;color:var(--ink-soft);margin-top:-6px;font-style:italic;}
+  .addbtn{background:var(--ink);color:#F2F1EA;border:0;border-radius:6px;
+          padding:9px 14px;font-size:12.5px;font-weight:600;cursor:pointer;
+          transition:filter .15s ease;}
+  .addbtn:hover:not(:disabled){filter:brightness(1.3);}
+  .addbtn:disabled{opacity:.6;cursor:default;}
+  .sector{font-size:12px;color:var(--slate);margin-top:-6px;}
+  .secstr{font-size:9.5px;font-weight:700;letter-spacing:.03em;padding:1px 6px;
+          border-radius:3px;margin:0 2px;}
+  .secstr.strong{background:#E3F3E9;color:var(--gain);}
+  .secstr.weak{background:#F1EFE6;color:var(--slate);}
+  .triplet{display:grid;grid-template-columns:1fr 1fr 1fr;border:1px solid var(--line);
+           border-radius:4px;overflow:hidden;text-align:center;}
+  .triplet div{padding:8px 4px;background:var(--chip);}
+  .triplet div+div{border-left:1px solid var(--line);}
+  .triplet label{display:block;font-size:10.5px;color:var(--slate);letter-spacing:.04em;}
+  .triplet .v{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:14px;}
+  .triplet .buy .v{color:var(--ink)} .triplet .tgt .v{color:var(--gain)}
+  .triplet .stp .v{color:var(--loss)}
+  .scoreline{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .gauge{width:40px;height:40px;border-radius:50%;flex-shrink:0;position:relative;
+         background:conic-gradient(var(--marigold) calc(var(--sc,0)*3.6deg), var(--chip) 0);
+         transition:background 1.2s cubic-bezier(.16,1,.3,1);}
+  .gauge::before{content:'';position:absolute;inset:3px;border-radius:50%;background:var(--card);}
+  @supports not (background: conic-gradient(red, blue)){
+    .gauge{background:var(--chip);border:2px solid var(--marigold);}
+  }
+  .gauge b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+           font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:700;}
+  .scorewrap{display:flex;flex-direction:column;gap:2px;}
+  .scorewrap small{font-size:10.5px;color:var(--slate);letter-spacing:.03em;}
+  .pctile{font-size:11px;color:var(--marigold-deep);font-weight:600;}
+  .bigscore{font-size:26px;font-weight:600;}
+  .bigscore small{font-size:12px;color:var(--slate);font-weight:400;}
+  .riskbadge{font-family:'IBM Plex Mono',monospace;font-size:9.5px;font-weight:700;
+             letter-spacing:.03em;padding:4px 8px;border-radius:4px;white-space:nowrap;}
+  .riskbadge.risk-low{background:#E3F3E9;color:var(--gain);}
+  .riskbadge.risk-med{background:#FBF0DA;color:var(--marigold-deep);}
+  .riskbadge.risk-high{background:#FBE7E7;color:var(--loss);}
+  .verdict-tag{font-family:'IBM Plex Mono',monospace;font-size:9.5px;font-weight:700;
+              letter-spacing:.03em;padding:3px 8px;border-radius:4px;white-space:nowrap;
+              background:var(--chip);color:var(--slate);}
+  .verdict-tag.pos{background:#E3F3E9;color:var(--gain);}
+  .verdict-tag.neg{background:#FBE7E7;color:var(--loss);}
+  .rrwrap{display:flex;flex-direction:column;align-items:flex-end;gap:1px;margin-left:auto;
+         max-width:150px;text-align:right;}
+  .rrexplain{color:var(--slate);font-size:9.5px;line-height:1.3;font-weight:400;}
+  .whybox{background:var(--chip);border-radius:8px;padding:12px 14px;}
+  .whybox label{display:block;font-size:10px;letter-spacing:.05em;color:var(--slate);
+               font-weight:700;margin-bottom:7px;}
+  .narrative{font-size:12.5px;line-height:1.5;color:var(--ink-soft);
+            margin-bottom:10px;padding-bottom:10px;border-bottom:1px dashed var(--line);}
+  .whystats{display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;padding-top:8px;
+            border-top:1px dashed var(--line);font-size:11.5px;}
+  .whystats small{color:var(--slate);}
+  .riskbox{margin-top:10px;padding-top:9px;border-top:1px dashed var(--line);}
+  .riskbox label{display:block;font-size:10px;letter-spacing:.05em;color:var(--marigold-deep);
+                font-weight:700;margin-bottom:6px;}
+  .critbox{margin-top:10px;padding-top:9px;border-top:1px dashed var(--line);}
+  .critbox label{display:block;font-size:10px;letter-spacing:.05em;color:var(--slate);
+                font-weight:700;margin-bottom:6px;}
+  .critbox .hlrow{font-size:11.5px;}
+  .newsbox{margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+  .newsbox label{display:block;font-size:10px;letter-spacing:.05em;color:var(--slate);
+                font-weight:700;margin-bottom:7px;}
+  .readybox{margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);}
+  .readybox label{display:block;font-size:10px;letter-spacing:.05em;color:var(--slate);
+                 font-weight:700;margin-bottom:8px;}
+  .readyrow{display:flex;align-items:center;gap:10px;padding:3px 0;font-size:11.5px;}
+  .readyname{width:120px;flex-shrink:0;color:var(--ink-soft);}
+  .readybar{flex:1;height:7px;background:var(--chip);border-radius:4px;overflow:hidden;}
+  .readybar span{display:block;height:100%;background:var(--marigold);}
+  .readypct{width:34px;text-align:right;font-family:'IBM Plex Mono',monospace;
+           font-weight:600;color:var(--slate);}
+  .newsitem{display:block;padding:7px 0;border-bottom:1px solid var(--line);
+           text-decoration:none;color:inherit;}
+  .newsitem:last-child{border-bottom:0;}
+  .newsitem:hover .newstitle{color:var(--marigold-deep);}
+  .newstitle{display:block;font-size:12.5px;color:var(--ink-soft);line-height:1.4;}
+  .newsmeta{display:block;font-size:10.5px;color:var(--slate);margin-top:2px;}
+  .rrwrap small{font-size:10.5px;color:var(--slate);letter-spacing:.03em;}
+  .rr-big{font-size:22px;font-weight:700;color:var(--ink-soft);}
+  .rr-big.rr-good{color:var(--gain);}
+  .rr-big.rr-weak{color:var(--loss);}
+  .quad{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);
+        border-radius:4px;overflow:hidden;text-align:center;}
+  .quad div{padding:8px 2px;background:var(--chip);}
+  .quad div+div{border-left:1px solid var(--line);}
+  .quad label{display:block;font-size:10px;color:var(--slate);letter-spacing:.04em;}
+  .quad .v{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13.5px;}
+  .quad .tgt .v{color:var(--gain)} .quad .stp .v{color:var(--loss)}
+  .meta{display:flex;justify-content:space-between;font-size:12px;color:var(--slate);}
+  .why{font-size:12.5px;color:var(--ink-soft);border-top:1px dashed var(--line);
+       padding-top:9px;display:flex;flex-direction:column;gap:5px;}
+  .condrow{font-size:12px;color:var(--marigold-deep);padding:2px 0 2px 4px;}
+  .hlrow{display:flex;align-items:baseline;gap:7px;}
+  .hlrow small{color:var(--slate);font-weight:400;}
+  .hlcheck{color:var(--gain);font-style:normal;font-weight:700;font-size:11px;flex-shrink:0;}
+  .histblock{font-size:11px;}
+  .histblock label{display:block;color:var(--slate);letter-spacing:.03em;
+                   font-size:10px;margin-bottom:3px;}
+  .histsub{font-size:11px;color:var(--ink-soft);margin-bottom:7px;}
+  .histbar{display:flex;gap:2px;min-height:34px;border-radius:5px;overflow:hidden;padding:4px 0;}
+  .histbar span{display:flex;flex-direction:column;align-items:center;justify-content:center;
+               font-weight:700;font-size:11.5px;color:#fff;font-family:'IBM Plex Mono',monospace;}
+  .histbar span small{font-weight:500;font-size:8px;letter-spacing:.02em;opacity:.9;}
+  .hb-win{background:var(--gain);} .hb-stop{background:var(--loss);}
+  .hb-neither{background:var(--slate);}
+  .histdetail{display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:var(--slate);
+             margin-top:7px;}
+  .histdetail b{color:var(--ink-soft);}
+  .histevents{margin-top:10px;padding-top:9px;border-top:1px dashed var(--line);}
+  .evbox{background:var(--card);border:1px solid var(--line);border-radius:8px;
+        padding:12px 14px;margin-top:10px;}
+  .evbox label{display:block;font-size:10px;letter-spacing:.05em;color:var(--slate);
+              font-weight:700;margin-bottom:8px;}
+  .evrow{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;margin-bottom:8px;}
+  .evtotal{font-size:13px;padding-top:8px;border-top:1px dashed var(--line);}
+  .evtotal small{color:var(--slate);font-weight:400;font-size:10.5px;}
+  .histevents label{display:block;font-size:10px;letter-spacing:.05em;color:var(--slate);
+                    font-weight:700;margin-bottom:6px;}
+  .histevrow{display:flex;align-items:baseline;gap:10px;padding:2px 0;font-size:11.5px;}
+  .histevdate{font-family:'IBM Plex Mono',monospace;color:var(--slate);width:80px;flex-shrink:0;}
+  .histevtag{color:var(--slate);font-size:10.5px;}
+  .progressbox{font-size:12px;}
+  .progresshead{display:flex;align-items:center;gap:10px;font-weight:600;}
+  .progressbar{flex:1;height:6px;background:var(--chip);border-radius:3px;overflow:hidden;}
+  .progressbar span{display:block;height:100%;background:var(--marigold);
+                    transition:width .4s ease;}
+  .progressline{color:var(--slate);margin-top:4px;}
+  .watchplan{font-size:12.5px;background:#FBF4DE;border:1px solid #E5D9A8;
+             border-radius:5px;padding:8px 10px;}
+  .sizing{font-size:12.5px;background:#EDF5EF;border:1px solid #CBE3D2;
+          border-radius:5px;padding:8px 10px;}
+  .factors{border-top:1px dashed var(--line);padding-top:8px;}
+  .factoggle{background:none;border:0;padding:0;font-size:12px;color:var(--ink-soft);
+             cursor:pointer;font-family:'IBM Plex Mono',monospace;text-align:left;width:100%;}
+  .factoggle:hover{color:var(--ink);}
+  .factoggle .g{color:var(--gain);font-weight:600;} .factoggle .y{color:var(--marigold-deep);font-weight:600;}
+  .factoggle .r{color:var(--loss);font-weight:600;} .factoggle .farrow{color:var(--slate);font-size:10px;}
+  table.factbl{width:100%;border-collapse:collapse;font-size:12px;margin-top:6px;}
+  table.factbl td{padding:4px 6px;border-bottom:1px solid var(--line);vertical-align:middle;}
+  table.factbl tr:last-child td{border-bottom:0;}
+  table.factbl td.fmark{width:18px;text-align:center;font-weight:700;padding-right:2px;}
+  table.factbl td.fmark.g{color:var(--gain);} table.factbl td.fmark.y{color:var(--marigold-deep);}
+  table.factbl td.fmark.r{color:var(--loss);}
+  table.factbl td.flabel{color:var(--ink-soft);}
+  table.facts-main{background:var(--chip);border:1px solid var(--line);border-radius:6px;
+                    padding:2px 10px;margin-top:8px;}
+  table.facts-main td{border-bottom:1px solid var(--border,#E4E1D6);padding:6px 4px;}
+  table.facts-main td.flabel{width:44%;color:var(--slate);font-size:11.5px;}
+  table.facts-main td.fval{font-family:'IBM Plex Mono',monospace;font-weight:600;text-align:left;}
+  .sizing .szn{color:var(--slate);font-size:11px;}
+  .intraday{font-size:12.5px;background:#EEF2FA;border:1px solid #C9D6EC;
+            border-radius:5px;padding:8px 10px;}
+  .summary{font-size:12.5px;font-style:italic;color:var(--ink-soft);
+           border-left:3px solid var(--marigold);padding-left:10px;}
+  .fails{color:var(--marigold-deep);}
+  .banner{background:#FBF4DE;border:1px solid #E5D9A8;border-left:3px solid var(--marigold);
+          border-radius:6px;padding:14px 16px;margin-bottom:16px;font-weight:500;}
+  .loading{display:flex;align-items:center;gap:10px;color:var(--slate);
+           padding:44px 0;font-family:'IBM Plex Mono',monospace;font-size:13px;}
+  .loading .dot{width:8px;height:8px;border-radius:50%;background:var(--marigold);
+           animation:pulse 1.1s ease-in-out infinite;}
+  .hzhead{font-size:13px;color:var(--slate);margin-bottom:14px;
+          border-left:3px solid var(--marigold);padding-left:10px;}
+
+  .toppick{background:linear-gradient(135deg,#FFF9EC,#FBF0DA);border:1px solid #E5C989;
+           border-radius:10px;padding:14px 18px;margin-bottom:16px;}
+  .toppick label{display:block;font-size:10.5px;letter-spacing:.05em;color:var(--marigold-deep);
+                 font-weight:700;margin-bottom:6px;}
+  .toppick-body{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}
+  .toppick-sym{font-family:'Archivo',sans-serif;font-weight:800;font-size:19px;}
+  .toppick-co{font-size:12px;color:var(--slate);}
+  .toppick-score{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;}
+  .toppick-rr{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-soft);}
+  .toppick-cmp{font-size:11.5px;color:var(--slate);margin-top:8px;padding-top:8px;
+              border-top:1px dashed #E5C989;}
+  .rankgap{font-size:11px;color:var(--marigold-deep);background:#FBF4DE;
+          border-radius:5px;padding:5px 9px;margin:2px 0;}
+  .rankgap small{color:var(--slate);}
+  .seclead{background:var(--card);border:1px solid var(--line);border-radius:10px;
+           padding:14px 18px;margin-bottom:16px;
+           box-shadow:0 1px 3px rgba(22,33,28,.04);}
+  .concwarn{background:#FBF4DE;border:1px solid #E5D9A8;border-radius:10px;
+           padding:14px 18px;margin-bottom:16px;font-size:12.5px;}
+  .concwarn label{display:block;font-size:10px;letter-spacing:.05em;color:var(--marigold-deep);
+                  font-weight:700;margin-bottom:6px;}
+  .seclead-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:5px 0;}
+  .seclead-row label{font-size:10px;letter-spacing:.05em;color:var(--slate);
+                     width:150px;flex-shrink:0;font-weight:700;}
+  .secleadnote{font-size:10.5px;color:var(--slate);font-style:italic;margin-top:4px;}
+  .secchip{font-size:12px;background:var(--chip);border-radius:5px;padding:4px 10px;
+           display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap;transition:filter .15s;}
+  .secchip:hover{filter:brightness(0.96);}
+  .secchip.pos{border:1px solid #C9E3D1;} .secchip.neg{border:1px solid #F0C9C9;}
+  .oppscore{font-family:'IBM Plex Mono',monospace;color:var(--marigold-deep);font-weight:700;}
+  .seccounts{color:var(--slate);font-weight:400;}
+  .healthcard{background:var(--card);border:1px solid var(--line);border-radius:8px;
+             padding:14px 16px;display:flex;flex-direction:column;gap:8px;}
+  .healthhead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .healththen{color:var(--slate);font-weight:400;}
+  .healthfail{font-size:12px;background:#FBE7E7;border-radius:5px;padding:6px 10px;color:var(--loss);}
+  .healthnote{font-size:11px;color:var(--slate);font-style:italic;}
+  .secgroup{margin-bottom:16px;border:1px solid var(--line);border-radius:10px;
+            background:var(--card);overflow:hidden;
+            box-shadow:0 1px 3px rgba(22,33,28,.04);}
+  .sechead{width:100%;display:flex;align-items:center;gap:12px;padding:16px 18px;
+           background:none;border:0;cursor:pointer;text-align:left;
+           font-family:'Archivo',sans-serif;transition:background .15s ease;}
+  .sechead:hover{background:var(--chip);}
+  .secname{font-weight:700;font-size:15.5px;letter-spacing:.01em;}
+  .seccount{margin-left:auto;font-size:12.5px;color:var(--slate);
+            font-family:'IBM Plex Mono',monospace;}
+  .secarrow{color:var(--marigold);font-size:11px;width:16px;text-align:center;
+            transition:transform .15s ease;}
+  .seccontent{padding:2px 18px 18px;}
+
+  /* tables */
+  table{width:100%;border-collapse:collapse;background:var(--card);
+        border:1px solid var(--line);border-radius:6px;overflow:hidden;font-size:13.5px;}
+  th{font-size:11.5px;letter-spacing:.05em;color:var(--slate);text-align:left;
+     padding:10px 12px;border-bottom:2px solid var(--line);font-weight:600;background:var(--chip);}
+  td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:middle;}
+  tbody tr{transition:background .12s ease;}
+  tbody tr:hover{background:#f7f6f0;}
+  tbody tr:nth-child(even){background:rgba(22,33,28,.015);}
+  tbody tr:nth-child(even):hover{background:#f7f6f0;}
+  tr:last-child td{border-bottom:0}
+  .num{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;}
+  .pos{color:var(--gain);font-weight:600} .neg{color:var(--loss);font-weight:600}
+  .btn{background:var(--card);border:1px solid var(--line);border-radius:4px;
+       padding:6px 12px;font-size:13px;}
+  .btn:hover{border-color:var(--slate)}
+  .btn.primary{background:var(--ink);color:#F2F1EA;border-color:var(--ink);}
+
+  /* stat blocks */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:20px;}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:6px;
+        padding:14px;text-align:center;transition:transform .15s ease, box-shadow .15s ease;}
+  .stat:hover{transform:translateY(-1px);box-shadow:0 3px 10px rgba(22,33,28,.06);}
+  .stat .v{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;}
+  .stat .k{font-size:11.5px;color:var(--slate);letter-spacing:.04em;margin-top:2px;}
+
+  /* settings */
+  form{background:var(--card);border:1px solid var(--line);border-radius:6px;
+       padding:20px;max-width:640px;}
+  fieldset{border:0;padding:0;margin:0 0 20px;}
+  legend{font-family:'Archivo',sans-serif;font-weight:700;font-size:15px;margin-bottom:10px;}
+  .frow{display:grid;grid-template-columns:200px 1fr;gap:10px;align-items:center;margin-bottom:10px;}
+  .frow label{font-size:13.5px;color:var(--ink-soft);}
+  input[type=text],input[type=number],input[type=email],input[type=password]{
+    font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:4px;
+    background:var(--paper);width:100%;}
+  input:focus{border-color:var(--marigold);outline:none;}
+  .hint{font-size:12px;color:var(--slate);margin:4px 0 14px;}
+
+  /* logs drawer */
+  #logs{background:var(--ink);color:#C9D4CD;font-family:'IBM Plex Mono',monospace;
+        font-size:12px;border-radius:6px;padding:14px;max-height:280px;overflow:auto;
+        white-space:pre-wrap;display:none;margin-top:16px;}
+  @media (max-width:560px){
+    nav{overflow-x:auto;white-space:nowrap;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;}
+    nav button{padding:12px 14px;font-size:15px;}
+    .quad{grid-template-columns:repeat(2,1fr);}
+    .quad div:nth-child(3),.quad div:nth-child(4){border-top:1px solid var(--line);}
+    .quad div:nth-child(3){border-left:0;}
+    header{padding:12px 14px;} main{padding:14px 12px 60px;}
+    #scanBtn{padding:12px 16px;}
+  }
+  .toast{position:sticky;bottom:16px;background:var(--ink);color:#F2F1EA;
+         padding:10px 16px;border-radius:4px;display:none;width:fit-content;margin:16px auto 0;
+         animation:toastIn .25s cubic-bezier(.16,1,.3,1);box-shadow:0 6px 20px rgba(22,33,28,.25);}
+
+  /* close dialog (in-flow) */
+  #closeBox{display:none;background:var(--card);border:1px solid var(--marigold);
+            border-radius:6px;padding:16px;margin-bottom:16px;}
+  #closeBox .frow{grid-template-columns:130px 1fr;}
+  select{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:4px;background:var(--paper);}
+
+</style>
+</head>
+<body>
+
+<header>
+  <span class="brand">SWING<em>SENSE</em> AI</span>
+  <span id="moodChip" class="mood Neutral">MOOD —</span>
+  <button id="scanBtn" onclick="runScan()">Run scan</button>
+</header>
+
+<div class="tape" id="tape">
+  <span id="niftyChip"></span>
+  <span>Last scan <b id="tScanDate">—</b></span>
+  <span>Passed filters <b id="tPassed">—</b></span>
+  <span class="m">Buy now <b id="tAGrade">—</b></span>
+  <span>Watchlist <b id="tWatch">—</b></span>
+  <span>Open positions <b id="tOpen">—</b></span>
+</div>
+
+<div class="legend" id="legend">
+  <span><span class="tag act-buy" style="font-size:10px;">BUY NOW</span> buyable today — every filter passed and it's already broken out</span>
+  <span><span class="tag act-wait" style="font-size:10px;">WAIT FOR TRIGGER</span> every filter passed, just hasn't closed above its breakout level yet — don't buy until it does</span>
+  <span><span class="tag act-watch" style="font-size:10px;">WATCHLIST</span> close, but missing something (shown on the card) — not buyable</span>
+  <span><span class="tag act-building" style="font-size:10px;">BUILDING</span> still forming, further away — nothing to do yet</span>
+  <button onclick="document.getElementById('legend').remove()" aria-label="Dismiss">&times;</button>
+</div>
+
+<div id="marketRead" style="display:none;"></div>
+
+<nav>
+  <button class="on" data-tab="signals" onclick="showTab('signals')">Signals</button>
+  <button data-tab="health" onclick="showTab('health')">Signal Health</button>
+  <button data-tab="history" onclick="showTab('history')">History</button>
+  <button data-tab="settings" onclick="showTab('settings')">Settings</button>
+</nav>
+
+<main>
+  <section id="tab-signals">
+    <div id="signalsWrap"><div class="loading"><span class="dot"></span>Loading signals…</div></div>
+  </section>
+
+  <section id="tab-health" hidden><div id="healthWrap"></div></section>
+
+  <section id="tab-history" hidden><div id="histWrap"></div></section>
+
+  <section id="tab-settings" hidden>
+    <form onsubmit="saveConfig(event)">
+      <fieldset>
+        <legend>Screening rules</legend>
+        <div class="frow"><label for="minPrice">Min price (Rs)</label><input type="number" id="minPrice"></div>
+        <div class="frow"><label for="maxPrice">Max price (Rs)</label><input type="number" id="maxPrice"></div>
+        <div class="frow"><label for="minRsi">RSI minimum</label><input type="number" id="minRsi"></div>
+        <div class="frow"><label for="maxRsi">RSI maximum</label><input type="number" id="maxRsi"></div>
+        <div class="frow"><label for="minVolumeMultiplier">Volume vs 20-day avg (x)</label><input type="number" step="0.1" id="minVolumeMultiplier"></div>
+        <div class="frow"><label for="maxRecommendations">Stocks per day</label><input type="number" id="maxRecommendations"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Breakout model</legend>
+        <div class="frow"><label for="minBreakoutScore">Min score to mark as Buy (0-100)</label><input type="number" id="minBreakoutScore"></div>
+        <div class="frow"><label for="consolidationDays">Consolidation window (days)</label><input type="number" id="consolidationDays"></div>
+        <div class="frow"><label for="resistanceLookback">Resistance lookback (days)</label><input type="number" id="resistanceLookback"></div>
+        <div class="frow"><label for="maxDistToBreakoutPct">Near-breakout distance (%)</label><input type="number" step="0.5" id="maxDistToBreakoutPct"></div>
+        <div class="frow"><label for="requireEma200">Require EMA50 &gt; EMA200</label><input type="checkbox" id="requireEma200" style="width:auto;justify-self:start"></div>
+        <div class="frow"><label for="minAdx">Min ADX (0 = off)</label><input type="number" id="minAdx"></div>
+        <div class="frow"><label for="minRsRank">Min RS Rank (0 = off)</label><input type="number" id="minRsRank"></div>
+        <div class="frow"><label for="minAvgVolume">Min avg volume (shares/day)</label><input type="number" step="50000" id="minAvgVolume"></div>
+        <div class="frow"><label for="maxOpenPositions">Max open positions</label><input type="number" id="maxOpenPositions"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Money &amp; sizing</legend>
+        <div class="frow"><label for="capital">Trading capital (Rs)</label><input type="number" id="capital"></div>
+        <div class="frow"><label for="riskPerTradePct">Risk per trade (%)</label><input type="number" step="0.1" id="riskPerTradePct"></div>
+        <p class="hint">Cards suggest share quantity so one stopped-out trade loses only this %% of capital.</p>
+        <div class="frow"><label for="mm2d">Min potential %% (2-day)</label><input type="number" step="0.5" id="mm2d"></div>
+        <div class="frow"><label for="mm1w">Min potential %% (1-week)</label><input type="number" step="0.5" id="mm1w"></div>
+        <div class="frow"><label for="mm2w">Min potential %% (2-week)</label><input type="number" step="0.5" id="mm2w"></div>
+        <div class="frow"><label for="mm1m">Min potential %% (1-month)</label><input type="number" step="0.5" id="mm1m"></div>
+        <p class="hint">A stock only appears if its Target-2 offers at least this move. Higher = fewer, more volatile candidates.</p>
+      </fieldset>
+      <fieldset>
+        <legend>Risk</legend>
+        <div class="frow"><label for="minRiskReward">Min risk:reward (T1)</label><input type="number" step="0.05" id="minRiskReward"></div>
+        <p class="hint">Rule changes apply from the next scan. No code edits needed.</p>
+      </fieldset>
+      <fieldset>
+        <legend>Email delivery</legend>
+        <div class="frow"><label for="emailEnabled">Enabled</label><input type="checkbox" id="emailEnabled" style="width:auto;justify-self:start"></div>
+        <div class="frow"><label for="toEmail">Send to</label><input type="email" id="toEmail"></div>
+        <div class="frow"><label for="smtpHost">SMTP host</label><input type="text" id="smtpHost"></div>
+        <div class="frow"><label for="smtpPort">SMTP port</label><input type="number" id="smtpPort"></div>
+        <div class="frow"><label for="smtpUser">SMTP user</label><input type="text" id="smtpUser"></div>
+        <p class="hint">The SMTP password lives in the .env file (SMTP_PASS), not here — safer than storing it in the browser or data.json.</p>
+        <button type="button" class="btn" onclick="testEmail()">Send test email</button>
+      </fieldset>
+      <fieldset>
+        <legend>AI ranking</legend>
+        <div class="frow"><label for="geminiApiKey">Gemini API key</label><input type="password" id="geminiApiKey" placeholder="optional — heuristic used if empty"></div>
+        <p class="hint">Prefer GEMINI_API_KEY in .env. A key pasted here is stored on this machine only.</p>
+      </fieldset>
+      <button class="btn primary" type="submit">Save settings</button>
+    </form>
+  </section>
+
+  <div id="logs" role="log" aria-live="polite"></div>
+  <div class="toast" id="toast"></div>
+</main>
+
+<script>
+let RECS = [], CONFIG = {}, SIGHIST = [], LAST_SCAN = null, pollTimer = null;
+
+const $ = id => document.getElementById(id);
+const rup = n => 'Rs ' + Number(n).toFixed(2);
+const escapeHtml = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const pct = n => (n >= 0 ? '+' : '') + Number(n).toFixed(2) + '%';
+
+function toast(msg){ const t=$('toast'); t.textContent=msg; t.style.display='block';
+  setTimeout(()=>t.style.display='none', 3500); }
+
+function showTab(name){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on', b.dataset.tab===name));
+  ['signals','health','history','settings'].forEach(t=>$('tab-'+t).hidden = t!==name);
+}
+
+function noServer(detail){
+  $('signalsWrap').innerHTML = `<div class="banner">
+    <b>The app can't reach its server.</b><br><br>
+    ${detail}<br><br>
+    1. Open a terminal in the swingsense folder<br>
+    2. Run <span class="mono">npm start</span> and leave it running<br>
+    3. Open <a href="http://localhost:5000"><b>http://localhost:5000</b></a> in the browser<br><br>
+    Opening dist/index.html as a file will always show this message —
+    the address bar must say <b>localhost:5000</b>, not File.</div>`;
+}
+
+async function loadAll(){
+  const [recs, cfg, status, sighist] = await Promise.all([
+    fetch('/api/recommendations').then(r=>r.json()),
+    fetch('/api/config').then(r=>r.json()),
+    fetch('/api/status').then(r=>r.json()),
+    fetch('/api/signal-history').then(r=>r.json()).catch(()=>[]),
+  ]);
+  RECS = recs; CONFIG = cfg; SIGHIST = sighist;
+  renderTape(status.lastScan);
+  renderSignals(); renderHealth(); renderHistory(); fillSettings();
+}
+
+function renderTape(ls){
+  LAST_SCAN = ls;
+  const latest = RECS.length ? RECS.map(r=>r.date).sort().pop() : null;
+  const todays = RECS.filter(r=>r.date===latest);
+  $('tScanDate').textContent = ls ? ls.date : (latest || 'never');
+  if (ls && ls.quoteTime) {
+    $('tScanDate').innerHTML = `${ls.date} <span style="color:var(--slate);font-weight:400">· latest price ~<b>${ls.quoteTime}</b> IST</span>`;
+  }
+  $('tPassed').textContent = ls ? ls.passed : '—';
+  $('tAGrade').textContent = todays.filter(r=>r.grade==='A').length;
+  $('tWatch').textContent  = todays.filter(r=>r.grade==='B').length;
+  $('tOpen').textContent   = RECS.filter(r=>r.status==='OPEN'||r.status==='PARTIAL').length;
+  const mood = ls ? ls.mood : (todays[0] ? todays[0].marketMood : null);
+  const chip = $('moodChip');
+  chip.textContent = 'MOOD ' + (mood || '—').toUpperCase();
+  chip.className = 'mood ' + (mood || 'Neutral');
+
+  const nifty = ls && ls.nifty;
+  const niftyEl = $('niftyChip');
+  if (nifty){
+    const up = nifty.changePts >= 0;
+    niftyEl.innerHTML = `<b class="niftylabel">NIFTY 50</b> <b class="num">${nifty.level.toLocaleString('en-IN')}</b>
+      <span class="${up?'pos':'neg'}">${up?'&#9650;':'&#9660;'} ${Math.abs(nifty.changePts).toFixed(2)} (${up?'+':''}${nifty.changePct}%)</span>`;
+    niftyEl.className = '';
+  } else {
+    niftyEl.innerHTML = '';
+  }
+
+  const mrEl = $('marketRead');
+  const bits = [];
+  if (nifty && nifty.technicalRead) bits.push(`<b>Today's technical read:</b> ${nifty.technicalRead}`);
+  if (ls && ls.nextFoExpiry) bits.push(`<b>Next F&amp;O expiry:</b> ${ls.nextFoExpiry} — expect extra volatility as it nears`);
+  // Market context synthesis: combines two ALREADY-real signals (breadth
+  // mood + Nifty's own EMA trend) into one plain sentence - not a new
+  // prediction, just reading two existing facts together instead of
+  // making the user cross-reference them.
+  let contextLine = '';
+  if (mood && nifty && nifty.aboveEma20 != null){
+    const favorable = mood === 'Bullish' && nifty.aboveEma20 && nifty.aboveEma50;
+    const caution = mood === 'Bearish' || (!nifty.aboveEma20 && !nifty.aboveEma50);
+    const verdict = favorable ? 'Conditions favor fresh swing entries today'
+                  : caution ? 'Conditions call for caution on fresh entries today'
+                  : 'Conditions are mixed - no strong tailwind or headwind today';
+    contextLine = `<div class="hzhead" style="margin-top:6px;"><b>Market context:</b> ${verdict}
+      <span style="color:var(--slate);"> (breadth: ${mood}, Nifty: ${nifty.aboveEma20?'above':'below'} 20-day, ${nifty.aboveEma50?'above':'below'} 50-day - a synthesis of two real facts, not a new prediction)</span></div>`;
+  }
+  if (bits.length || contextLine){
+    mrEl.style.display = 'block';
+    mrEl.innerHTML = (bits.length ? `<div class="hzhead">${bits.join(' &middot; ')}
+      <span style="color:var(--slate);"> — a description of today's real conditions, not a forecast of tomorrow.</span></div>` : '') + contextLine;
+  } else {
+    mrEl.style.display = 'none';
+  }
+}
+
+const HOLD_TEXT = {'2d':'1-2 trading days','1w':'3-5 trading days',
+                    '2w':'5-10 trading days','1m':'15-25 trading days'};
+function addTradingDays(iso, n){
+  const d = new Date(iso + 'T00:00:00');
+  while (n > 0){ d.setDate(d.getDate()+1); if (d.getDay()%6) n--; }
+  return d.toISOString().slice(0,10);
+}
+
+function sizingData(r){
+  const cap = +(CONFIG.scanner&&CONFIG.scanner.capital) || 100000;
+  const riskPct = +(CONFIG.scanner&&CONFIG.scanner.riskPerTradePct) || 1.0;
+  // Watch cards project buy zone/stop/target off the TRIGGER price, not
+  // today's close (that's the whole point - it hasn't triggered yet). Sizing
+  // must use the same basis, or risk/profit numbers won't match the levels
+  // shown on the card.
+  const entry = r.projectedEntry ?? r.closePrice, stop = r.stopLoss;
+  const perShareRisk = Math.max(entry - stop, 0.01);
+  let qty = Math.floor((cap * riskPct/100) / perShareRisk);
+  if (qty * entry > cap) qty = Math.floor(cap / entry);
+  if (qty < 1) return null;
+  const invest = qty * entry;
+  const riskAmt = qty * perShareRisk;
+  const t1v = (r.target1 ?? r.target);
+  const p1 = qty * (t1v - entry);
+  const p1pct = ((t1v - entry) / entry * 100).toFixed(1);
+  const p2 = r.target2 != null ? qty * (r.target2 - entry) : null;
+  const p2pct = r.target2 != null ? ((r.target2 - entry) / entry * 100).toFixed(1) : null;
+  return {qty, invest, riskAmt, riskPct, cap, p1, p1pct, p2, p2pct,
+          entry, isProjected: r.projectedEntry != null};
+}
+
+function intradayPlan(r){
+  if (r.horizon !== '2d' || r.grade !== 'A') return '';
+  const entry = r.closePrice;
+  // real ATR from the backend - no more guessing it back out of entry/stop
+  // with a hardcoded divisor that can silently drift from the real
+  // stopATR multiplier used server-side
+  const atr = r.atrValue != null ? r.atrValue : Math.max((entry - r.stopLoss) / 1.2, entry * 0.005);
+  const trig = Math.max(r.resistance || entry, entry) * 1.002;
+  const dStop = entry - 0.6 * atr;
+  const dTgt = entry + 1.0 * atr;
+  return `<div class="intraday">&#9728; <b>Same-day option</b> (buy morning, sell evening):
+    enter only if it crosses <b class="num">Rs ${trig.toFixed(1)}</b> in the first hour on strong volume ·
+    day stop <b class="num">Rs ${dStop.toFixed(1)}</b> · book by 3:15 PM near <b class="num">Rs ${dTgt.toFixed(1)}</b>
+    (+${((dTgt-entry)/entry*100).toFixed(1)}%). Skip if it gaps up over 2% at open.</div>`;
+}
+
+function actionStatus(r){
+  // ONE unambiguous label instead of grade+stage shown separately, which
+  // could conflict (a BUY-tagged card showing "Ready" looked like it
+  // wasn't actionable yet, when BUY already meant it was). Grade and
+  // breakout-distance are both real data; this just combines them into
+  // a single answer instead of making the trader reconcile two signals.
+  const maxDist = (CONFIG.scanner && CONFIG.scanner.maxDistToBreakoutPct) || 3;
+  const dist = r.distToResistancePct;
+  const strong = r.gradeLabel === 'A+';
+  if (r.grade === 'A' && dist != null && dist <= 0)
+    return {label: strong ? 'STRONG BUY NOW' : 'BUY NOW', cls: 'act-buy',
+            why: 'Every mandatory filter passed and price has already closed above its breakout level.'};
+  if (r.grade === 'A' && (dist == null || dist > 0))
+    return {label: 'WAIT FOR TRIGGER', cls: 'act-wait',
+            why: dist != null
+              ? `Every mandatory filter passed, but price hasn't closed above its breakout level yet (${dist.toFixed(1)}% to go). Wait for that close before buying.`
+              : `Every mandatory filter passed, but the breakout distance couldn't be measured for this signal - treat as not yet confirmed rather than assuming it already triggered.`};
+  if (dist != null && dist <= maxDist)
+    return {label: 'WATCHLIST', cls: 'act-watch',
+            why: `Close to its breakout level but missing something (shown below) - not buyable yet.`};
+  return {label: 'BUILDING', cls: 'act-building',
+          why: 'Still forming, further from its breakout level. Not buyable, worth checking back on.'};
+}
+
+function factorRow(b){
+  const pct = b.max > 0 ? b.points / b.max : 0;
+  const cls = pct >= 0.7 ? 'g' : pct > 0 ? 'y' : 'r';
+  const mark = pct >= 0.7 ? '&#10003;' : pct > 0 ? '~' : '&#10007;';
+  return `<tr><td class="fmark ${cls}">${mark}</td><td class="flabel">${b.label}</td></tr>`;
+}
+
+function chit(r, i){
+  const score = r.breakoutScore ?? r.confidenceScore ?? 0;
+  const t1 = r.target1 ?? r.target, t2 = r.target2;
+  const t1pct = ((t1-r.closePrice)/r.closePrice*100).toFixed(1);
+  const resLine = r.distToResistancePct != null
+    ? (r.distToResistancePct <= 0
+       ? `broke Rs${Number(r.resistance).toFixed(1)}`
+       : `${Number(r.distToResistancePct).toFixed(1)}% below Rs${Number(r.resistance).toFixed(1)}`)
+    : '—';
+  const resChip = r.distToResistancePct != null
+    ? (r.distToResistancePct <= 0
+       ? (r.distToResistancePct <= -2.5
+          ? `<span class="reschip chase">&#9888; ${(-r.distToResistancePct).toFixed(1)}% past breakout - late entry risk</span>`
+          : `<span class="reschip broke">&#10003; broke resistance, fresh</span>`)
+       : `<span class="reschip near">${Number(r.distToResistancePct).toFixed(1)}% from resistance</span>`)
+    : '';
+  const fails = (r.failedFilters||[]).length
+    ? `<div class="why fails"><b>${r.failedFilters.length} condition${r.failedFilters.length===1?'':'s'} still missing:</b>
+       ${r.failedFilters.map(f=>`<div class="condrow">&#9744; ${f}</div>`).join('')}</div>` : '';
+  const watchPlan = (r.grade==='B' && r.watchUntil)
+    ? `<div class="watchplan">&#9203; Watch until <b>${r.watchUntil}</b> &mdash; enter only if it closes above
+       <b class="num">Rs ${Number(r.triggerAbove ?? r.resistance).toFixed(1)}</b> on 1.5x+ volume
+       (it becomes a Buy here automatically). Stop watching if it closes below
+       <b class="num">Rs ${Number(r.invalidBelow ?? r.stopLoss).toFixed(1)}</b> or the date passes.</div>` : '';
+  const progress = r.triggerReadiness != null ? `<div class="progressbox">
+    <div class="progresshead"><b>${r.triggerReadiness}%</b> ready to trigger
+      <span class="progressbar"><span style="width:${r.triggerReadiness}%"></span></span></div>
+    <div class="progressline">${r.distToResistancePct.toFixed(1)}% below breakout &middot; ${r.volumeGapText}
+      &middot; ~${r.estDaysToTrigger} trading day${r.estDaysToTrigger===1?'':'s'} at this pace</div>
+  </div>` : '';
+  const bh = r.breakoutHistory;
+  // Expected Value in real rupees: real position size (already trusted for
+  // sizing display) x real historical win/stop rates and real average
+  // move sizes for THIS stock. Every input here already exists elsewhere
+  // on the card - this is arithmetic on real numbers, not a new prediction.
+  let evBox = '';
+  if (bh && bh.n >= 5 && bh.avgWinMove != null && bh.avgStopMove != null) {
+    const szForEv = sizingData(r);
+    if (szForEv) {
+      const winRupees = szForEv.invest * (bh.avgWinMove / 100);
+      const lossRupees = szForEv.invest * (bh.avgStopMove / 100);   // already negative
+      const ev = (bh.winRate/100 * winRupees) + (bh.stopRate/100 * lossRupees);
+      evBox = `<div class="evbox">
+        <label>EXPECTED VALUE &mdash; real position size &times; real historical win/loss rates for this stock, not a new prediction</label>
+        <div class="evrow">
+          <span>Position <b class="num">Rs ${Math.round(szForEv.invest).toLocaleString('en-IN')}</b> (${szForEv.qty} shares)</span>
+          <span>${bh.winRate}% &times; avg win <b class="num pos">+Rs ${Math.round(winRupees).toLocaleString('en-IN')}</b></span>
+          <span>${bh.stopRate}% &times; avg loss <b class="num neg">Rs ${Math.round(lossRupees).toLocaleString('en-IN')}</b></span>
+        </div>
+        <div class="evtotal">Expected value <b class="num ${ev>=0?'pos':'neg'}">${ev>=0?'+':''}Rs ${Math.round(ev).toLocaleString('en-IN')}</b> per trade
+          <small>(based on only ${bh.n} past breakouts on this stock - ${bh.n<10?'a small sample':'a moderate sample'}, weight it accordingly)</small></div>
+      </div>`;
+    }
+  }
+  const histBlock = bh ? `<div class="histblock">
+    <label>AFTER ITS LAST ${bh.n} REAL RESISTANCE BREAKS THIS YEAR, WHAT HAPPENED NEXT &mdash; not a forecast</label>
+    <div class="histsub">"Similar setup" here means one specific thing: <b>this stock's close crossed above its own prior
+      20-day high.</b> That's the entire definition - it does NOT require today's other criteria (RS Rank, EMA
+      alignment, volume) to have also been true on that past day, so this sample is broader than "days that would
+      have graded A" would be. The split below is what happened in the 5 days after each of those ${bh.n} crossings.
+      ${bh.periodStart&&bh.periodEnd?` Data period: ${bh.periodStart} to ${bh.periodEnd}.`:''}</div>
+    <div class="histbar">
+      <span class="hb-win" style="flex:${Math.max(bh.winRate,4)}">${bh.winRate}%<small>hit target first${bh.avgWinMove?` &middot; avg ${bh.avgWinMove>0?'+':''}${bh.avgWinMove}%`:''}</small></span>
+      <span class="hb-stop" style="flex:${Math.max(bh.stopRate,4)}">${bh.stopRate}%<small>hit stop first${bh.avgStopMove?` &middot; avg ${bh.avgStopMove}%`:''}</small></span>
+      <span class="hb-neither" style="flex:${Math.max(bh.neitherRate,4)}">${bh.neitherRate}%<small>neither in 5d</small></span>
+    </div>
+    ${bh.winQ25!=null&&bh.winQ75!=null?`<div class="histdetail">
+      <span>Middle 50% of winners <b class="num pos">+${bh.winQ25}% to +${bh.winQ75}%</b></span>
+    </div>`:''}
+    ${bh.medianWinMove!=null||bh.bestWinMove!=null?`<div class="histdetail">
+      ${bh.medianWinMove!=null?`<span>Median win <b class="num pos">+${bh.medianWinMove}%</b></span>`:''}
+      ${bh.bestWinMove!=null?`<span>Best win <b class="num pos">+${bh.bestWinMove}%</b></span>`:''}
+      ${bh.worstStopMove!=null?`<span>Worst loss <b class="num neg">${bh.worstStopMove}%</b></span>`:''}
+      ${bh.stability?`<span>Consistency <b>${bh.stability}</b></span>`:''}
+    </div>`:''}
+    ${bh.fastestWinDays!=null?`<div class="histdetail">
+      <span>Fastest win <b class="num">${bh.fastestWinDays}d</b></span>
+      <span>Typical <b class="num">${bh.typicalWinDays}d</b></span>
+      <span>Slowest win <b class="num">${bh.slowestWinDays}d</b></span>
+    </div>`:''}
+    ${bh.recentEvents&&bh.recentEvents.length?`<div class="histevents">
+      <label>MOST RECENT INDIVIDUAL BREAKOUTS &mdash; real dates, real outcomes, not a sample</label>
+      ${bh.recentEvents.map(e=>`<div class="histevrow">
+        <span class="histevdate">${e.date}</span>
+        <span class="num ${e.outcome==='win'?'pos':e.outcome==='stop'?'neg':''}">${e.movePct>=0?'+':''}${e.movePct}%</span>
+        <span class="histevtag">${e.outcome==='win'?'hit target':e.outcome==='stop'?'hit stop':'neither'}</span>
+      </div>`).join('')}
+    </div>`:''}
+  </div>` : '';
+  const me = r.modelEvidence;
+  const modelEvidenceBlock = me ? `<div class="histblock" style="margin-top:10px;">
+    <label>HISTORICAL MATCH QUALITY &mdash; pooled across ${me.symbolsCovered} scanned symbols, not just this stock</label>
+    <div class="histsub">From the last full backtest run (${me.generatedAt?me.generatedAt.slice(0,10):'unknown date'}) -
+      re-run scanner/backtest.py to refresh this. Not a forecast for THIS stock specifically, but real evidence for
+      how this exact model has performed on this horizon across the whole market. <b>Different definition from the
+      section above:</b> this "similar setup" means a day that would have passed EVERY real A-grade condition
+      (RS Rank, EMA alignment, volume, all of it) - stricter than the per-stock section's simpler "closed above its
+      own 20-day high."</div>
+    <div class="histdetail">
+      <span><b class="num">${me.n}</b> similar setups found</span>
+      <span><b class="num pos">${me.winRate}%</b> reached target before stop</span>
+      ${me.medianGainPct!=null?`<span>Median gain <b class="num pos">+${me.medianGainPct}%</b></span>`:''}
+      ${me.avgDays!=null?`<span>Typical hold <b class="num">${me.avgDays}d</b></span>`:''}
+      ${me.expectancyPct!=null?`<span>Expectancy <b class="num ${me.expectancyPct>=0?'pos':'neg'}">${me.expectancyPct>=0?'+':''}${me.expectancyPct}%</b> per signal <small>(raw)</small></span>`:''}
+      ${me.netExpectancyPct!=null?`<span>Expectancy <b class="num ${me.netExpectancyPct>=0?'pos':'neg'}">${me.netExpectancyPct>=0?'+':''}${me.netExpectancyPct}%</b> <small>(net of ~${me.costPctUsed}% real trading costs)</small></span>`:''}
+    </div>
+    ${me.criteria&&me.criteria.length?`<div class="critbox">
+      <label>WHAT "SIMILAR SETUP" ACTUALLY MEANS &mdash; the real conditions, from your actual settings</label>
+      ${me.criteria.map(c=>`<div class="hlrow"><i class="hlcheck">&#10003;</i>${c}</div>`).join('')}
+    </div>`:''}
+  </div>` : '';
+  const sz = sizingData(r);
+  const id = 'c-' + r.id.replace(/[^a-zA-Z0-9]/g,'');
+
+  // --- secondary "nice to know" facts: collapsed by default, don't compete
+  // visually with the buy/stop/target decision numbers above ---
+  const detailRows = [
+    ['Resistance', resLine],
+    ['Nearest support', r.nearestSupport!=null?rup(r.nearestSupport):'—'],
+    ['RVOL', r.rvol!=null?`${r.rvol}x average`:'—'],
+    ['ATR (14d)', r.atrValue!=null?`${rup(r.atrValue)} (${r.atrPct}% of price)`:'—'],
+    ['ADX', r.adxValue!=null?`${r.adxValue} — ${r.adxLabel}`:'—'],
+    ['vs 52w high', r.distFrom52wHighPct!=null
+      ?`${r.distFrom52wHighPct>0?'+':''}${r.distFrom52wHighPct}% — ${r.near52wLabel}`
+      :'—'],
+    ['Avg daily value', r.avgDailyValueCr!=null?`Rs ${r.avgDailyValueCr} Cr`:'—'],
+    ['Closing range', r.closingRangePct!=null?`${r.closingRangePct}% of day's range`:'—'],
+    ['Run-up so far', [
+        r.ret1mo!=null?`1mo ${r.ret1mo>=0?'+':''}${r.ret1mo}%`:null,
+        r.ret3mo!=null?`3mo ${r.ret3mo>=0?'+':''}${r.ret3mo}%`:null,
+        r.ret6mo!=null?`6mo ${r.ret6mo>=0?'+':''}${r.ret6mo}%`:null,
+      ].filter(Boolean).join(' · ') || '—'],
+    ['EMA compression', r.emaSpreadPct!=null?`${r.emaSpreadPct}% spread — ${r.emaConvergenceLabel}`:'—'],
+    ['Williams %R', r.williamsR!=null?`${r.williamsR} — ${r.williamsRLabel}`:'—'],
+    ['MACD histogram', r.macdHist!=null?`${r.macdHist} ${r.macdRising?'— rising':'— falling'}`:'—'],
+    ['Resistance fatigue', r.avgRejectionPct!=null
+      ?`avg rejection ${r.avgRejectionPct}%${r.daysSinceLastTouch!=null?` &middot; last touch ${r.daysSinceLastTouch===0?'today':r.daysSinceLastTouch+'d ago'}`:''}`
+      :'—'],
+  ];
+  if (r.grade==='A' && r.maxHoldDays)
+    detailRows.push(['Exit by (if no hit)', addTradingDays(r.date, r.maxHoldDays)]);
+  const detailTable = `<table class="factbl"><tbody>${
+    detailRows.map(([k,v])=>`<tr><td class="flabel">${k}</td><td class="fval">${v}</td></tr>`).join('')
+  }</tbody></table>`;
+
+  const sizingBox = sz
+    ? `<div class="sizing"><b>${sz.qty} shares</b> = Rs ${sz.invest.toLocaleString('en-IN',{maximumFractionDigits:0})}
+        &nbsp;·&nbsp; risk Rs ${sz.riskAmt.toLocaleString('en-IN',{maximumFractionDigits:0})} (${sz.riskPct}% of Rs ${sz.cap.toLocaleString('en-IN')})
+        &nbsp;·&nbsp; T1 <span class="pos">+Rs ${sz.p1.toLocaleString('en-IN',{maximumFractionDigits:0})}</span>${
+        sz.p2!=null?` · T2 <span class="pos">+Rs ${sz.p2.toLocaleString('en-IN',{maximumFractionDigits:0})}</span>`:''}${
+        sz.isProjected?`<br><span class="szn">sized for entry at trigger Rs ${sz.entry.toFixed(1)}, not today's close</span>`:''}</div>`
+    : `<div class="sizing szn">Position too small for your capital/risk settings</div>`;
+
+  const bd = r.scoreBreakdown || [];
+  const positive = [...bd].filter(b=>b.points>0).sort((a,b)=>(b.points/Math.max(b.max,1))-(a.points/Math.max(a.max,1)));
+  const top5 = positive.slice(0,5);
+  const top5Labels = new Set(top5.map(b=>b.label));
+  // the full table shows everything EXCEPT what's already in the whybox
+  // above it - otherwise the same top reasons appear twice in a row
+  const remaining = [...bd].filter(b=>!top5Labels.has(b.label))
+    .sort((a,b)=>(b.points/Math.max(b.max,1))-(a.points/Math.max(a.max,1)));
+  const allRows = remaining.map(factorRow).join('');
+
+  // Key risks: the genuinely weakest factors that still scored SOMETHING
+  // (0 < points < 50% of max) - not fully missing ones, those already show
+  // via failedFilters. This is the same real per-factor data used everywhere
+  // else on the card, just surfaced as "what could go wrong" instead of
+  // buried at the bottom of the full breakdown table.
+  const weak = [...bd].filter(b=>b.points>0 && b.points/Math.max(b.max,1)<0.5 && !top5Labels.has(b.label))
+    .sort((a,b)=>(a.points/Math.max(a.max,1))-(b.points/Math.max(b.max,1))).slice(0,2);
+  // Invalidation: a real rule (the actual stop price), not a probability.
+  // "This becomes invalid if..." always has an honest answer - the stop -
+  // whether or not there are also weak factors worth flagging. Separated
+  // from "weaker if" (EMA20 break, volume dry-up, extended run, weak
+  // factors) since those are early-warning evidence, not the hard exit
+  // rule - a technically cleaner distinction than lumping both together.
+  const invalidPrice = r.grade==='B' ? (r.invalidBelow ?? r.stopLoss) : r.stopLoss;
+  const extendedNote = (r.ret6mo != null && r.ret6mo >= 80)
+    ? `<div class="hlrow"><i class="hlcheck" style="color:var(--marigold-deep);">&#9888;</i>Already up ${r.ret6mo}% in 6 months - an extended move, not a fresh breakout</div>` : '';
+  const ema20Note = r.ema20Level != null
+    ? `<div class="hlrow"><i class="hlcheck" style="color:var(--marigold-deep);">&#9888;</i>Closes below its 20-day average (currently <b class="num">Rs ${Number(r.ema20Level).toFixed(1)}</b>) <small>&mdash; trend momentum has weakened</small></div>` : '';
+  const volDryNote = r.rvol != null
+    ? `<div class="hlrow"><i class="hlcheck" style="color:var(--marigold-deep);">&#9888;</i>Volume falls below 1x average (currently <b class="num">${Number(r.rvol).toFixed(1)}x</b>) <small>&mdash; the move's real confirmation has faded</small></div>` : '';
+  const weakerRows = [ema20Note, volDryNote, extendedNote,
+    ...weak.map(b=>`<div class="hlrow"><i class="hlcheck" style="color:var(--marigold-deep);">&#9888;</i>${b.label} weakens further</div>`)].filter(Boolean);
+  const risks = `<div class="riskbox">
+    ${weakerRows.length ? `<label>THIS SETUP BECOMES WEAKER IF</label>${weakerRows.join('')}` : ''}
+    <label${weakerRows.length?' style="margin-top:10px;"':''}>THIS SETUP IS INVALID IF</label>
+    <div class="hlrow"><i class="hlcheck" style="color:var(--loss);">&#10007;</i>Closes below <b class="num">Rs ${Number(invalidPrice).toFixed(1)}</b> (the real stop) <small>&mdash; exit level reached</small></div>
+  </div>`;
+
+  // "Why SwingSense likes this" - one consolidated synthesis of data that's
+  // ALREADY real and computed (top reasons, expected holding, historical
+  // win rate) instead of scattering it across the card in separate places.
+  // The narrative line below is pure synthesis, not new data: every number
+  // in it already exists elsewhere on the card, just stitched into one
+  // readable sentence instead of making the trader combine them by hand.
+  const narrativeParts = [];
+  if (bh && bh.n >= 5) {
+    narrativeParts.push(`Historically, similar setups on this stock reached target `
+      + `${bh.winRate}% of the time across ${bh.n} past breakouts`
+      + (r.estDaysRange ? `, typically resolving in about ${r.estDaysRange} trading days` : '') + '.');
+    if (bh.avgWinMove != null && bh.avgStopMove != null) {
+      narrativeParts.push(`The average winning move was ${bh.avgWinMove>=0?'+':''}${bh.avgWinMove}%`
+        + `, against an average loss of ${bh.avgStopMove}% when it didn't work out.`);
+    }
+  }
+  const narrative = narrativeParts.length
+    ? `<div class="narrative">${narrativeParts.join(' ')}</div>` : '';
+
+  const scoreChange = r.scoreChangeFromPrior;
+  const scoreChangeLine = scoreChange ? `<div class="scorechg">
+      <b>Yesterday: ${scoreChange.priorScore}</b> &rarr; <b>Today: ${score}</b>
+      <span class="${scoreChange.totalDelta>=0?'pos':'neg'}">(${scoreChange.totalDelta>=0?'+':''}${scoreChange.totalDelta})</span>
+      ${scoreChange.factorDeltas.length ? scoreChange.factorDeltas.map(d=>
+        `<span class="scdelta ${d.delta>=0?'pos':'neg'}">${d.delta>=0?'+':''}${d.delta} ${d.label}</span>`).join('') : ''}
+    </div>` : '';
+
+  const why = `<div class="whybox">
+    <label>WHY SWINGSENSE LIKES THIS</label>
+    ${narrative}
+    ${scoreChangeLine}
+    ${top5.map(b=>`<div class="hlrow"><i class="hlcheck">&#10003;</i>${b.label}</div>`).join('')}
+    <div class="whystats">
+      <span>Score <b>${score}/100</b>${r.percentile!=null?` <small>(rank #${r.rawRank} of ${r.scoredCount} scanned)</small>`:''}</span>
+      <span>Expected holding <b>${r.estDaysRange||r.estDays+'d'}</b></span>
+      ${bh?`<span>Historical success <b>${bh.winRate}%</b> <small>(${bh.n} past breakouts &mdash; ${bh.n>=30?'strong':bh.n>=10?'moderate':'limited'} evidence)</small></span>`:''}
+    </div>
+    ${risks}
+  </div>`;
+
+  // Readiness by category: the SAME real per-factor points already in
+  // scoreBreakdown, just grouped into named buckets instead of a flat list.
+  // No new numbers invented - this is a re-presentation of real data.
+  const CATEGORY_MAP = {
+    Compression: ['vcp','dryup'],
+    Accumulation: ['accum','hhhl'],
+    'Resistance structure': ['restest','pivot','asctri','nearres'],
+    'Volume setup': ['volq','atrexp'],
+    Trend: ['ema','weekly','adx','rsi'],
+    'Relative strength': ['rsrank','sector','prox52'],
+  };
+  const readinessRows = Object.entries(CATEGORY_MAP).map(([name, keys]) => {
+    const items = bd.filter(b => keys.includes(b.key));
+    if (!items.length) return null;
+    const pts = items.reduce((s,b)=>s+b.points, 0);
+    const max = items.reduce((s,b)=>s+b.max, 0);
+    const pct = max > 0 ? Math.round(pts/max*100) : 0;
+    return {name, pct};
+  }).filter(Boolean);
+  const readiness = readinessRows.length ? `<div class="readybox">
+    <label>READINESS BY CATEGORY &mdash; same real factors above, grouped, not new numbers</label>
+    ${readinessRows.map(c=>`<div class="readyrow">
+      <span class="readyname">${c.name}</span>
+      <span class="readybar"><span style="width:${c.pct}%"></span></span>
+      <span class="readypct">${c.pct}%</span>
+    </div>`).join('')}
+  </div>` : '';
+
+  const news = (r.recentNews && r.recentNews.length) ? `<div class="newsbox">
+    <label>RECENT NEWS &mdash; last 10 days, real headlines from real sources</label>
+    ${r.recentNews.map(n=>`<a class="newsitem" href="${escapeHtml(n.link)}" target="_blank" rel="noopener noreferrer">
+      <span class="newstitle">${escapeHtml(n.title)}</span>
+      <span class="newsmeta">${escapeHtml(n.source||'')}${n.date?` &middot; ${n.date}`:''}</span>
+    </a>`).join('')}
+  </div>` : '';
+
+  // Quality badge: pure synthesis of real signals already computed
+  // (score, percentile rank, and evidence sample size) into one qualitative
+  // read - not a new model, just reading three real numbers together
+  // instead of leaving the trader to combine them mentally.
+  function qualityBadge(){
+    const goodEvidence = bh && bh.n >= 10;
+    const greatEvidence = bh && bh.n >= 30;
+    if (score >= 88 && r.percentile != null && r.percentile >= 95 && greatEvidence)
+      return {label: 'Elite Setup', cls: 'qb-elite'};
+    if (score >= 82 && r.percentile != null && r.percentile >= 85 && goodEvidence)
+      return {label: 'High Conviction', cls: 'qb-high'};
+    if (score >= 70)
+      return {label: 'Standard Quality', cls: 'qb-std'};
+    return null;
+  }
+  const qb = qualityBadge();
+
+  const stripeClass = r.grade==='A' ? (r.gradeLabel==='A+' ? 'stripe-strong' : 'stripe-buy') : 'stripe-watch';
+  const act = actionStatus(r);
+  const riskCls = r.riskRating==='Low'?'risk-low':r.riskRating==='High'?'risk-high':'risk-med';
+
+  return `<div class="chit ${stripeClass}" style="animation-delay:${Math.min(i,10)*35}ms">
+    <div class="chit-head">
+      <span class="sym">${r.symbol}</span>
+      <span class="co">${escapeHtml(r.companyName||'')}</span>
+      <span class="hz" title="The type of setup this is - how long you might hold it if targets aren't hit early. Not time until it breaks out.">up to ~${r.horizonLabel||'1 week'}</span>
+      <span class="tag ${act.cls}">${act.label}</span>
+      ${resChip}
+      ${qb?`<span class="qbadge ${qb.cls}">&#11088; ${qb.label}</span>`:''}
+      ${r.upcomingEvent?`<span class="eventchip" title="From NSE's own board-meetings listing">&#128197; ${r.upcomingEvent.purpose} on ${r.upcomingEvent.date}</span>`:''}
+      ${r.intradayCheck?`<span class="intrachip ${r.intradayCheck.aboveResistance?'crossed':''}" title="Live price as of the last intraday check - NOT a confirmed close, price can still reverse before end of day">
+        &#9889; ${r.intradayCheck.aboveResistance?'Trading above resistance':'Still below resistance'} as of ${r.intradayCheck.asOf}
+        (Rs ${r.intradayCheck.livePrice}, ${r.intradayCheck.liveDistPct>=0?'':''}${r.intradayCheck.liveDistPct}%) &mdash; not confirmed until close</span>`:''}
+      ${r.watchTrend?`<span class="trendchip trend-${r.watchTrend.toLowerCase()}">${r.watchTrend==='Improving'?'&#9650;':r.watchTrend==='Weakening'?'&#9660;':'&#9679;'} ${r.watchTrend}</span>`:''}
+      ${(me && me.netExpectancyPct != null && me.netExpectancyPct < 0)?`<span class="expchip" title="Real backtest for this horizon shows negative expectancy">&#9888; Negative expectancy horizon</span>`:''}
+    </div>
+    <div class="sector">${r.setupType?`<b>${r.setupType}</b> · `:''}${r.sector||''}
+      <span class="secstr ${r.sectorStrong?'strong':'weak'}">${r.sectorStrong?'strong sector':'sector not leading'}</span>
+      · ~${r.estDays||'?'}d to target</div>
+    ${r.rankGapNote?`<div class="rankgap">${r.rankGapNote}</div>`:''}
+    <div class="actwhy">${act.why}</div>
+    ${(me && me.netExpectancyPct != null && me.netExpectancyPct < 0) ? `<div class="expwarn">
+      &#9888; <b>Real backtest evidence for this exact horizon shows negative expectancy: ${me.netExpectancyPct}% per signal</b>
+      (${me.n} real historical A-grade signals, net of trading costs). This means, on average across those
+      ${me.n} signals, this kind of setup has lost money - not a guarantee this specific trade will, but the
+      honest track record for signals like it. Trading it anyway is a real decision to override that evidence,
+      not a decision this app is encouraging.
+    </div>` : ''}
+    ${act.cls==='act-buy' && r.status==='SIGNAL'
+      ? `<button class="addbtn" onclick="addToPositions('${r.id}', this)">+ I bought this &mdash; add to Positions</button>` : ''}
+
+    <div class="scoreline">      <span class="gauge" style="--sc:${score}"><b class="num">${score}</b></span>
+      <div class="scorewrap"><small>BREAKOUT SCORE /100</small>${r.percentile!=null?`<span class="pctile">Top ${Math.max(1,100-r.percentile)}%${r.rawRank&&r.scoredCount?` &middot; #${r.rawRank} of ${r.scoredCount}`:''}</span>`:''}</div>
+      <span class="riskbadge ${riskCls}">${(r.riskRating||'—').toUpperCase()} RISK</span>
+      <div class="rrwrap">
+        <small>RISK : REWARD</small>
+        <b class="rr-big num ${r.riskReward>=2?'rr-good':r.riskReward>=1.2?'':'rr-weak'}">${r.riskReward!=null?Number(r.riskReward).toFixed(2):'—'}</b>
+        <small class="rrexplain">Rs${r.riskReward!=null?Number(r.riskReward).toFixed(2):'?'} back for every Rs1 risked to the stop</small>
+      </div>
+    </div>
+
+    <div class="quad">
+      <div class="buy"><label>BUY ZONE</label><span class="v">${r.buyZone}</span></div>
+      <div class="stp"><label>STOP</label><span class="v">${Number(r.stopLoss).toFixed(1)}</span></div>
+      <div class="tgt"><label>TARGET 1</label><span class="v">${Number(t1).toFixed(1)}</span></div>
+      <div class="tgt"><label>TARGET 2</label><span class="v">${t2!=null?Number(t2).toFixed(1):'—'}</span></div>
+    </div>
+    <div class="meta"><span>Close ${rup(r.closePrice)}</span><span>${resLine}</span></div>
+
+    ${sizingBox}
+    ${histBlock}
+    ${evBox}
+    ${modelEvidenceBlock}
+    ${progress}
+    ${watchPlan}
+    ${intradayPlan(r)}
+
+    <button class="factoggle" onclick="const e=document.getElementById('${id}-more');
+      const open=e.style.display!=='none'; e.style.display=open?'none':'block';
+      this.querySelector('.farrow').textContent=open?'\\u25be':'\\u25b4';">
+      Why &amp; full analysis - ${bd.length} factors, technical details <span class="farrow">&#9662;</span>
+    </button>
+    <div id="${id}-more" style="display:none;">
+      ${why}
+      ${readiness}
+      ${news}
+      <table class="factbl"><tbody>${allRows}</tbody></table>
+      ${detailTable}
+    </div>
+
+    ${fails}
+  </div>`;
+}
+
+function sectorLeaderboard(todays){
+  const ranking = LAST_SCAN && LAST_SCAN.sectorRanking;
+  if (!ranking || !ranking.length) return '';
+  // real per-sector counts from today's actual signals - no fabrication,
+  // just grouping what's already there
+  const bySec = {};
+  (todays||[]).forEach(r => { (bySec[r.sector] = bySec[r.sector] || []).push(r); });
+  const counts = sec => {
+    const arr = bySec[sec] || [];
+    const buyNow = arr.filter(r => r.grade==='A' && r.distToResistancePct!=null && r.distToResistancePct<=0).length;
+    const watch = arr.length - buyNow;
+    return {buyNow, watch, total: arr.length};
+  };
+  // Sector Opportunity Score: real synthesis of real per-stock data already
+  // on the cards for that sector today - avg breakout score, avg RS rank
+  // (from scoreBreakdown where available), and how many are actionable -
+  // not a new invented metric, just the existing numbers combined.
+  const oppScore = sec => {
+    const arr = bySec[sec] || [];
+    if (!arr.length) return null;
+    const avgScore = arr.reduce((s,r)=>s+(r.breakoutScore||0),0) / arr.length;
+    const c = counts(sec);
+    const actionableFrac = arr.length ? c.buyNow / arr.length : 0;
+    // 70% weight on real average score, 30% on real fraction actionable -
+    // both already-real numbers, just blended into one comparable score
+    return Math.round(avgScore * 0.7 + actionableFrac * 100 * 0.3);
+  };
+  const top = ranking.slice(0,3), bottom = ranking.slice(-3).reverse();
+  const chip = r => {
+    const c = counts(r.sector);
+    const opp = oppScore(r.sector);
+    const secId = 'secgroup-' + r.sector.replace(/[^a-zA-Z0-9]/g,'');
+    return `<span class="secchip ${r.avgReturn20d>=0?'pos':'neg'}" style="cursor:pointer;"
+      onclick="jumpToSector('${secId}')"
+      title="Click to jump to ${escapeHtml(r.sector)} below">
+      ${r.avgReturn20d>=0?'&#9650;':'&#9660;'} ${escapeHtml(r.sector)}
+      <b class="num">${r.avgReturn20d>=0?'+':''}${r.avgReturn20d}%</b>
+      ${opp!=null?`<small class="oppscore">Opp ${opp}</small>`:''}
+      ${c.total?`<small class="seccounts">${c.buyNow} BUY &middot; ${c.watch} watch</small>`:''}
+    </span>`;
+  };
+  return `<div class="seclead">
+    <div class="seclead-row"><label title="Average 20-day return of the stocks in this sector that are actually in our scanned universe - not the official Nifty sector index">STRONGEST SECTOR STOCK MOMENTUM (AVG 20D)</label>${top.map(chip).join('')}</div>
+    <div class="seclead-row"><label title="Average 20-day return of the stocks in this sector that are actually in our scanned universe - not the official Nifty sector index">WEAKEST SECTOR STOCK MOMENTUM (AVG 20D)</label>${bottom.map(chip).join('')}</div>
+    <div class="secleadnote">Average return of scanned stocks in each sector, not the official Nifty sector index.</div>
+  </div>`;
+}
+
+function concentrationWarning(todays){
+  // Real data only: today's actionable BUY NOW signals, plus sectors of
+  // stocks you already hold (status OPEN). No new fetch, no invented
+  // "portfolio risk score" - just counting what's already tracked.
+  const buysToday = todays.filter(r => r.grade === 'A' && r.distToResistancePct != null && r.distToResistancePct <= 0 && r.sector);
+  const bySector = {};
+  buysToday.forEach(r => { (bySector[r.sector] = bySector[r.sector] || []).push(r.symbol); });
+  const heldSectors = new Set(RECS.filter(r => r.status === 'OPEN' && r.sector).map(r => r.sector));
+
+  const notes = [];
+  Object.entries(bySector).forEach(([sec, syms]) => {
+    if (syms.length >= 2){
+      notes.push(`${syms.length} of today's BUY NOW signals are in ${sec} (${syms.join(', ')}) - buying all of them is one sector bet, not ${syms.length} diversified ones.`);
+    }
+    if (heldSectors.has(sec)){
+      notes.push(`${syms.join(', ')} in ${sec} would add to a sector you already hold a position in.`);
+    }
+  });
+  if (!notes.length) return '';
+  return `<div class="concwarn"><label>SECTOR CONCENTRATION</label>
+    ${notes.map(n=>`<div class="hlrow"><i class="hlcheck" style="color:var(--marigold-deep);">&#9888;</i>${n}</div>`).join('')}
+  </div>`;
+}
+
+function renderSignals(){
+  const wrap = $('signalsWrap');
+  if (!RECS.length){
+    wrap.innerHTML = `<div class="banner">No scans yet. Press <b>Run scan</b> — the first run downloads ~1 year of NSE history and takes a few minutes.</div>`;
+    return;
+  }
+  const latest = RECS.map(r=>r.date).sort().pop();
+  const todays = RECS.filter(r=>r.date===latest);
+  if (!todays.length){
+    wrap.innerHTML = `<div class="banner">No signals today — the market didn't produce a qualifying setup. That's a valid outcome, not a bug.</div>`;
+    return;
+  }
+  const aTotal = todays.filter(r=>r.grade==='A').length;
+
+  const bySector = {};
+  todays.forEach(r=>{ const sec = r.sector || 'Other'; (bySector[sec]=bySector[sec]||[]).push(r); });
+  Object.values(bySector).forEach(arr => arr.sort((a,b)=>
+    a.grade!==b.grade ? (a.grade==='A'?-1:1) : (b.breakoutScore??0)-(a.breakoutScore??0)));
+  const buyNowCount = arr => arr.filter(r=>r.grade==='A' && r.distToResistancePct!=null && r.distToResistancePct<=0).length;
+  const sectors = Object.keys(bySector).sort((a,b)=>{
+    const buyDiff = buyNowCount(bySector[b]) - buyNowCount(bySector[a]);
+    if (buyDiff !== 0) return buyDiff;
+    return Math.max(...bySector[b].map(r=>r.breakoutScore??0)) - Math.max(...bySector[a].map(r=>r.breakoutScore??0));
+  });
+
+  let html = sectorLeaderboard(todays) + concentrationWarning(todays);
+
+  // Today's Top Pick: the single highest-scoring stock that's actually
+  // buyable right now (BUY NOW / STRONG BUY NOW). Real ranking of real
+  // scores - not a separate invented "conviction" metric.
+  const buyNow = todays.filter(r => r.grade==='A' && r.distToResistancePct!=null && r.distToResistancePct<=0)
+                       .sort((a,b)=>(b.breakoutScore??0)-(a.breakoutScore??0));
+  if (buyNow.length){
+    const top = buyNow[0];
+    const runnerUp = buyNow[1];
+    let compareNote = '';
+    let rankStability = null;
+    if (runnerUp && top.scoreBreakdown && runnerUp.scoreBreakdown){
+      const ruByKey = {};
+      runnerUp.scoreBreakdown.forEach(b => { ruByKey[b.key] = b; });
+      const diffs = top.scoreBreakdown
+        .filter(b => ruByKey[b.key])
+        .map(b => ({label: b.label, ruLabel: ruByKey[b.key].label,
+                    diff: (b.points/Math.max(b.max,1)) - (ruByKey[b.key].points/Math.max(ruByKey[b.key].max,1))}))
+        .filter(d => d.diff > 0.15)
+        .sort((a,b) => b.diff - a.diff)
+        .slice(0, 3);
+      if (diffs.length){
+        compareNote = `<div class="toppick-cmp">Ahead of #2 (${escapeHtml(runnerUp.symbol)}) on: ${diffs.map(d=>escapeHtml(d.label)).join('; ')} - real factor-level comparison, not a synthetic score.</div>`;
+        // mirror framing, attached to the runner-up's own card: same real
+        // diff, shown from its perspective - "why wasn't I #1" instead of
+        // repeating "why is #1 ahead" a second time
+        runnerUp.rankGapNote = `Missed the top spot because: `
+          + diffs.map(d => `${escapeHtml(d.ruLabel)} <small>(vs ${escapeHtml(top.symbol)}'s ${escapeHtml(d.label)})</small>`).join('; ') + '.';
+      }
+      // Ranking Stability: how DECISIVE today's #1 is, not how likely it
+      // is to succeed - a real score gap and a real count of factor
+      // advantages, deliberately not framed as a probability.
+      const scoreGap = (top.breakoutScore ?? 0) - (runnerUp.breakoutScore ?? 0);
+      if (scoreGap >= 8 && diffs.length >= 2){
+        rankStability = {label: 'High', reasons: diffs.map(d=>d.label)};
+      } else if (scoreGap >= 3 || diffs.length >= 1){
+        rankStability = {label: 'Moderate', reasons: diffs.length ? diffs.map(d=>d.label) : [`Score gap of ${scoreGap} points over #2`]};
+      } else {
+        rankStability = {label: 'Close call', reasons: [`Only ${scoreGap} point(s) ahead of #2 - not a decisive lead`]};
+      }
+    }
+    html += `<div class="toppick">
+      <label>&#127942; TODAY'S TOP PICK</label>
+      <div class="toppick-body">
+        <span class="toppick-sym">${top.symbol}</span>
+        <span class="toppick-co">${top.companyName||''}</span>
+        <span class="toppick-score">${top.breakoutScore}/100${top.rawRank?` &middot; #${top.rawRank} of ${top.scoredCount}`:''}</span>
+        <span class="toppick-rr">R:R ${Number(top.riskReward).toFixed(2)}</span>
+      </div>
+      ${compareNote}
+      ${rankStability?`<div class="toppick-cmp"><b>Ranking stability: ${rankStability.label}</b> <small>(how decisive this lead is, not a success probability)</small><br>${rankStability.reasons.join('; ')}</div>`:''}
+    </div>`;
+  }
+
+  if (aTotal===0) html += `<div class="banner">No Buy signals today. Watch candidates below show what's missing before entry.</div>`;
+
+  html += sectors.map((sec,si)=>{
+    const stocks = bySector[sec];
+    const aCount = stocks.filter(r=>r.grade==='A').length;
+    const id = 'sec' + si;
+    const secSlug = 'secgroup-' + sec.replace(/[^a-zA-Z0-9]/g,'');
+    const open = si===0;
+    return `<div class="secgroup" id="${secSlug}" data-contentid="${id}">
+      <button class="sechead" onclick="toggleSector('${id}')">
+        <span class="secname">${sec}</span>
+        <span class="seccount">${stocks.length} stock${stocks.length===1?'':'s'}${aCount?` &middot; <span class="pos">${aCount} buy</span>`:''}</span>
+        <span class="secarrow" id="${id}-arrow">${open?'&#9662;':'&#9656;'}</span>
+      </button>
+      <div class="grid seccontent" id="${id}" style="display:${open?'grid':'none'}">
+        ${stocks.map((r,i)=>chit(r,i)).join('')}
+      </div>
+    </div>`;
+  }).join('');
+  wrap.innerHTML = html;
+}
+
+function toggleSector(id){
+  const el = $(id), arrow = $(id+'-arrow');
+  const open = el.style.display !== 'none';
+  el.style.display = open ? 'none' : 'grid';
+  arrow.innerHTML = open ? '&#9656;' : '&#9662;';
+}
+
+function jumpToSector(secSlug){
+  const wrapper = $(secSlug);
+  if (!wrapper) return;
+  const contentId = wrapper.getAttribute('data-contentid');
+  const content = $(contentId);
+  if (content && content.style.display === 'none') toggleSector(contentId);
+  wrapper.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function dayChip(d){
+  if (!d) return '<span style="color:var(--slate);">—</span>';
+  const cls = d.changePct >= 0 ? 'pos' : 'neg';
+  const priceLine = d.close != null
+    ? `<div style="font-size:11px;color:var(--ink-soft);">Rs ${d.close.toFixed(2)}</div>` : '';
+  return `<span class="${cls} num" title="${d.date}">${priceLine}${d.changePct>=0?'+':''}${d.changePct.toFixed(1)}%</span>`;
+}
+
+function leadTimeSummary(){
+  // for every symbol seen as Watch, then later seen as Buy, how many
+  // calendar days elapsed between the first Watch flag and the Buy?
+  // this answers: is the scanner catching setups BEFORE they trigger,
+  // or only noticing them once the move is already obvious?
+  const bySymbol = {};
+  [...SIGHIST].sort((a,b)=>a.date<b.date?-1:1).forEach(h=>{
+    (bySymbol[h.symbol] = bySymbol[h.symbol]||[]).push(h);
+  });
+  const leads = [];
+  Object.values(bySymbol).forEach(entries=>{
+    const firstWatch = entries.find(e=>e.grade==='B');
+    if (!firstWatch) return;
+    const laterBuy = entries.find(e=>e.grade==='A' && e.date > firstWatch.date);
+    if (!laterBuy) return;
+    const days = Math.round((new Date(laterBuy.date) - new Date(firstWatch.date)) / 864e5);
+    if (days > 0) leads.push({symbol: firstWatch.symbol, days, watchDate: firstWatch.date, buyDate: laterBuy.date});
+  });
+  if (!leads.length) return '';
+  const avg = (leads.reduce((s,l)=>s+l.days,0) / leads.length).toFixed(1);
+  const examples = leads.slice(0,3).map(l=>`${l.symbol} (${l.days}d)`).join(', ');
+  return `<div class="hzhead" style="margin-top:0;margin-bottom:16px;">
+    <b>Lead time:</b> ${leads.length} stock${leads.length===1?'':'s'} were flagged Watch before later
+    becoming a Buy — average <b>${avg} day${avg==1?'':'s'}</b> of advance notice
+    (e.g. ${examples}). Higher is better: it means the scanner is catching setups
+    forming, not just noticing breakouts after they've already happened.</div>`;
+}
+
+function healthCell(then, now, higherIsBetter){
+  if (then == null || now == null) return `<span class="num">${now ?? '—'}</span>`;
+  const delta = now - then;
+  const changed = Math.abs(delta) > 0.05;
+  const worse = higherIsBetter ? delta < 0 : delta > 0;
+  const cls = !changed ? '' : (worse ? 'neg' : 'pos');
+  const arrow = !changed ? '' : (delta > 0 ? ' &#9650;' : ' &#9660;');
+  return `<span class="num ${cls}">${now}${arrow}</span> <small class="healththen">(was ${then})</small>`;
+}
+
+function renderHealth(){
+  const wrap = $('healthWrap');
+  const open = RECS.filter(r => r.status === 'OPEN' || r.status === 'PARTIAL');
+  const closed = RECS.filter(r => ['STOP_LOSS_HIT','TARGET_HIT','TIME_EXIT'].includes(r.status));
+  if (!open.length && !closed.length){
+    wrap.innerHTML = `<div class="banner">No open positions yet. Click "+ I bought this" on a BUY NOW card in Signals to start tracking one here.</div>`;
+    return;
+  }
+  const rows = open.map(r => {
+    const h = r.health;
+    if (!h){
+      return `<div class="healthcard">
+        <div class="healthhead">
+          <span class="sym">${r.symbol}</span>
+          <span class="co">${escapeHtml(r.companyName||'')}</span>
+          <span class="hz">added ${r.addedAt?r.addedAt.slice(0,10):(r.date||'—')}</span>
+          <span class="tag act-wait">PENDING FIRST CHECK</span>
+        </div>
+        <div class="healthnote">No re-check yet — this runs on your next scan. Added at
+          ${r.closePrice!=null?`Rs ${Number(r.closePrice).toFixed(2)}`:'—'}, stop
+          ${r.stopLoss!=null?`Rs ${Number(r.stopLoss).toFixed(2)}`:'—'}, target
+          ${r.target1!=null?`Rs ${Number(r.target1).toFixed(2)}`:'—'}.</div>
+      </div>`;
+    }
+    const statusBadge = r.status === 'PARTIAL'
+      ? `<span class="tag act-buy">PARTIAL BOOKED, RUNNER OPEN</span>`
+      : h.stillPassesFilters
+      ? `<span class="tag act-buy">STILL VALID</span>`
+      : `<span class="tag act-wait">WEAKENING</span>`;
+    const failText = h.newlyFailing.length
+      ? `<div class="healthfail">New: ${h.newlyFailing.join('; ')}</div>` : '';
+    return `<div class="healthcard">
+      <div class="healthhead">
+        <span class="sym">${r.symbol}</span>
+        <span class="co">${escapeHtml(r.companyName||'')}</span>
+        <span class="hz">bought ${r.date}</span>
+        ${statusBadge}
+      </div>
+      <table class="factbl"><tbody>
+        <tr><td class="flabel">RS Rank</td><td class="fval">${healthCell(h.rsRank.then, h.rsRank.now, true)}</td></tr>
+        <tr><td class="flabel">ADX</td><td class="fval">${healthCell(h.adx.then, h.adx.now, true)}</td></tr>
+        <tr><td class="flabel">Volume ratio</td><td class="fval">${healthCell(h.volRatio.then, h.volRatio.now, true)}</td></tr>
+      </tbody></table>
+      ${failText}
+      <div class="healthnote">Re-checked as of ${h.asOf} using the same real scoring - not a price or profit view.</div>
+    </div>`;
+  }).join('');
+
+  // Daily/Weekly loss limit check: real rupee P&L per closed trade, using
+  // the SAME sizing formula already trusted for display - just applied
+  // retroactively to what a position of that size would have actually
+  // returned. Compared against standard 2% daily / 5% weekly caps on your
+  // configured capital. This can only warn after the fact (it's not
+  // gating new trades in real time), but it tells you honestly whether
+  // today or this week already breached a sane risk limit.
+  let lossLimitHtml = '';
+  if (closed.length){
+    const today = new Date().toISOString().slice(0,10);
+    const dayOfWeek = new Date().getDay();
+    const monday = new Date(); monday.setDate(monday.getDate() - ((dayOfWeek+6)%7));
+    const weekStart = monday.toISOString().slice(0,10);
+    const cap = +(CONFIG.scanner&&CONFIG.scanner.capital) || 100000;
+
+    const realPnlRupees = r => {
+      const sz = sizingData(r);
+      return sz ? sz.invest * (r.pnlPct/100) : 0;
+    };
+    const todayClosed = closed.filter(r => r.exitDate === today);
+    const weekClosed = closed.filter(r => r.exitDate >= weekStart);
+    const todayPnl = todayClosed.reduce((s,r)=>s+realPnlRupees(r), 0);
+    const weekPnl = weekClosed.reduce((s,r)=>s+realPnlRupees(r), 0);
+    const todayPct = todayPnl / cap * 100;
+    const weekPct = weekPnl / cap * 100;
+
+    if (todayClosed.length || weekClosed.length){
+      const dayBreach = todayPct <= -2;
+      const weekBreach = weekPct <= -5;
+      lossLimitHtml = `<div class="${dayBreach||weekBreach?'concwarn':'histdetail'}" style="margin-top:14px;">
+        ${dayBreach||weekBreach?'<label>LOSS LIMIT CHECK</label>':''}
+        <div class="hlrow"><i class="hlcheck" style="color:${dayBreach?'var(--loss)':'var(--gain)'};">${dayBreach?'&#9888;':'&#10003;'}</i>
+          Today's real P&amp;L: <b class="num ${todayPct>=0?'pos':'neg'}">${todayPct>=0?'+':''}${todayPct.toFixed(2)}%</b> of capital
+          ${dayBreach?' - past the 2% daily limit, consider stopping for today':''}</div>
+        <div class="hlrow"><i class="hlcheck" style="color:${weekBreach?'var(--loss)':'var(--gain)'};">${weekBreach?'&#9888;':'&#10003;'}</i>
+          This week's real P&amp;L: <b class="num ${weekPct>=0?'pos':'neg'}">${weekPct>=0?'+':''}${weekPct.toFixed(2)}%</b> of capital
+          ${weekBreach?' - past the 5% weekly limit, consider stopping for the week':''}</div>
+      </div>`;
+    }
+  }
+
+  // Trade Journal: real closed trades, real P&L, real aggregate stats -
+  // computed once already by review_open(), just never shown until now.
+  let journalHtml = '';
+  if (closed.length){
+    const sorted = [...closed].sort((a,b)=> (a.exitDate<b.exitDate?1:-1));
+    const wins = closed.filter(r=>r.status==='TARGET_HIT').length;
+    const losses = closed.filter(r=>r.status==='STOP_LOSS_HIT').length;
+    const expired = closed.filter(r=>r.status==='TIME_EXIT').length;
+    const avgPnl = closed.reduce((s,r)=>s+(r.pnlPct||0),0) / closed.length;
+    const statusLabel = st => st==='TARGET_HIT'?'Target hit':st==='STOP_LOSS_HIT'?'Stop hit':'Time exit';
+    const journalRows = sorted.map(r => `<tr>
+      <td><b>${r.symbol}</b></td>
+      <td class="num">${r.date}</td>
+      <td class="num">${r.exitDate||'—'}</td>
+      <td class="num">${rup(r.closePrice)}</td>
+      <td class="num">${r.exitPrice!=null?rup(r.exitPrice):'—'}</td>
+      <td class="num ${r.pnlPct>=0?'pos':'neg'}">${r.pnlPct>=0?'+':''}${r.pnlPct}%</td>
+      <td><span class="verdict-tag ${r.status==='TARGET_HIT'?'pos':r.status==='STOP_LOSS_HIT'?'neg':''}">${statusLabel(r.status)}</span></td>
+    </tr>`).join('');
+    journalHtml = `<div class="hzhead" style="margin-top:22px;"><b>Trade Journal</b> — real closed trades, real P&amp;L,
+      computed the same way every time (real exit price hit, no rounding in your favor). This is the honest record
+      of what actually happened, not what was expected.</div>
+      <div class="histdetail" style="margin:8px 0 14px;">
+        <span><b class="num">${closed.length}</b> closed trades</span>
+        <span>Real win rate <b class="num ${wins/closed.length>=0.5?'pos':'neg'}">${Math.round(wins/closed.length*100)}%</b>
+          <small>(${wins} target, ${losses} stop, ${expired} time exit)</small></span>
+        <span>Real average P&amp;L <b class="num ${avgPnl>=0?'pos':'neg'}">${avgPnl>=0?'+':''}${avgPnl.toFixed(2)}%</b></span>
+      </div>
+      <div style="overflow-x:auto;"><table><thead><tr>
+        <th>Symbol</th><th>Entry date</th><th>Exit date</th><th>Entry</th><th>Exit</th><th>P&amp;L</th><th>Result</th>
+      </tr></thead><tbody>${journalRows}</tbody></table></div>`;
+  }
+
+  wrap.innerHTML = `<div class="hzhead"><b>Signal Health</b> — for every open position, the exact same real
+    checks that got it flagged, re-measured today. Answers "is the reason I bought this still true?" -
+    not price or P&amp;L, which your broker already tracks better than this ever could.</div>
+    <div class="grid">${rows}</div>
+    ${lossLimitHtml}
+    ${journalHtml}`;
+}
+
+function signalVerdict(h){
+  const tracked = h.days || [];
+  if (!tracked.length) return {totalChange: null, verdict: 'Too early', cls: ''};
+  const totalChange = tracked[tracked.length - 1].changePct;
+  if (totalChange > 0.05) return {totalChange, verdict: 'Correct', cls: 'pos'};
+  if (totalChange < -0.05) return {totalChange, verdict: 'Wrong', cls: 'neg'};
+  return {totalChange, verdict: 'Flat', cls: ''};
+}
+
+function renderHistory(){
+  const wrap = $('histWrap');
+  if (!SIGHIST.length){
+    wrap.innerHTML = `<div class="banner">No signal history yet. Every stock that appears on any tab - Buy or Watch - gets tracked here for 5 trading days from its signal date, so you can see whether a rejection would have paid off anyway.</div>`;
+    return;
+  }
+  const verdictRank = {'Correct':0, 'Wrong':1, 'Flat':2, 'Too early':3};
+  const rows = [...SIGHIST].sort((a,b)=>{
+    if (a.grade !== b.grade) return a.grade==='A' ? -1 : 1;   // Buy before Watch
+    const va = verdictRank[signalVerdict(a).verdict], vb = verdictRank[signalVerdict(b).verdict];
+    if (va !== vb) return va - vb;                             // then by verdict
+    return a.date < b.date ? 1 : -1;                           // then most recent first
+  }).map(h=>{
+    const days = [0,1,2,3,4].map(i=>dayChip(h.days[i]));
+    const tag = h.grade==='A'
+      ? `<span class="tag A">${h.gradeLabel==='A+'?'STRONG BUY':'BUY'}</span>`
+      : `<span class="tag B">WATCH</span>`;
+    const why = (h.failedFilters||[]).length
+      ? `<div style="font-size:11.5px;color:var(--slate);margin-top:2px;">${h.failedFilters.join('; ')}</div>` : '';
+    const v = signalVerdict(h);
+    const totalChangeText = v.totalChange != null
+      ? `<span class="num ${v.cls}">${v.totalChange>=0?'+':''}${v.totalChange.toFixed(2)}%</span>` : '—';
+    return `<tr>
+      <td><b>${h.symbol}</b>${why}</td>
+      <td>${tag}</td>
+      <td class="num">${h.date}</td>
+      <td class="num">${h.breakoutScore ?? '—'}</td>
+      <td class="num">${rup(h.entryClose)}</td>
+      <td>${days[0]}</td><td>${days[1]}</td><td>${days[2]}</td><td>${days[3]}</td><td>${days[4]}</td>
+      <td>${totalChangeText}</td>
+      <td><span class="verdict-tag ${v.cls}">${v.verdict}</span></td>
+    </tr>`;
+  }).join('');
+  wrap.innerHTML = `
+    <div class="hzhead"><b>5-day signal history</b> — every stock that appeared on any tab, Buy or Watch,
+      tracked for 5 trading days from its signal date. Use this to check whether Watch rejections
+      (shown under the symbol) would have moved anyway - that's the evidence for whether a filter is earning its keep.
+      <b>Total change</b> is the real cumulative move since the signal date, as of the last tracked day.
+      <b>Verdict</b> is a straight read of that number - Correct if the stock actually moved up, Wrong if it fell -
+      real backtesting against what actually happened, not a prediction.</div>
+    ${leadTimeSummary()}
+    <div style="overflow-x:auto;"><table><thead><tr>
+      <th>Symbol</th><th>Grade</th><th>Signal date</th><th>Score</th><th>Signal price</th>
+      <th>Day 1</th><th>Day 2</th><th>Day 3</th><th>Day 4</th><th>Day 5</th>
+      <th>Total change</th><th>Verdict</th>
+    </tr></thead><tbody>${rows}</tbody></table></div>`;
+}
+
+function fillSettings(){
+  const s = CONFIG.scanner||{}, e = CONFIG.email||{};
+  ['minPrice','maxPrice','minRsi','maxRsi','minVolumeMultiplier','maxRecommendations',
+   'minBreakoutScore','consolidationDays','resistanceLookback','maxDistToBreakoutPct','minAdx','minRsRank','minRiskReward','minAvgVolume','maxOpenPositions',
+   'capital','riskPerTradePct']
+    .forEach(k=>{ if($(k)) $(k).value = s[k] ?? ''; });
+  const mm = s.minMovePct || {};
+  $('mm2d').value = mm['2d'] ?? 3; $('mm1w').value = mm['1w'] ?? 5;
+  $('mm2w').value = mm['2w'] ?? 10; $('mm1m').value = mm['1m'] ?? 15;
+  $('requireEma200').checked = !!s.requireEma200;
+  $('emailEnabled').checked = !!e.enabled;
+  $('toEmail').value = e.toEmail||''; $('smtpHost').value = e.smtpHost||'';
+  $('smtpPort').value = e.smtpPort||587; $('smtpUser').value = e.smtpUser||'';
+  $('geminiApiKey').value = CONFIG.geminiApiKey||'';
+}
+
+async function addToPositions(id, btn){
+  if (window.STATIC_MODE){ toast('Preview only — adding positions needs the real app running on your PC.'); return; }
+  btn.disabled = true; btn.textContent = 'Adding…';
+  try {
+    const res = await fetch('/api/positions/add', {method:'POST',
+      headers:{'Content-Type':'application/json'}, body: JSON.stringify({id})}).then(r=>r.json());
+    toast(res.message);
+    if (res.success) loadAll();
+    else { btn.disabled = false; btn.textContent = '+ I bought this — add to Positions'; }
+  } catch(e) {
+    toast('Could not reach the server.'); btn.disabled = false;
+    btn.textContent = '+ I bought this — add to Positions';
+  }
+}
+
+async function saveConfig(ev){
+  ev.preventDefault();
+  if (window.STATIC_MODE){ toast('Preview only — settings changes need the real app running on your PC.'); return; }
+  const cfg = {
+    scanner: {
+      minPrice:+$('minPrice').value, maxPrice:+$('maxPrice').value,
+      minRsi:+$('minRsi').value, maxRsi:+$('maxRsi').value,
+      minVolumeMultiplier:+$('minVolumeMultiplier').value,
+      maxRecommendations:+$('maxRecommendations').value,
+      minBreakoutScore:+$('minBreakoutScore').value,
+      consolidationDays:+$('consolidationDays').value,
+      resistanceLookback:+$('resistanceLookback').value,
+      maxDistToBreakoutPct:+$('maxDistToBreakoutPct').value,
+      requireEma200:$('requireEma200').checked,
+      minAdx:+$('minAdx').value,
+      minRsRank:+$('minRsRank').value,
+      minAvgVolume:+$('minAvgVolume').value,
+      maxOpenPositions:+$('maxOpenPositions').value,
+      minRiskReward:+$('minRiskReward').value,
+      capital:+$('capital').value,
+      riskPerTradePct:+$('riskPerTradePct').value,
+      minMovePct:{'2d':+$('mm2d').value,'1w':+$('mm1w').value,
+                  '2w':+$('mm2w').value,'1m':+$('mm1m').value},
+      trendEma:true, fillWithNearMisses:true,
+    },
+    email: {
+      enabled:$('emailEnabled').checked, toEmail:$('toEmail').value,
+      smtpHost:$('smtpHost').value, smtpPort:+$('smtpPort').value,
+      smtpUser:$('smtpUser').value,
+      smtpPass:(CONFIG.email&&CONFIG.email.smtpPass)||'',
+    },
+    geminiApiKey:$('geminiApiKey').value,
+  };
+  try {
+    const res = await fetch('/api/config',{method:'POST',
+      headers:{'Content-Type':'application/json'},body:JSON.stringify(cfg)}).then(r=>r.json());
+    toast(res.message); CONFIG = cfg;
+  } catch(e) {
+    toast('Could not reach the server — settings were not saved.');
+  }
+}
+
+async function testEmail(){
+  try {
+    const res = await fetch('/api/email/test',{method:'POST'}).then(r=>r.json());
+    toast(res.message); $('logs').style.display='block'; watchScan(true);
+  } catch(e) {
+    toast('Could not reach the server — test email was not sent.');
+  }
+}
+
+async function runScan(){
+  try {
+    const res = await fetch('/api/recommendations/run',{method:'POST'}).then(r=>r.json());
+    toast(res.message);
+    if (res.success) watchScan();
+  } catch(e) {
+    toast('Could not reach the server — scan did not start. Is the app running on your PC?');
+  }
+}
+
+function watchScan(oneShot){
+  $('scanBtn').disabled = true; $('scanBtn').textContent = 'Scanning…';
+  $('logs').style.display = 'block';
+  clearInterval(pollTimer);
+  pollTimer = setInterval(async ()=>{
+    const st = await fetch('/api/scanner/status').then(r=>r.json());
+    $('logs').textContent = st.logs.join('\n');
+    $('logs').scrollTop = $('logs').scrollHeight;
+    if (!st.running){
+      clearInterval(pollTimer);
+      $('scanBtn').disabled = false; $('scanBtn').textContent = 'Run scan';
+      if (!oneShot){ toast(st.error ? 'Scan failed — see logs' : 'Scan complete'); loadAll(); }
+    }
+  }, 2500);
+  if (oneShot) setTimeout(()=>{clearInterval(pollTimer);
+    $('scanBtn').disabled=false; $('scanBtn').textContent='Run scan';}, 8000);
+}
+
+loadAll();
+
+</script>
+<script>
+if ('serviceWorker' in navigator && location.protocol !== 'file:')
+  navigator.serviceWorker.register('/sw.js').catch(()=>{});
+</script>
+</body>
+</html>

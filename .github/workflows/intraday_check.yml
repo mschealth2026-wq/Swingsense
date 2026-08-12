@@ -1,0 +1,54 @@
+name: Intraday trigger check
+
+# Deliberately separate from the full scan workflow. This is much lighter -
+# no price-history fetch, no re-scoring, just a live quote check for
+# whichever stocks are currently WAIT FOR TRIGGER / WATCHLIST. Runs twice
+# during the trading day: once after the open has settled, once before
+# the close, per your own schedule preference (not intraday monitoring,
+# just two real checkpoints).
+
+on:
+  schedule:
+    - cron: '30 5 * * 1-5'    # 11:00 IST, Mon-Fri
+    - cron: '30 8 * * 1-5'    # 14:00 IST, Mon-Fri
+  workflow_dispatch: {}        # manual trigger from GitHub's own website
+
+permissions:
+  contents: write
+
+concurrency:
+  group: intraday-check
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r scanner/requirements.txt
+
+      - name: Restore live data.json from published copy
+        run: |
+          if [ -f docs/data.json ]; then cp docs/data.json data.json;
+          else cp data.example.json data.json; fi
+
+      - name: Run intraday check
+        run: python scanner/intraday_check.py
+
+      - name: Build static site
+        run: python build_static.py
+
+      - name: Publish
+        run: |
+          git config user.name  "swingsense-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add docs/
+          git add -f docs/data.json
+          git diff --cached --quiet || git commit -m "intraday check: $(date -u +%F' '%H:%M)"
+          git push
