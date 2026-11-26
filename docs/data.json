@@ -92120,15 +92120,125 @@
       "status": "WATCH",
       "marketMood": "Neutral",
       "recentNews": []
-    }
-  ],
-  "priorScores": {
-    "MAHABANK": {
-      "date": "2026-11-25",
-      "score": 84,
-      "breakdown": [
+    },
+    {
+      "id": "WELSPUNLIV-2026-11-26",
+      "date": "2026-11-26",
+      "symbol": "WELSPUNLIV",
+      "companyName": "Welspun Living Ltd.",
+      "sector": "Textiles",
+      "closePrice": 279.4,
+      "projectedEntry": 279.4,
+      "buyZone": "276.6 - 282.2",
+      "stopLoss": 237.86,
+      "target": 348.64,
+      "target1": 348.64,
+      "target2": 390.18,
+      "riskReward": 1.67,
+      "target1Pct": 24.8,
+      "potentialPct": 39.6,
+      "resistance": 278.99,
+      "distToResistancePct": -0.15,
+      "triggerReadiness": null,
+      "emaSpreadPct": 24.89,
+      "williamsR": -12.4,
+      "avgRejectionPct": null,
+      "daysSinceLastTouch": 0,
+      "williamsRLabel": "Overbought",
+      "macdHist": 1.873,
+      "macdRising": true,
+      "emaConvergenceLabel": "Spread out - already trending",
+      "ret1mo": 31.7,
+      "ret3mo": 42.4,
+      "ret6mo": 91.9,
+      "volumeGapText": null,
+      "estDaysToTrigger": null,
+      "nearestSupport": 239.88,
+      "rvol": 0.58,
+      "ema20Level": 255.88,
+      "atrValue": 13.85,
+      "atrPct": 4.9560808961714695,
+      "adxValue": 37.8,
+      "adxLabel": "Strong trend",
+      "distFrom52wHighPct": 0.1,
+      "near52wLabel": "At ATH",
+      "near52wStars": 5,
+      "avgDailyValueCr": 384.4,
+      "closingRangePct": 74,
+      "horizon": "1m",
+      "horizonLabel": "1 month",
+      "estDays": 9,
+      "estDaysRange": "9-25",
+      "maxHoldDays": 22,
+      "holdingPeriod": "1 month",
+      "breakoutScore": 90,
+      "confidenceScore": 90,
+      "percentile": 100,
+      "rsRankAtSignal": 100,
+      "adxAtSignal": 37.8,
+      "volRatioAtSignal": 0.58,
+      "rawRank": 1,
+      "scoredCount": 103,
+      "gradeLabel": "A+",
+      "setupType": "Breakout buy",
+      "sectorStrong": true,
+      "breakoutHistory": {
+        "n": 17,
+        "winRate": 29,
+        "stopRate": 53,
+        "neitherRate": 18,
+        "avg5d": -1.2,
+        "avgWinMove": 5.5,
+        "avgStopMove": -5.1,
+        "medianWinMove": 5.2,
+        "bestWinMove": 7.0,
+        "worstStopMove": -6.1,
+        "fastestWinDays": 1,
+        "typicalWinDays": 1,
+        "slowestWinDays": 4,
+        "periodStart": "2025-08-14",
+        "periodEnd": "2026-11-26",
+        "stability": "Stable",
+        "winQ25": 4.9,
+        "winQ75": 5.7,
+        "recentEvents": [
+          {
+            "date": "2026-11-03",
+            "outcome": "win",
+            "movePct": 5.66
+          },
+          {
+            "date": "2026-10-01",
+            "outcome": "stop",
+            "movePct": -5.42
+          },
+          {
+            "date": "2026-09-22",
+            "outcome": "win",
+            "movePct": 5.19
+          },
+          {
+            "date": "2026-09-04",
+            "outcome": "neither",
+            "movePct": -0.4
+          },
+          {
+            "date": "2026-08-31",
+            "outcome": "win",
+            "movePct": 6.99
+          },
+          {
+            "date": "2026-08-20",
+            "outcome": "neither",
+            "movePct": 1.91
+          }
+        ]
+      },
+      "rsRank": 100.0,
+      "summary": "A+ (90/100): trading 0.1% above its pivot after a 16-day base. Volume 0.6x average (P85), RS Rank 100, weekly and daily trends aligned. About 39.6% upside to T2 at 1.67:1 risk-reward, target expected in ~9 trading days once it triggers.",
+      "scoreBreakdown": [
         {
-          "label": "RS Rank 96 - market leader",
+          "label": "RS Rank 100 - market leader",
           "points": 17.0,
           "max": 17,
           "key": "rsrank"
@@ -92146,7 +92256,7 @@
           "key": "weekly"
         },
         {
-          "label": "At/near new 52w high (98%)",
+          "label": "At/near new 52w high (100%)",
           "points": 11.0,
           "max": 11,
           "key": "prox52"
@@ -92164,42 +92274,390 @@
           "key": "sector"
         },
         {
-          "label": "No clear rising pattern yet",
-          "points": 0.0,
+          "label": "Each pullback held higher than the last",
+          "points": 8.0,
           "max": 8,
           "key": "hhhl"
         },
         {
-          "label": "Base tightening nicely (28% down to 12% range), quiet for 12 sessions",
+          "label": "Base tightening nicely (27% down to 13% range), quiet for 16 sessions",
           "points": 2.7,
           "max": 6,
           "key": "vcp"
         },
         {
-          "label": "RSI 75 outside range",
-          "points": 0.0,
+          "label": "RSI 68 in sweet spot",
+          "points": 4.0,
           "max": 4,
           "key": "rsi"
         },
         {
-          "label": "History: 15 breakouts past year - 60% reached +4% before -3%, 40% hit -3% first (averaged +5.3% when it worked, -3.6% when it stopped out)",
-          "points": 4.8,
+          "label": "History: 17 breakouts past year - 29% reached +4% before -3%, 53% hit -3% first (averaged +5.5% when it worked, -5.1% when it stopped out)",
+          "points": 1.2,
           "max": 8,
           "key": "history"
-        },
+        }
+      ],
+      "riskRating": "High",
+      "grade": "B",
+      "failedFilters": [
+        "volume below 1.5x average"
+      ],
+      "aiExplanation": "RS Rank 100 - market leader\nEMA20 > EMA50 > EMA200 aligned\nWeekly chart also trending up\nAt/near new 52w high (100%)\nSteady buying: buying volume rising, money flowing in, trading above its average cost basis\nSector among market leaders\nEach pullback held higher than the last\nBase tightening nicely (27% down to 13% range), quiet for 16 sessions\nRSI 68 in sweet spot\nHistory: 17 breakouts past year - 29% reached +4% before -3%, 53% hit -3% first (averaged +5.5% when it worked, -5.1% when it stopped out)",
+      "watchUntil": "2026-12-07",
+      "triggerAbove": 279.4,
+      "invalidBelow": 237.86,
+      "status": "WATCH",
+      "marketMood": "Neutral",
+      "scoreChangeFromPrior": {
+        "priorScore": 92,
+        "priorDate": "2026-11-25",
+        "totalDelta": -2,
+        "factorDeltas": []
+      },
+      "watchTrend": "Unchanged",
+      "recentNews": [
         {
-          "label": "Pattern: Inside bar",
-          "points": 2,
-          "max": 2
+          "title": "Welspun India Share Price - Live NSE: WELSPUNLIV Stock Price & Chart",
+          "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5abV9PR204SWR4VUk3VGJGNG0weGlRMGVDQm1IWFUydGdMcVU1UnZ3S1dMYWk4LTNyOUh5bzNYMEEyYjVoMkFTNndXMk9pcFd1UnFpZVJmalJFcFR5Q2pVTWI5TVl6dk1xSDY2eElB?oc=5",
+          "source": "Upstox",
+          "date": "2026-11-24"
         }
       ]
     },
-    "PPLPHARMA": {
-      "date": "2026-11-24",
-      "score": 80,
-      "breakdown": [
+    {
+      "id": "MOTHERSON-2026-11-26",
+      "date": "2026-11-26",
+      "symbol": "MOTHERSON",
+      "companyName": "Samvardhana Motherson International Ltd.",
+      "sector": "Automobile and Auto Components",
+      "closePrice": 164.61,
+      "projectedEntry": 169.69,
+      "buyZone": "168.0 - 171.4",
+      "stopLoss": 153.83,
+      "target": 196.12,
+      "target1": 196.12,
+      "target2": 211.98,
+      "riskReward": 1.67,
+      "target1Pct": 15.6,
+      "potentialPct": 24.9,
+      "resistance": 169.69,
+      "distToResistancePct": 3.09,
+      "triggerReadiness": 0,
+      "emaSpreadPct": 10.06,
+      "williamsR": -37.8,
+      "avgRejectionPct": 7.8,
+      "daysSinceLastTouch": 9,
+      "williamsRLabel": "Neutral",
+      "macdHist": 0.143,
+      "macdRising": false,
+      "emaConvergenceLabel": "Spread out - already trending",
+      "ret1mo": 2.9,
+      "ret3mo": -3.6,
+      "ret6mo": 13.0,
+      "volumeGapText": "Volume at 0.8x - needs 1.5x to confirm",
+      "estDaysToTrigger": 1,
+      "nearestSupport": 152.56,
+      "rvol": 0.85,
+      "ema20Level": 163.36,
+      "atrValue": 5.29,
+      "atrPct": 3.115471979434358,
+      "adxValue": 10.2,
+      "adxLabel": "Weak trend",
+      "distFrom52wHighPct": -2.1,
+      "near52wLabel": "Near ATH",
+      "near52wStars": 4,
+      "avgDailyValueCr": 343.6,
+      "closingRangePct": 2,
+      "horizon": "1m",
+      "horizonLabel": "1 month",
+      "estDays": 9,
+      "estDaysRange": "9-25",
+      "maxHoldDays": 22,
+      "holdingPeriod": "1 month",
+      "breakoutScore": 88,
+      "confidenceScore": 88,
+      "percentile": 99,
+      "rsRankAtSignal": 81,
+      "adxAtSignal": 10.2,
+      "volRatioAtSignal": 0.85,
+      "rawRank": 2,
+      "scoredCount": 103,
+      "gradeLabel": "A",
+      "setupType": "Ascending triangle",
+      "sectorStrong": true,
+      "breakoutHistory": {
+        "n": 12,
+        "winRate": 33,
+        "stopRate": 50,
+        "neitherRate": 17,
+        "avg5d": 0.7,
+        "avgWinMove": 6.1,
+        "avgStopMove": -5.0,
+        "medianWinMove": 6.0,
+        "bestWinMove": 7.6,
+        "worstStopMove": -9.2,
+        "fastestWinDays": 1,
+        "typicalWinDays": 4,
+        "slowestWinDays": 5,
+        "periodStart": "2025-08-14",
+        "periodEnd": "2026-11-26",
+        "stability": "Stable",
+        "winQ25": 4.9,
+        "winQ75": 7.2,
+        "recentEvents": [
+          {
+            "date": "2026-11-11",
+            "outcome": "stop",
+            "movePct": -3.44
+          },
+          {
+            "date": "2026-11-05",
+            "outcome": "stop",
+            "movePct": -9.19
+          },
+          {
+            "date": "2026-08-07",
+            "outcome": "neither",
+            "movePct": -0.12
+          },
+          {
+            "date": "2026-07-31",
+            "outcome": "win",
+            "movePct": 4.8
+          },
+          {
+            "date": "2026-05-27",
+            "outcome": "stop",
+            "movePct": -5.45
+          },
+          {
+            "date": "2026-05-21",
+            "outcome": "win",
+            "movePct": 7.08
+          }
+        ]
+      },
+      "rsRank": 81.0,
+      "summary": "A (88/100): trading 3.1% below its pivot Rs169.7 after a 62-day base. Volume 0.8x average (P71), RS Rank 81, weekly and daily trends aligned. About 24.9% upside to T2 at 1.67:1 risk-reward, target expected in ~9 trading days once it triggers.",
+      "scoreBreakdown": [
         {
-          "label": "RS Rank 92 - market leader",
+          "label": "RS Rank 81",
+          "points": 12.8,
+          "max": 17,
+          "key": "rsrank"
+        },
+        {
+          "label": "EMA20 > EMA50 > EMA200 aligned",
+          "points": 14.0,
+          "max": 14,
+          "key": "ema"
+        },
+        {
+          "label": "Weekly chart also trending up",
+          "points": 11.0,
+          "max": 11,
+          "key": "weekly"
+        },
+        {
+          "label": "At/near new 52w high (95%)",
+          "points": 11.0,
+          "max": 11,
+          "key": "prox52"
+        },
+        {
+          "label": "Steady buying: buying volume rising, money flowing in, trading above its average cost basis",
+          "points": 12.0,
+          "max": 12,
+          "key": "accum"
+        },
+        {
+          "label": "Sector among market leaders",
+          "points": 9.0,
+          "max": 9,
+          "key": "sector"
+        },
+        {
+          "label": "Each pullback held higher than the last",
+          "points": 8.0,
+          "max": 8,
+          "key": "hhhl"
+        },
+        {
+          "label": "Base tightening nicely (14% down to 8% range), quiet for 62 sessions",
+          "points": 5.4,
+          "max": 6,
+          "key": "vcp"
+        },
+        {
+          "label": "RSI 53 in sweet spot",
+          "points": 4.0,
+          "max": 4,
+          "key": "rsi"
+        },
+        {
+          "label": "History: 12 breakouts past year - 33% reached +4% before -3%, 50% hit -3% first (averaged +6.1% when it worked, -5.0% when it stopped out)",
+          "points": 1.2,
+          "max": 8,
+          "key": "history"
+        }
+      ],
+      "riskRating": "Medium",
+      "grade": "B",
+      "failedFilters": [
+        "volume below 1.5x average"
+      ],
+      "aiExplanation": "RS Rank 81\nEMA20 > EMA50 > EMA200 aligned\nWeekly chart also trending up\nAt/near new 52w high (95%)\nSteady buying: buying volume rising, money flowing in, trading above its average cost basis\nSector among market leaders\nEach pullback held higher than the last\nBase tightening nicely (14% down to 8% range), quiet for 62 sessions\nRSI 53 in sweet spot\nHistory: 12 breakouts past year - 33% reached +4% before -3%, 50% hit -3% first (averaged +6.1% when it worked, -5.0% when it stopped out)",
+      "watchUntil": "2026-12-07",
+      "triggerAbove": 169.69,
+      "invalidBelow": 153.83,
+      "status": "WATCH",
+      "marketMood": "Neutral",
+      "scoreChangeFromPrior": {
+        "priorScore": 87,
+        "priorDate": "2026-11-25",
+        "totalDelta": 1,
+        "factorDeltas": [
+          {
+            "label": "Base tightening nicely (14% down to 8% range), quiet for 62 sessions",
+            "delta": 1.8
+          }
+        ]
+      },
+      "watchTrend": "Unchanged",
+      "recentNews": [
+        {
+          "title": "Samvardhana Motherson cancels Nov 26 board meet, reopens trading window",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQaTBJTENNMmlrR2ZJdWdxcjl4cW9rYlRfR0RQNW00c3hWNTFWMzBHNEJfOEZmTm1rTkhpbjZpcEg5NlJEVmRqMmdnRzNwdWlnRHl4V25CM2kzVzFiWDVsRzVicHZhUlZJU3pmcC1KYndfUEpoYWZXalJMUmk0QkVjeG1tdEtfckEteFl0UVB6b1V5emRZMzVXRHdOLTZjWkdFWHhHUHF1ZW1kZWZoNDlVUy03WGx6dDhNaGVjdl9Sb1VGRENpN3c?oc=5",
+          "source": "scanx.trade",
+          "date": "2026-11-26"
+        },
+        {
+          "title": "Motherson NSE:MOTHERSON Analyst Meet November 2026",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQUXlhNE1zZGtFaGFWWXBWLWR1V0tEeXZMTlE5Y1B6ZWJNNk9WVldzTnJtaEp5ZnFDdVZQXzFxREYxeWxpWjA5UWVoUkRrVjRfWjhZbjB3SW5QdjVZX2h0QldjeUZEYmR0Y05WZ19vclc5ajRseGt0bXZFVHFsZ1VSLXNXMG9wcWdLUms2d2lVd09fTzNfTVNwU2JmSlBKWk11TW81U3FibEVwN2hOSng1ODRpc3VWc19xQmRObkFvQnV3cUht?oc=5",
+          "source": "Kalkine India",
+          "date": "2026-11-17"
+        }
+      ]
+    },
+    {
+      "id": "PNB-2026-11-26",
+      "date": "2026-11-26",
+      "symbol": "PNB",
+      "companyName": "Punjab National Bank",
+      "sector": "Financial Services",
+      "closePrice": 147.5,
+      "projectedEntry": 156.49,
+      "buyZone": "154.9 - 158.1",
+      "stopLoss": 142.31,
+      "target": 180.13,
+      "target1": 180.13,
+      "target2": 194.32,
+      "riskReward": 1.67,
+      "target1Pct": 15.1,
+      "potentialPct": 24.2,
+      "resistance": 156.49,
+      "distToResistancePct": 6.09,
+      "triggerReadiness": 0,
+      "emaSpreadPct": 15.25,
+      "williamsR": -29.4,
+      "avgRejectionPct": 6.9,
+      "daysSinceLastTouch": 1,
+      "williamsRLabel": "Neutral",
+      "macdHist": 0.249,
+      "macdRising": false,
+      "emaConvergenceLabel": "Spread out - already trending",
+      "ret1mo": 19.0,
+      "ret3mo": 29.1,
+      "ret6mo": 39.4,
+      "volumeGapText": "Volume at 0.4x - needs 1.5x to confirm",
+      "estDaysToTrigger": 2,
+      "nearestSupport": 123.1,
+      "rvol": 0.36,
+      "ema20Level": 140.99,
+      "atrValue": 4.73,
+      "atrPct": 3.0214433068819377,
+      "adxValue": 52.5,
+      "adxLabel": "Strong trend",
+      "distFrom52wHighPct": 0.0,
+      "near52wLabel": "At ATH",
+      "near52wStars": 5,
+      "avgDailyValueCr": 619.5,
+      "closingRangePct": 8,
+      "horizon": "1m",
+      "horizonLabel": "1 month",
+      "estDays": 9,
+      "estDaysRange": "9-25",
+      "maxHoldDays": 22,
+      "holdingPeriod": "1 month",
+      "breakoutScore": 88,
+      "confidenceScore": 88,
+      "percentile": 99,
+      "rsRankAtSignal": 94,
+      "adxAtSignal": 52.5,
+      "volRatioAtSignal": 0.36,
+      "rawRank": 2,
+      "scoredCount": 103,
+      "gradeLabel": "A",
+      "setupType": "Momentum continuation",
+      "sectorStrong": true,
+      "breakoutHistory": {
+        "n": 16,
+        "winRate": 19,
+        "stopRate": 56,
+        "neitherRate": 25,
+        "avg5d": 0.8,
+        "avgWinMove": 4.7,
+        "avgStopMove": -3.8,
+        "medianWinMove": 4.8,
+        "bestWinMove": 5.1,
+        "worstStopMove": -5.4,
+        "fastestWinDays": 2,
+        "typicalWinDays": 2,
+        "slowestWinDays": 2,
+        "periodStart": "2025-08-14",
+        "periodEnd": "2026-11-26",
+        "stability": "Stable",
+        "winQ25": null,
+        "winQ75": null,
+        "recentEvents": [
+          {
+            "date": "2026-11-17",
+            "outcome": "win",
+            "movePct": 4.33
+          },
+          {
+            "date": "2026-11-11",
+            "outcome": "win",
+            "movePct": 4.81
+          },
+          {
+            "date": "2026-11-09",
+            "outcome": "stop",
+            "movePct": -4.73
+          },
+          {
+            "date": "2026-11-05",
+            "outcome": "win",
+            "movePct": 5.06
+          },
+          {
+            "date": "2026-10-19",
+            "outcome": "stop",
+            "movePct": -3.04
+          },
+          {
+            "date": "2026-08-12",
+            "outcome": "stop",
+            "movePct": -3.08
+          }
+        ]
+      },
+      "rsRank": 94.0,
+      "summary": "A (88/100): trading 6.1% below its pivot Rs156.5 after a 10-day base. Volume 0.4x average (P52), RS Rank 94, weekly and daily trends aligned. About 24.2% upside to T2 at 1.67:1 risk-reward, target expected in ~9 trading days once it triggers.",
+      "scoreBreakdown": [
+        {
+          "label": "RS Rank 94 - market leader",
           "points": 17.0,
           "max": 17,
           "key": "rsrank"
@@ -92217,7 +92675,467 @@
           "key": "weekly"
         },
         {
-          "label": "Near 52w high (93%)",
+          "label": "Near 52w high (94%)",
+          "points": 6.6,
+          "max": 11,
+          "key": "prox52"
+        },
+        {
+          "label": "Steady buying: buying volume rising, money flowing in, trading above its average cost basis",
+          "points": 12.0,
+          "max": 12,
+          "key": "accum"
+        },
+        {
+          "label": "Sector among market leaders",
+          "points": 9.0,
+          "max": 9,
+          "key": "sector"
+        },
+        {
+          "label": "Each pullback held higher than the last",
+          "points": 8.0,
+          "max": 8,
+          "key": "hhhl"
+        },
+        {
+          "label": "Base tightening nicely (29% down to 13% range), quiet for 10 sessions",
+          "points": 2.7,
+          "max": 6,
+          "key": "vcp"
+        },
+        {
+          "label": "RSI 68 in sweet spot",
+          "points": 4.0,
+          "max": 4,
+          "key": "rsi"
+        },
+        {
+          "label": "History: 16 breakouts past year - 19% reached +4% before -3%, 56% hit -3% first (averaged +4.7% when it worked, -3.8% when it stopped out)",
+          "points": 1.2,
+          "max": 8,
+          "key": "history"
+        },
+        {
+          "label": "Pattern: NR7, Inside bar",
+          "points": 2,
+          "max": 2
+        }
+      ],
+      "riskRating": "Medium",
+      "grade": "B",
+      "failedFilters": [
+        "volume below 1.5x average"
+      ],
+      "aiExplanation": "RS Rank 94 - market leader\nEMA20 > EMA50 > EMA200 aligned\nWeekly chart also trending up\nNear 52w high (94%)\nSteady buying: buying volume rising, money flowing in, trading above its average cost basis\nSector among market leaders\nEach pullback held higher than the last\nBase tightening nicely (29% down to 13% range), quiet for 10 sessions\nRSI 68 in sweet spot\nHistory: 16 breakouts past year - 19% reached +4% before -3%, 56% hit -3% first (averaged +4.7% when it worked, -3.8% when it stopped out)\nPattern: NR7, Inside bar",
+      "watchUntil": "2026-12-07",
+      "triggerAbove": 156.49,
+      "invalidBelow": 142.31,
+      "status": "WATCH",
+      "marketMood": "Neutral",
+      "scoreChangeFromPrior": {
+        "priorScore": 74,
+        "priorDate": "2026-11-25",
+        "totalDelta": 14,
+        "factorDeltas": [
+          {
+            "label": "Each pullback held higher than the last",
+            "delta": 8.0
+          },
+          {
+            "label": "RSI 68 in sweet spot",
+            "delta": 2.0
+          },
+          {
+            "label": "Base tightening nicely (29% down to 13% range), quiet for 10 sessions",
+            "delta": 1.5
+          }
+        ]
+      },
+      "watchTrend": "Improving",
+      "recentNews": [
+        {
+          "title": "PNB, Deutsche Bank Sign MoU to Fund Acquisitions in India",
+          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE93ckMtSE9MR1B6eUxHa2w5N2F5OV8yZmliYzJRWWVzU01QY3p0ZF84VVVubk5KMEZrZlIwU2hFSGdNaFJuZnZjejVxZzZ6WVhLa2R4cG5CYVZXWnRlc3FLUy1VMTk3YlB5bTF3S2cxTUtEdld2SmpZNw?oc=5",
+          "source": "Elets BFSI",
+          "date": "2026-11-24"
+        },
+        {
+          "title": "PNB Signs MoU with Deutsche Bank to Explore Acquisition Financing Opportunities",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQRzRVT3FJRmJqS0VXUWRWYzVWTFpGdGdHTjE4VGdJUXZDQ2QtTVNjY29oUVBHQmtpNFFpRERPUko2Wi1iYUJkbnI0cDJCbVVKOVZTdEhBY1hHZEJSVE5yaUlnbWlDQm9HczRBcDY2eF9ZYThuUDlwc2xMLU1iNWhxSjJ3TU1GQ3dLLTdUUWt2dWxHdlowRE1ib2NYQnh0bzYzbVI5ektocWYyLUc1NFBqSWRDQ0tqUQ?oc=5",
+          "source": "PSU Connect",
+          "date": "2026-11-25"
+        },
+        {
+          "title": "PNB, BoB, KMB, SBI, Axis Bank among biggest beneficiaries of rate hikes: JPMorgan",
+          "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNTmZGVW9SeWEtQV9jNE1pWHdtNmJHcnJfQmNQS1J6ekN6dkY5eE55dzdWRElzVEN0WjJjRkMyYVZIemNMc0llbzQzbFhJbFdHZEh4Znd1VFhjLVpCWGQtQUhKRHBXMFZwY3FCSzhNRDB3RUdKdkpZSmM0OG9tcUpjQk5HZ0xIa0NnVG5abGtWbGFnOEo0bHFBVnNaMElfaW45clJKNU90ak5ONWJWdE5pakVqbWVQMVg0eU84Um5qQW5lLXh2a2g0dUlETXdWV1JTRks3VVlnSUhLLUlU0gHiAUFVX3lxTE1DMlRGeC1Kejl4cXNrcU0wTmlxV0dDdHBDeU15MzVYY3VYRjhmQ19sTHliaU5jSkFZRXlkUjFRT2FKS0JfUGZXX0NqZE8xaEZQQV9yUzktRUpFVDl6dWItME1odkdHWHoyRVZfRUJiSFdQa0VwZGh3dXZ5Umg4djZJWTdubHo5N3RheXBzU3J1MHhjSFVwVDdwZG5uOEhBNXJZdUdxdGY5WVc2RDJtN3paaER5aGg1TS1Uc2xTS1lCNzRvZU5aQU9Gc0IxOGh3ZDZmX2Z1MVJjZHhMYnJpMnVYTmc?oc=5",
+          "source": "Business Today",
+          "date": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "UNIONBANK-2026-11-26",
+      "date": "2026-11-26",
+      "symbol": "UNIONBANK",
+      "companyName": "Union Bank of India",
+      "sector": "Financial Services",
+      "closePrice": 210.2,
+      "projectedEntry": 219.72,
+      "buyZone": "217.5 - 221.9",
+      "stopLoss": 200.67,
+      "target": 251.46,
+      "target1": 251.46,
+      "target2": 270.51,
+      "riskReward": 1.67,
+      "target1Pct": 14.4,
+      "potentialPct": 23.1,
+      "resistance": 219.72,
+      "distToResistancePct": 4.53,
+      "triggerReadiness": 0,
+      "emaSpreadPct": 11.66,
+      "williamsR": -28.9,
+      "avgRejectionPct": 5.9,
+      "daysSinceLastTouch": 1,
+      "williamsRLabel": "Neutral",
+      "macdHist": 0.382,
+      "macdRising": false,
+      "emaConvergenceLabel": "Spread out - already trending",
+      "ret1mo": 12.7,
+      "ret3mo": 11.4,
+      "ret6mo": 26.1,
+      "volumeGapText": "Volume at 0.4x - needs 1.5x to confirm",
+      "estDaysToTrigger": 2,
+      "nearestSupport": 184.25,
+      "rvol": 0.44,
+      "ema20Level": 201.9,
+      "atrValue": 6.35,
+      "atrPct": 2.889372194757802,
+      "adxValue": 47.0,
+      "adxLabel": "Strong trend",
+      "distFrom52wHighPct": 0.0,
+      "near52wLabel": "At ATH",
+      "near52wStars": 5,
+      "avgDailyValueCr": 348.2,
+      "closingRangePct": 10,
+      "horizon": "1m",
+      "horizonLabel": "1 month",
+      "estDays": 9,
+      "estDaysRange": "9-25",
+      "maxHoldDays": 22,
+      "holdingPeriod": "1 month",
+      "breakoutScore": 88,
+      "confidenceScore": 88,
+      "percentile": 99,
+      "rsRankAtSignal": 90,
+      "adxAtSignal": 47.0,
+      "volRatioAtSignal": 0.44,
+      "rawRank": 2,
+      "scoredCount": 103,
+      "gradeLabel": "A",
+      "setupType": "Momentum continuation",
+      "sectorStrong": true,
+      "breakoutHistory": {
+        "n": 17,
+        "winRate": 24,
+        "stopRate": 41,
+        "neitherRate": 35,
+        "avg5d": 0.2,
+        "avgWinMove": 5.5,
+        "avgStopMove": -5.4,
+        "medianWinMove": 5.8,
+        "bestWinMove": 6.6,
+        "worstStopMove": -8.6,
+        "fastestWinDays": 1,
+        "typicalWinDays": 4,
+        "slowestWinDays": 5,
+        "periodStart": "2025-08-14",
+        "periodEnd": "2026-11-26",
+        "stability": "Stable",
+        "winQ25": 5.2,
+        "winQ75": 6.2,
+        "recentEvents": [
+          {
+            "date": "2026-11-16",
+            "outcome": "win",
+            "movePct": 6.57
+          },
+          {
+            "date": "2026-11-11",
+            "outcome": "neither",
+            "movePct": 2.81
+          },
+          {
+            "date": "2026-11-09",
+            "outcome": "stop",
+            "movePct": -5.18
+          },
+          {
+            "date": "2026-10-29",
+            "outcome": "stop",
+            "movePct": -3.01
+          },
+          {
+            "date": "2026-08-12",
+            "outcome": "neither",
+            "movePct": -0.05
+          },
+          {
+            "date": "2026-08-06",
+            "outcome": "neither",
+            "movePct": 2.19
+          }
+        ]
+      },
+      "rsRank": 90.0,
+      "summary": "A (88/100): trading 4.5% below its pivot Rs219.7 after a 13-day base. Volume 0.4x average (P18), RS Rank 90, weekly and daily trends aligned. About 23.1% upside to T2 at 1.67:1 risk-reward, target expected in ~9 trading days once it triggers.",
+      "scoreBreakdown": [
+        {
+          "label": "RS Rank 90",
+          "points": 12.8,
+          "max": 17,
+          "key": "rsrank"
+        },
+        {
+          "label": "EMA20 > EMA50 > EMA200 aligned",
+          "points": 14.0,
+          "max": 14,
+          "key": "ema"
+        },
+        {
+          "label": "Weekly chart also trending up",
+          "points": 11.0,
+          "max": 11,
+          "key": "weekly"
+        },
+        {
+          "label": "At/near new 52w high (96%)",
+          "points": 11.0,
+          "max": 11,
+          "key": "prox52"
+        },
+        {
+          "label": "Steady buying: buying volume rising, money flowing in, trading above its average cost basis",
+          "points": 12.0,
+          "max": 12,
+          "key": "accum"
+        },
+        {
+          "label": "Sector among market leaders",
+          "points": 9.0,
+          "max": 9,
+          "key": "sector"
+        },
+        {
+          "label": "Each pullback held higher than the last",
+          "points": 8.0,
+          "max": 8,
+          "key": "hhhl"
+        },
+        {
+          "label": "Base tightening nicely (25% down to 10% range), quiet for 13 sessions",
+          "points": 2.7,
+          "max": 6,
+          "key": "vcp"
+        },
+        {
+          "label": "RSI 64 in sweet spot",
+          "points": 4.0,
+          "max": 4,
+          "key": "rsi"
+        },
+        {
+          "label": "History: 17 breakouts past year - 24% reached +4% before -3%, 41% hit -3% first (averaged +5.5% when it worked, -5.4% when it stopped out)",
+          "points": 1.2,
+          "max": 8,
+          "key": "history"
+        },
+        {
+          "label": "Pattern: Inside bar",
+          "points": 2,
+          "max": 2
+        }
+      ],
+      "riskRating": "Medium",
+      "grade": "B",
+      "failedFilters": [
+        "volume below 1.5x average"
+      ],
+      "aiExplanation": "RS Rank 90\nEMA20 > EMA50 > EMA200 aligned\nWeekly chart also trending up\nAt/near new 52w high (96%)\nSteady buying: buying volume rising, money flowing in, trading above its average cost basis\nSector among market leaders\nEach pullback held higher than the last\nBase tightening nicely (25% down to 10% range), quiet for 13 sessions\nRSI 64 in sweet spot\nHistory: 17 breakouts past year - 24% reached +4% before -3%, 41% hit -3% first (averaged +5.5% when it worked, -5.4% when it stopped out)\nPattern: Inside bar",
+      "watchUntil": "2026-12-07",
+      "triggerAbove": 219.72,
+      "invalidBelow": 200.67,
+      "status": "WATCH",
+      "marketMood": "Neutral",
+      "scoreChangeFromPrior": {
+        "priorScore": 92,
+        "priorDate": "2026-11-25",
+        "totalDelta": -4,
+        "factorDeltas": [
+          {
+            "label": "RS Rank 90",
+            "delta": -4.2
+          }
+        ]
+      },
+      "watchTrend": "Weakening",
+      "recentNews": [
+        {
+          "title": "Trade Spotlight: How should you trade Coforge, Torrent Pharma, Siemens Energy, Union Bank of India,...",
+          "link": "https://news.google.com/rss/articles/CBMipgJBVV95cUxNdXJzTXB1TUxVaTZSVVBxOC1ZOEFRWlB4bHZDdnZqWUE2eG9NN0RSMXk1QkpvVG1UZm1Vam5IeVFMU1hiZzJaMllCVTdabHA4Y0M4MnIwSkFDbFRsdDd1bHV2SmEwQ0ItUjZmaXN3WHZrOV9TNVp3VjlCaDE5NkpwTDBpNzZOalFzR3hDbGFGNlhwOENlUXFiLVpFN0ZxVVcwbU5aN0I4MHQ3NFNLVVBIbEZmdUczZG5JLUdRX3VPTGFXVXFmTE40NFFrXzlyb01nTjFzTGgyejBoZXV0YU5oVDJ6d0NiN25SdjcwOGVqbjJXREREaEE1U1pLTy1mWVBBdGVfZGpiQmMtbC10VGVzTXdtNGo1d1VOTXJjZjJzMU9wazVTeWfSAasCQVVfeXFMUFpTM3NCb3RWbkJTWllZdjcxc29idnV2eU1kVF9qcm9Rbm9FLTNVY3BDeWQwaFd2YVBnY2kyMWJsX0hSYVhZQ0JVcHphQmNpYW9wSjlnQ1hIazR3MTFfOFVUR2tsYTBUNmhHNnlySFM0c2hibUR4MThNRUUzRnlUU2d0a1J3bXZnUFdfYkRHTENHR1VpV3g3c2xHQ3BCcEpYUDlSb28zOXBhVDVRMmcwVXdtTVJjOWJya2xjRUpKNm9tb1hZVUx6bENrMWxHUFcxdWI3VTZmSTBEVDF0UFZDLVYtdVR5UkM5d1V6NWlROVVMOG5oT1ppaFgwQW1LbEhGTlY5b01fV08tMDc2YXZqYXk1YUdkMGhxenNUaF9wOUVObnNCRW5GSnRtWDA?oc=5",
+          "source": "Moneycontrol.com",
+          "date": "2026-11-25"
+        },
+        {
+          "title": "Union Bank of India (NSEI:UNIONBANK) Stock Forecast & Analyst Predictions",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPS1Z0UXVFZXN1MkNIZ3pXbGI1RU1pNUViNVBiclNVak5SLWt4TFhmeWgyc2h3NnBlS2Yyc3EwbFd3czV4Q0tZVzNDamY0RnpLX1RGai12LVZpTjNyZC10UVBEZXpCbjU2QUlJUGtaemUxZlB0QzJwYWw3NFVmclpVMnl1SmdlNzhDdWFwSjVB?oc=5",
+          "source": "Simply Wall St",
+          "date": "2026-11-23"
+        },
+        {
+          "title": "Zee Business. . STOCK OF THE DAY Buy Coforge Futures: SL 2000 SL 2050, 2075, 2100 Strong buy report from Bernstein today Buy Persistent Futures: SL 6100 SL 6250, 6325, 6400 Strong buy report from Bernstein today Buy DMart Futures: SL 3500 Tgt 36",
+          "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQeHhiQnA5MEhBQVA1a3dNMWdrTEhPeUVmM0I1akVwNTBxOXlFejlmYnVZTGZYemVWYzF5M1E4QTJFS0N1ajgyTDlnNEFNMDZhd0prcE5xeGI3Z2ROS042NTZZYkhoTS1mQXJVN05PTTNvb3pBbHJob00zdlBZZGNuQ01vVXViclhsRGZKaWNHQlF3dE1hNUZWNlRCWlhPaUNmMVMzTnV0clhWckRNYXlkU3FTY1FBbWQyQnJWMHpTN01YeWVtdEh5QS0zYktfNWJ0T2pmbjZRcFhLRkVuVFJXbVlB?oc=5",
+          "source": "Facebook",
+          "date": "2026-11-26"
+        }
+      ]
+    },
+    {
+      "id": "MAHABANK-2026-11-26",
+      "date": "2026-11-26",
+      "symbol": "MAHABANK",
+      "companyName": "Bank of Maharashtra",
+      "sector": "Financial Services",
+      "closePrice": 94.2,
+      "projectedEntry": 100.7,
+      "buyZone": "99.7 - 101.7",
+      "stopLoss": 91.52,
+      "target": 116.0,
+      "target1": 116.0,
+      "target2": 125.18,
+      "riskReward": 1.67,
+      "target1Pct": 15.2,
+      "potentialPct": 24.3,
+      "resistance": 100.7,
+      "distToResistancePct": 6.9,
+      "triggerReadiness": 0,
+      "emaSpreadPct": 13.25,
+      "williamsR": -43.8,
+      "avgRejectionPct": null,
+      "daysSinceLastTouch": 0,
+      "williamsRLabel": "Neutral",
+      "macdHist": 0.391,
+      "macdRising": false,
+      "emaConvergenceLabel": "Spread out - already trending",
+      "ret1mo": 16.3,
+      "ret3mo": 14.8,
+      "ret6mo": 18.2,
+      "volumeGapText": "Volume at 0.7x - needs 1.5x to confirm",
+      "estDaysToTrigger": 2,
+      "nearestSupport": 80.93,
+      "rvol": 0.72,
+      "ema20Level": 91.87,
+      "atrValue": 3.06,
+      "atrPct": 3.0382137467248125,
+      "adxValue": 41.2,
+      "adxLabel": "Strong trend",
+      "distFrom52wHighPct": 0.0,
+      "near52wLabel": "At ATH",
+      "near52wStars": 5,
+      "avgDailyValueCr": 226.2,
+      "closingRangePct": 3,
+      "horizon": "1m",
+      "horizonLabel": "1 month",
+      "estDays": 9,
+      "estDaysRange": "9-25",
+      "maxHoldDays": 22,
+      "holdingPeriod": "1 month",
+      "breakoutScore": 81,
+      "confidenceScore": 81,
+      "percentile": 96,
+      "rsRankAtSignal": 93,
+      "adxAtSignal": 41.2,
+      "volRatioAtSignal": 0.72,
+      "rawRank": 5,
+      "scoredCount": 103,
+      "gradeLabel": "A",
+      "setupType": "Momentum continuation",
+      "sectorStrong": true,
+      "breakoutHistory": {
+        "n": 15,
+        "winRate": 60,
+        "stopRate": 40,
+        "neitherRate": 0,
+        "avg5d": 2.1,
+        "avgWinMove": 5.3,
+        "avgStopMove": -3.6,
+        "medianWinMove": 5.0,
+        "bestWinMove": 7.0,
+        "worstStopMove": -4.6,
+        "fastestWinDays": 1,
+        "typicalWinDays": 3,
+        "slowestWinDays": 4,
+        "periodStart": "2025-08-14",
+        "periodEnd": "2026-11-26",
+        "stability": "Stable",
+        "winQ25": 4.4,
+        "winQ75": 5.8,
+        "recentEvents": [
+          {
+            "date": "2026-11-17",
+            "outcome": "win",
+            "movePct": 4.91
+          },
+          {
+            "date": "2026-11-11",
+            "outcome": "win",
+            "movePct": 6.54
+          },
+          {
+            "date": "2026-11-05",
+            "outcome": "win",
+            "movePct": 7.04
+          },
+          {
+            "date": "2026-08-26",
+            "outcome": "stop",
+            "movePct": -3.1
+          },
+          {
+            "date": "2026-06-29",
+            "outcome": "stop",
+            "movePct": -3.45
+          },
+          {
+            "date": "2026-06-12",
+            "outcome": "win",
+            "movePct": 4.35
+          }
+        ]
+      },
+      "rsRank": 93.0,
+      "summary": "A (81/100): trading 6.9% below its pivot Rs100.7 after a 13-day base. Volume 0.7x average (P63), RS Rank 93, weekly and daily trends aligned. About 24.3% upside to T2 at 1.67:1 risk-reward, target expected in ~9 trading days once it triggers.",
+      "scoreBreakdown": [
+        {
+          "label": "RS Rank 93 - market leader",
+          "points": 17.0,
+          "max": 17,
+          "key": "rsrank"
+        },
+        {
+          "label": "EMA20 > EMA50 > EMA200 aligned",
+          "points": 14.0,
+          "max": 14,
+          "key": "ema"
+        },
+        {
+          "label": "Weekly chart also trending up",
+          "points": 11.0,
+          "max": 11,
+          "key": "weekly"
+        },
+        {
+          "label": "Near 52w high (94%)",
           "points": 6.6,
           "max": 11,
           "key": "prox52"
@@ -92241,7 +93159,649 @@
           "key": "hhhl"
         },
         {
-          "label": "Base tightening nicely (29% down to 8% range), quiet for 18 sessions",
+          "label": "Base tightening nicely (30% down to 12% range), quiet for 13 sessions",
+          "points": 2.7,
+          "max": 6,
+          "key": "vcp"
+        },
+        {
+          "label": "RSI 60 in sweet spot",
+          "points": 4.0,
+          "max": 4,
+          "key": "rsi"
+        },
+        {
+          "label": "History: 15 breakouts past year - 60% reached +4% before -3%, 40% hit -3% first (averaged +5.3% when it worked, -3.6% when it stopped out)",
+          "points": 4.8,
+          "max": 8,
+          "key": "history"
+        }
+      ],
+      "riskRating": "Medium",
+      "grade": "B",
+      "failedFilters": [
+        "volume below 1.5x average"
+      ],
+      "aiExplanation": "RS Rank 93 - market leader\nEMA20 > EMA50 > EMA200 aligned\nWeekly chart also trending up\nNear 52w high (94%)\nSteady buying: buying volume rising, money flowing in, trading above its average cost basis\nSector among market leaders\nBase tightening nicely (30% down to 12% range), quiet for 13 sessions\nRSI 60 in sweet spot\nHistory: 15 breakouts past year - 60% reached +4% before -3%, 40% hit -3% first (averaged +5.3% when it worked, -3.6% when it stopped out)",
+      "watchUntil": "2026-12-07",
+      "triggerAbove": 100.7,
+      "invalidBelow": 91.52,
+      "status": "WATCH",
+      "marketMood": "Neutral",
+      "scoreChangeFromPrior": {
+        "priorScore": 84,
+        "priorDate": "2026-11-25",
+        "totalDelta": -3,
+        "factorDeltas": [
+          {
+            "label": "Near 52w high (94%)",
+            "delta": -4.4
+          },
+          {
+            "label": "RSI 60 in sweet spot",
+            "delta": 4.0
+          }
+        ]
+      },
+      "watchTrend": "Weakening",
+      "recentNews": [
+        {
+          "title": "MAHABANK Option Chain: Live NSE Option Chain Data, OI & Price",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQZ0ZKNmdnckF6QU9sd1NhUnVaUVQzOG0yamtoTG1qZDVZT3FlOFZuQTBNTmZSRWJ4OWF3aXFqalNqbENYZlNYRTF0OFpFeXNwQl9ONFRFZVBLTEwzX3N2dGVMRFdyM2ZTUTNLZWRmT3lqVlJpLTRJdXJ1SHkxVmVmRU5QS0Q3WkVZVmEzX0dSaTRWTmZGeFJZVA?oc=5",
+          "source": "Kotak Neo",
+          "date": "2026-11-23"
+        }
+      ]
+    },
+    {
+      "id": "IDFCFIRSTB-2026-11-26",
+      "date": "2026-11-26",
+      "symbol": "IDFCFIRSTB",
+      "companyName": "IDFC First Bank Ltd.",
+      "sector": "Financial Services",
+      "closePrice": 86.71,
+      "projectedEntry": 88.18,
+      "buyZone": "87.3 - 89.1",
+      "stopLoss": 81.26,
+      "target": 99.71,
+      "target1": 99.71,
+      "target2": 106.63,
+      "riskReward": 1.67,
+      "target1Pct": 13.1,
+      "potentialPct": 20.9,
+      "resistance": 88.18,
+      "distToResistancePct": 1.7,
+      "triggerReadiness": 43,
+      "emaSpreadPct": 4.1,
+      "williamsR": -12.7,
+      "avgRejectionPct": 6.3,
+      "daysSinceLastTouch": 0,
+      "williamsRLabel": "Overbought",
+      "macdHist": 0.883,
+      "macdRising": false,
+      "emaConvergenceLabel": "Compressing",
+      "ret1mo": 18.2,
+      "ret3mo": 0.9,
+      "ret6mo": 20.8,
+      "volumeGapText": "Volume at 0.7x - needs 1.5x to confirm",
+      "estDaysToTrigger": 1,
+      "nearestSupport": 75.6,
+      "rvol": 0.71,
+      "ema20Level": 82.14,
+      "atrValue": 2.31,
+      "atrPct": 2.6147816571178586,
+      "adxValue": 38.6,
+      "adxLabel": "Strong trend",
+      "distFrom52wHighPct": -1.6,
+      "near52wLabel": "Near ATH",
+      "near52wStars": 4,
+      "avgDailyValueCr": 225.5,
+      "closingRangePct": 44,
+      "horizon": "1m",
+      "horizonLabel": "1 month",
+      "estDays": 9,
+      "estDaysRange": "9-25",
+      "maxHoldDays": 22,
+      "holdingPeriod": "1 month",
+      "breakoutScore": 75,
+      "confidenceScore": 75,
+      "percentile": 95,
+      "rsRankAtSignal": 74,
+      "adxAtSignal": 38.6,
+      "volRatioAtSignal": 0.71,
+      "rawRank": 6,
+      "scoredCount": 103,
+      "gradeLabel": "B",
+      "setupType": "Base breakout setup",
+      "sectorStrong": true,
+      "breakoutHistory": {
+        "n": 17,
+        "winRate": 18,
+        "stopRate": 29,
+        "neitherRate": 53,
+        "avg5d": 0.5,
+        "avgWinMove": 4.6,
+        "avgStopMove": -3.4,
+        "medianWinMove": 4.8,
+        "bestWinMove": 5.0,
+        "worstStopMove": -3.7,
+        "fastestWinDays": 3,
+        "typicalWinDays": 3,
+        "slowestWinDays": 3,
+        "periodStart": "2025-08-14",
+        "periodEnd": "2026-11-26",
+        "stability": "Stable",
+        "winQ25": null,
+        "winQ75": null,
+        "recentEvents": [
+          {
+            "date": "2026-11-17",
+            "outcome": "win",
+            "movePct": 4.8
+          },
+          {
+            "date": "2026-09-03",
+            "outcome": "neither",
+            "movePct": -0.75
+          },
+          {
+            "date": "2026-07-27",
+            "outcome": "neither",
+            "movePct": 1.32
+          },
+          {
+            "date": "2026-07-20",
+            "outcome": "stop",
+            "movePct": -3.55
+          },
+          {
+            "date": "2026-06-22",
+            "outcome": "stop",
+            "movePct": -3.14
+          },
+          {
+            "date": "2026-06-12",
+            "outcome": "neither",
+            "movePct": 2.85
+          }
+        ]
+      },
+      "rsRank": 74.0,
+      "summary": "B (75/100): trading 1.7% below its pivot Rs88.2 after a 15-day base. Volume 0.7x average (P58), RS Rank 74, weekly and daily trends aligned. About 20.9% upside to T2 at 1.67:1 risk-reward, target expected in ~9 trading days once it triggers.",
+      "scoreBreakdown": [
+        {
+          "label": "RS Rank 74",
+          "points": 8.5,
+          "max": 17,
+          "key": "rsrank"
+        },
+        {
+          "label": "EMA20 > EMA50 > EMA200 aligned",
+          "points": 14.0,
+          "max": 14,
+          "key": "ema"
+        },
+        {
+          "label": "Weekly chart also trending up",
+          "points": 11.0,
+          "max": 11,
+          "key": "weekly"
+        },
+        {
+          "label": "At/near new 52w high (97%)",
+          "points": 11.0,
+          "max": 11,
+          "key": "prox52"
+        },
+        {
+          "label": "Steady buying: buying volume rising, money flowing in, trading above its average cost basis",
+          "points": 12.0,
+          "max": 12,
+          "key": "accum"
+        },
+        {
+          "label": "Sector among market leaders",
+          "points": 9.0,
+          "max": 9,
+          "key": "sector"
+        },
+        {
+          "label": "No clear rising pattern yet",
+          "points": 0.0,
+          "max": 8,
+          "key": "hhhl"
+        },
+        {
+          "label": "Base tightening nicely (22% down to 10% range), quiet for 15 sessions",
+          "points": 2.7,
+          "max": 6,
+          "key": "vcp"
+        },
+        {
+          "label": "RSI 66 in sweet spot",
+          "points": 4.0,
+          "max": 4,
+          "key": "rsi"
+        },
+        {
+          "label": "History: 17 breakouts past year - 18% reached +4% before -3%, 29% hit -3% first (averaged +4.6% when it worked, -3.4% when it stopped out)",
+          "points": 1.2,
+          "max": 8,
+          "key": "history"
+        },
+        {
+          "label": "Pattern: NR7",
+          "points": 2,
+          "max": 2
+        }
+      ],
+      "riskRating": "Medium",
+      "grade": "B",
+      "failedFilters": [
+        "volume below 1.5x average"
+      ],
+      "aiExplanation": "RS Rank 74\nEMA20 > EMA50 > EMA200 aligned\nWeekly chart also trending up\nAt/near new 52w high (97%)\nSteady buying: buying volume rising, money flowing in, trading above its average cost basis\nSector among market leaders\nBase tightening nicely (22% down to 10% range), quiet for 15 sessions\nRSI 66 in sweet spot\nHistory: 17 breakouts past year - 18% reached +4% before -3%, 29% hit -3% first (averaged +4.6% when it worked, -3.4% when it stopped out)\nPattern: NR7",
+      "watchUntil": "2026-12-07",
+      "triggerAbove": 88.18,
+      "invalidBelow": 81.26,
+      "status": "WATCH",
+      "marketMood": "Neutral",
+      "scoreChangeFromPrior": {
+        "priorScore": 80,
+        "priorDate": "2026-11-25",
+        "totalDelta": -5,
+        "factorDeltas": [
+          {
+            "label": "RS Rank 74",
+            "delta": -4.3
+          }
+        ]
+      },
+      "watchTrend": "Weakening",
+      "recentNews": [
+        {
+          "title": "IDFC First Bank Share Price Target 2026",
+          "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5LUmpHcGlvSy1IOTIzN1o3b0Rrc0FpS0FJYlFHeXdQR3FtZ2x0bV95akZoYkJmaVFYZnVXb1VwSlN3X3h3WUxtWHBjc1hldUNLdWRBc1BTVl9sT29XNzUwdmRXTjAzNkFmblJkM1RxVEFGUQ?oc=5",
+          "source": "Univest",
+          "date": "2026-11-22"
+        },
+        {
+          "title": "IDFC FIRST Bank NSE:IDFCFIRSTB Rumour Clarification Nov 2026",
+          "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQdjdmcWpndDdJczZWUzE3MmxaZXo3WXBlaHBMZTA3WlF2LXVJT1ppTG01NTdBdmF1YzJnNjVfbnViTk5TbVh6eTFyOEo5X0lZQmJoOXFBcjNlNUVmcFlSM3VWZmIxRGxaZVdUaWtCNXNmY3dTY2ZuU0gwUG1Mbl9oY01JYThZQkE3SklMWnVSNnVfNGxfMnNJVDdidTQ1Rjk3SjFscVQyalphd2cwY1g2WDZvd0tuSm1NV2lGajB6N29uNTJJY0FTQkRwOEVUOE41c3pnVXgxZTROeTF6?oc=5",
+          "source": "Kalkine India",
+          "date": "2026-11-20"
+        },
+        {
+          "title": "IDFC FIRST Bank Issues Clarification on Share Price Movement Following NSE and BSE Filing on 20 November 2026",
+          "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQNE9rRkNZRWQ2dXVMbkdCZ3V5amFmRWVVdjVtdkEtclljUVg4TDVsQnVvd1Byd2NhUWF0VW1ZZHUxNUFfLXNiMGJIcENrYmY4Si1sbzJ1OHZicmxza0hRejFkcGc5dFZBNWZYM05Hdnk2YjRDU1RlNTZ5dXJLaUFLYzJGT2prdFBLSmxUNHc1SXJuSVIxaE14OWtTQjA2bm9iRTBOSFFnSzN3bXBWdS1hNl95VUIzUUk5VmlJY1hNaWtOTGRZaFl3cTkzNWZkRnFKMXhZV2R0a3dUWURXekh1SGNwQklzVE9ES3pSQQ?oc=5",
+          "source": "Kalkine Media",
+          "date": "2026-11-20"
+        }
+      ]
+    },
+    {
+      "id": "PPLPHARMA-2026-11-26",
+      "date": "2026-11-26",
+      "symbol": "PPLPHARMA",
+      "companyName": "Piramal Pharma Ltd.",
+      "sector": "Healthcare",
+      "closePrice": 234.7,
+      "projectedEntry": 253.9,
+      "buyZone": "251.4 - 256.4",
+      "stopLoss": 227.34,
+      "target": 298.17,
+      "target1": 298.17,
+      "target2": 324.73,
+      "riskReward": 1.67,
+      "target1Pct": 17.4,
+      "potentialPct": 27.9,
+      "resistance": 253.9,
+      "distToResistancePct": 8.18,
+      "triggerReadiness": 0,
+      "emaSpreadPct": 15.74,
+      "williamsR": -57.4,
+      "avgRejectionPct": 7.7,
+      "daysSinceLastTouch": 7,
+      "williamsRLabel": "Neutral",
+      "macdHist": -2.299,
+      "macdRising": false,
+      "emaConvergenceLabel": "Spread out - already trending",
+      "ret1mo": 1.7,
+      "ret3mo": 9.5,
+      "ret6mo": 40.5,
+      "volumeGapText": "Volume at 1.0x - needs 1.5x to confirm",
+      "estDaysToTrigger": 2,
+      "nearestSupport": 220.47,
+      "rvol": 0.98,
+      "ema20Level": 234.27,
+      "atrValue": 8.85,
+      "atrPct": 3.48725677196898,
+      "adxValue": 36.1,
+      "adxLabel": "Strong trend",
+      "distFrom52wHighPct": 0.0,
+      "near52wLabel": "At ATH",
+      "near52wStars": 5,
+      "avgDailyValueCr": 173.5,
+      "closingRangePct": 44,
+      "horizon": "1m",
+      "horizonLabel": "1 month",
+      "estDays": 9,
+      "estDaysRange": "9-25",
+      "maxHoldDays": 22,
+      "holdingPeriod": "1 month",
+      "breakoutScore": 75,
+      "confidenceScore": 75,
+      "percentile": 95,
+      "rsRankAtSignal": 92,
+      "adxAtSignal": 36.1,
+      "volRatioAtSignal": 0.98,
+      "rawRank": 6,
+      "scoredCount": 103,
+      "gradeLabel": "B",
+      "setupType": "Base breakout setup",
+      "sectorStrong": true,
+      "breakoutHistory": {
+        "n": 12,
+        "winRate": 33,
+        "stopRate": 67,
+        "neitherRate": 0,
+        "avg5d": 0.0,
+        "avgWinMove": 6.6,
+        "avgStopMove": -4.2,
+        "medianWinMove": 5.2,
+        "bestWinMove": 11.7,
+        "worstStopMove": -5.6,
+        "fastestWinDays": 2,
+        "typicalWinDays": 2,
+        "slowestWinDays": 5,
+        "periodStart": "2025-08-14",
+        "periodEnd": "2026-11-26",
+        "stability": "Variable",
+        "winQ25": 4.6,
+        "winQ75": 7.2,
+        "recentEvents": [
+          {
+            "date": "2026-11-09",
+            "outcome": "stop",
+            "movePct": -3.26
+          },
+          {
+            "date": "2026-10-28",
+            "outcome": "stop",
+            "movePct": -3.08
+          },
+          {
+            "date": "2026-09-08",
+            "outcome": "stop",
+            "movePct": -4.2
+          },
+          {
+            "date": "2026-08-10",
+            "outcome": "stop",
+            "movePct": -5.43
+          },
+          {
+            "date": "2026-08-05",
+            "outcome": "win",
+            "movePct": 5.67
+          },
+          {
+            "date": "2026-07-27",
+            "outcome": "win",
+            "movePct": 4.66
+          }
+        ]
+      },
+      "rsRank": 92.0,
+      "summary": "B (75/100): trading 8.2% below its pivot Rs253.9 after a 20-day base. Volume 1.0x average (P77), RS Rank 92, weekly and daily trends aligned. About 27.9% upside to T2 at 1.67:1 risk-reward, target expected in ~9 trading days once it triggers.",
+      "scoreBreakdown": [
+        {
+          "label": "RS Rank 92 - market leader",
+          "points": 17.0,
+          "max": 17,
+          "key": "rsrank"
+        },
+        {
+          "label": "EMA20 > EMA50 > EMA200 aligned",
+          "points": 14.0,
+          "max": 14,
+          "key": "ema"
+        },
+        {
+          "label": "Weekly chart also trending up",
+          "points": 11.0,
+          "max": 11,
+          "key": "weekly"
+        },
+        {
+          "label": "Near 52w high (92%)",
+          "points": 6.6,
+          "max": 11,
+          "key": "prox52"
+        },
+        {
+          "label": "Steady buying: buying volume rising, money flowing in, trading above its average cost basis",
+          "points": 12.0,
+          "max": 12,
+          "key": "accum"
+        },
+        {
+          "label": "Sector among market leaders",
+          "points": 9.0,
+          "max": 9,
+          "key": "sector"
+        },
+        {
+          "label": "No clear rising pattern yet",
+          "points": 0.0,
+          "max": 8,
+          "key": "hhhl"
+        },
+        {
+          "label": "No real tightening yet",
+          "points": 0.0,
+          "max": 6,
+          "key": "vcp"
+        },
+        {
+          "label": "RSI 55 in sweet spot",
+          "points": 4.0,
+          "max": 4,
+          "key": "rsi"
+        },
+        {
+          "label": "History: 12 breakouts past year - 33% reached +4% before -3%, 67% hit -3% first (averaged +6.6% when it worked, -4.2% when it stopped out)",
+          "points": 1.2,
+          "max": 8,
+          "key": "history"
+        }
+      ],
+      "riskRating": "Medium",
+      "grade": "B",
+      "failedFilters": [
+        "MACD not bullish or improving",
+        "volume below 1.5x average"
+      ],
+      "aiExplanation": "RS Rank 92 - market leader\nEMA20 > EMA50 > EMA200 aligned\nWeekly chart also trending up\nNear 52w high (92%)\nSteady buying: buying volume rising, money flowing in, trading above its average cost basis\nSector among market leaders\nRSI 55 in sweet spot\nHistory: 12 breakouts past year - 33% reached +4% before -3%, 67% hit -3% first (averaged +6.6% when it worked, -4.2% when it stopped out)",
+      "watchUntil": "2026-12-07",
+      "triggerAbove": 253.9,
+      "invalidBelow": 227.34,
+      "status": "WATCH",
+      "marketMood": "Neutral",
+      "scoreChangeFromPrior": {
+        "priorScore": 80,
+        "priorDate": "2026-11-24",
+        "totalDelta": -5,
+        "factorDeltas": [
+          {
+            "label": "No real tightening yet",
+            "delta": -2.7
+          }
+        ]
+      },
+      "watchTrend": "Weakening",
+      "recentNews": []
+    },
+    {
+      "id": "GROWW-2026-11-26",
+      "date": "2026-11-26",
+      "symbol": "GROWW",
+      "companyName": "Billionbrains Garage Ventures Ltd.",
+      "sector": "Financial Services",
+      "closePrice": 220.01,
+      "projectedEntry": 233.4,
+      "buyZone": "231.1 - 235.7",
+      "stopLoss": 210.6,
+      "target": 271.41,
+      "target1": 271.41,
+      "target2": 294.21,
+      "riskReward": 1.67,
+      "target1Pct": 16.3,
+      "potentialPct": 26.1,
+      "resistance": 233.4,
+      "distToResistancePct": 6.09,
+      "triggerReadiness": 0,
+      "emaSpreadPct": 11.27,
+      "williamsR": -71.8,
+      "avgRejectionPct": 8.0,
+      "daysSinceLastTouch": 5,
+      "williamsRLabel": "Neutral",
+      "macdHist": -1.161,
+      "macdRising": false,
+      "emaConvergenceLabel": "Spread out - already trending",
+      "ret1mo": 15.1,
+      "ret3mo": 14.6,
+      "ret6mo": 16.5,
+      "volumeGapText": "Volume at 0.7x - needs 1.5x to confirm",
+      "estDaysToTrigger": 2,
+      "nearestSupport": 208.55,
+      "rvol": 0.69,
+      "ema20Level": 215.46,
+      "atrValue": 7.6,
+      "atrPct": 3.256700740030212,
+      "adxValue": 36.0,
+      "adxLabel": "Strong trend",
+      "distFrom52wHighPct": 0.0,
+      "near52wLabel": "At ATH",
+      "near52wStars": 5,
+      "avgDailyValueCr": 1126.8,
+      "closingRangePct": 37,
+      "horizon": "1m",
+      "horizonLabel": "1 month",
+      "estDays": 9,
+      "estDaysRange": "9-25",
+      "maxHoldDays": 22,
+      "holdingPeriod": "1 month",
+      "breakoutScore": 73,
+      "confidenceScore": 73,
+      "percentile": 93,
+      "rsRankAtSignal": 89,
+      "adxAtSignal": 36.0,
+      "volRatioAtSignal": 0.69,
+      "rawRank": 8,
+      "scoredCount": 103,
+      "gradeLabel": "B",
+      "setupType": "Base breakout setup",
+      "sectorStrong": true,
+      "breakoutHistory": {
+        "n": 9,
+        "winRate": 44,
+        "stopRate": 56,
+        "neitherRate": 0,
+        "avg5d": 2.1,
+        "avgWinMove": 6.7,
+        "avgStopMove": -5.0,
+        "medianWinMove": 6.3,
+        "bestWinMove": 9.6,
+        "worstStopMove": -6.4,
+        "fastestWinDays": 1,
+        "typicalWinDays": 2,
+        "slowestWinDays": 2,
+        "periodStart": "2025-11-12",
+        "periodEnd": "2026-11-26",
+        "stability": "Stable",
+        "winQ25": 4.6,
+        "winQ75": 8.3,
+        "recentEvents": [
+          {
+            "date": "2026-11-03",
+            "outcome": "win",
+            "movePct": 9.6
+          },
+          {
+            "date": "2026-10-16",
+            "outcome": "stop",
+            "movePct": -6.0
+          },
+          {
+            "date": "2026-08-25",
+            "outcome": "stop",
+            "movePct": -3.9
+          },
+          {
+            "date": "2026-07-15",
+            "outcome": "stop",
+            "movePct": -5.45
+          },
+          {
+            "date": "2026-06-12",
+            "outcome": "win",
+            "movePct": 4.54
+          },
+          {
+            "date": "2026-04-22",
+            "outcome": "stop",
+            "movePct": -6.38
+          }
+        ]
+      },
+      "rsRank": 89.0,
+      "summary": "B (73/100): trading 6.1% below its pivot Rs233.4 after a 16-day base. Volume 0.7x average (P69), RS Rank 89, weekly and daily trends aligned. About 26.1% upside to T2 at 1.67:1 risk-reward, target expected in ~9 trading days once it triggers.",
+      "scoreBreakdown": [
+        {
+          "label": "RS Rank 89",
+          "points": 12.8,
+          "max": 17,
+          "key": "rsrank"
+        },
+        {
+          "label": "EMA20 > EMA50 > EMA200 aligned",
+          "points": 14.0,
+          "max": 14,
+          "key": "ema"
+        },
+        {
+          "label": "Weekly chart also trending up",
+          "points": 11.0,
+          "max": 11,
+          "key": "weekly"
+        },
+        {
+          "label": "Near 52w high (94%)",
+          "points": 6.6,
+          "max": 11,
+          "key": "prox52"
+        },
+        {
+          "label": "Steady buying: buying volume rising, money flowing in, trading above its average cost basis",
+          "points": 12.0,
+          "max": 12,
+          "key": "accum"
+        },
+        {
+          "label": "Sector among market leaders",
+          "points": 9.0,
+          "max": 9,
+          "key": "sector"
+        },
+        {
+          "label": "No clear rising pattern yet",
+          "points": 0.0,
+          "max": 8,
+          "key": "hhhl"
+        },
+        {
+          "label": "Base tightening nicely (25% down to 8% range), quiet for 16 sessions",
           "points": 2.7,
           "max": 6,
           "key": "vcp"
@@ -92253,15 +93813,634 @@
           "key": "rsi"
         },
         {
-          "label": "History: 12 breakouts past year - 33% reached +4% before -3%, 67% hit -3% first (averaged +6.6% when it worked, -4.2% when it stopped out)",
+          "label": "History: 9 breakouts past year - 44% reached +4% before -3%, 56% hit -3% first (averaged +6.7% when it worked, -5.0% when it stopped out)",
+          "points": 1.2,
+          "max": 8,
+          "key": "history"
+        }
+      ],
+      "riskRating": "Medium",
+      "grade": "B",
+      "failedFilters": [
+        "MACD not bullish or improving",
+        "volume below 1.5x average"
+      ],
+      "aiExplanation": "RS Rank 89\nEMA20 > EMA50 > EMA200 aligned\nWeekly chart also trending up\nNear 52w high (94%)\nSteady buying: buying volume rising, money flowing in, trading above its average cost basis\nSector among market leaders\nBase tightening nicely (25% down to 8% range), quiet for 16 sessions\nRSI 59 in sweet spot\nHistory: 9 breakouts past year - 44% reached +4% before -3%, 56% hit -3% first (averaged +6.7% when it worked, -5.0% when it stopped out)",
+      "watchUntil": "2026-12-07",
+      "triggerAbove": 233.4,
+      "invalidBelow": 210.6,
+      "status": "WATCH",
+      "marketMood": "Neutral",
+      "scoreChangeFromPrior": {
+        "priorScore": 75,
+        "priorDate": "2026-11-25",
+        "totalDelta": -2,
+        "factorDeltas": []
+      },
+      "watchTrend": "Unchanged",
+      "recentNews": [
+        {
+          "title": "Mahanadi Coalfields IPO Day 1: Subscription Status, Timeline & Key Issue Details",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWXROODA0OGFjNDBzdE1YVUVQMTNmM2FzcWhXVGo1NDJneFBYOExjekEtbTRDdTlfQWxyUV9Fdm8teEhicWhlTzZPcTZCOENIOWVUc09WY2RrSVRkMFhQYmdmcWFwN3J6bWVwNmc4WUgtNF9xM0NYZlFIUml2Z0tqVkpYUG13cEhqeGJsYjE3RklmWUNrRFRGNGZZR3A3QkVOT09fQQ?oc=5",
+          "source": "Groww",
+          "date": "2026-11-19"
+        },
+        {
+          "title": "Nifty 50 vs Nifty Next 50 vs Nifty 100",
+          "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFA0OFZSV0R6N0dZVFhhcS1xSHFsUEh3NnU4QkxJWWhvQzBITmRta3c5czd2UEd5Tkx4OFlrUlVLNkpLakc2VGFNbjdfcjB4VjVycDBQVU5EV3ZucGZ6LUlibHoxSnIwdGt2anVSNg?oc=5",
+          "source": "Groww",
+          "date": "2026-11-19"
+        },
+        {
+          "title": "Crystal Crop Protection IPO Day 2: Subscription Status, Timeline & Key Issue Details",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNOTJSYktrSjR2bi16U3dmTFdHX0RZWkRLdEVQUldIOVBPdHdZc3NNNXNyX0daazZFVkFCOXhKOWR2THFlQ1FlQzZLNEJDdmdCUGhUYjlEQ3EzdVZUaGNGa1ItLXBTN3hjUXRwSkJtZ2ZWUGdjUUVwUHI3bXFOUXhUaHdFQXkzNENsQ3VfWjBUQTg5VDNEak5FaWhWeDEyc2J4Y3BrT21UY0VGdw?oc=5",
+          "source": "Groww",
+          "date": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": "BANKINDIA-2026-11-26",
+      "date": "2026-11-26",
+      "symbol": "BANKINDIA",
+      "companyName": "Bank of India",
+      "sector": "Financial Services",
+      "closePrice": 160.29,
+      "projectedEntry": 166.85,
+      "buyZone": "165.2 - 168.5",
+      "stopLoss": 150.97,
+      "target": 193.31,
+      "target1": 193.31,
+      "target2": 209.19,
+      "riskReward": 1.67,
+      "target1Pct": 15.9,
+      "potentialPct": 25.4,
+      "resistance": 166.85,
+      "distToResistancePct": 4.09,
+      "triggerReadiness": 0,
+      "emaSpreadPct": 6.28,
+      "williamsR": -23.3,
+      "avgRejectionPct": 5.2,
+      "daysSinceLastTouch": 1,
+      "williamsRLabel": "Neutral",
+      "macdHist": 0.749,
+      "macdRising": false,
+      "emaConvergenceLabel": "Spread out - already trending",
+      "ret1mo": 18.1,
+      "ret3mo": 13.2,
+      "ret6mo": 14.6,
+      "volumeGapText": "Volume at 0.8x - needs 1.5x to confirm",
+      "estDaysToTrigger": 1,
+      "nearestSupport": 135.59,
+      "rvol": 0.83,
+      "ema20Level": 151.95,
+      "atrValue": 5.29,
+      "atrPct": 3.17222637311899,
+      "adxValue": 41.6,
+      "adxLabel": "Strong trend",
+      "distFrom52wHighPct": -6.5,
+      "near52wLabel": "Approaching ATH",
+      "near52wStars": 3,
+      "avgDailyValueCr": 204.1,
+      "closingRangePct": 0,
+      "horizon": "1m",
+      "horizonLabel": "1 month",
+      "estDays": 9,
+      "estDaysRange": "9-25",
+      "maxHoldDays": 22,
+      "holdingPeriod": "1 month",
+      "breakoutScore": 72,
+      "confidenceScore": 72,
+      "percentile": 92,
+      "rsRankAtSignal": 82,
+      "adxAtSignal": 41.6,
+      "volRatioAtSignal": 0.83,
+      "rawRank": 9,
+      "scoredCount": 103,
+      "gradeLabel": "B",
+      "setupType": "Momentum continuation",
+      "sectorStrong": true,
+      "breakoutHistory": {
+        "n": 17,
+        "winRate": 41,
+        "stopRate": 24,
+        "neitherRate": 35,
+        "avg5d": 1.5,
+        "avgWinMove": 4.7,
+        "avgStopMove": -4.6,
+        "medianWinMove": 4.4,
+        "bestWinMove": 5.7,
+        "worstStopMove": -5.1,
+        "fastestWinDays": 1,
+        "typicalWinDays": 3,
+        "slowestWinDays": 4,
+        "periodStart": "2025-08-14",
+        "periodEnd": "2026-11-26",
+        "stability": "Stable",
+        "winQ25": 4.2,
+        "winQ75": 5.0,
+        "recentEvents": [
+          {
+            "date": "2026-11-17",
+            "outcome": "win",
+            "movePct": 4.02
+          },
+          {
+            "date": "2026-11-13",
+            "outcome": "win",
+            "movePct": 5.71
+          },
+          {
+            "date": "2026-11-11",
+            "outcome": "win",
+            "movePct": 4.1
+          },
+          {
+            "date": "2026-11-09",
+            "outcome": "stop",
+            "movePct": -4.31
+          },
+          {
+            "date": "2026-06-09",
+            "outcome": "stop",
+            "movePct": -5.08
+          },
+          {
+            "date": "2026-04-22",
+            "outcome": "stop",
+            "movePct": -4.67
+          }
+        ]
+      },
+      "rsRank": 82.0,
+      "summary": "B (72/100): trading 4.1% below its pivot Rs166.8 after a 11-day base. Volume 0.8x average (P73), RS Rank 82, weekly and daily trends aligned. About 25.4% upside to T2 at 1.67:1 risk-reward, target expected in ~9 trading days once it triggers.",
+      "scoreBreakdown": [
+        {
+          "label": "RS Rank 82",
+          "points": 12.8,
+          "max": 17,
+          "key": "rsrank"
+        },
+        {
+          "label": "EMA20 > EMA50 > EMA200 aligned",
+          "points": 14.0,
+          "max": 14,
+          "key": "ema"
+        },
+        {
+          "label": "Weekly chart also trending up",
+          "points": 11.0,
+          "max": 11,
+          "key": "weekly"
+        },
+        {
+          "label": "90% of 52w high",
+          "points": 3.3,
+          "max": 11,
+          "key": "prox52"
+        },
+        {
+          "label": "Steady buying: buying volume rising, money flowing in, trading above its average cost basis",
+          "points": 12.0,
+          "max": 12,
+          "key": "accum"
+        },
+        {
+          "label": "Sector among market leaders",
+          "points": 9.0,
+          "max": 9,
+          "key": "sector"
+        },
+        {
+          "label": "No clear rising pattern yet",
+          "points": 0.0,
+          "max": 8,
+          "key": "hhhl"
+        },
+        {
+          "label": "Base tightening nicely (27% down to 11% range), quiet for 11 sessions",
+          "points": 2.7,
+          "max": 6,
+          "key": "vcp"
+        },
+        {
+          "label": "RSI 68 in sweet spot",
+          "points": 4.0,
+          "max": 4,
+          "key": "rsi"
+        },
+        {
+          "label": "History: 17 breakouts past year - 41% reached +4% before -3%, 24% hit -3% first (averaged +4.7% when it worked, -4.6% when it stopped out)",
           "points": 1.2,
           "max": 8,
           "key": "history"
         },
         {
-          "label": "Pattern: NR7",
+          "label": "Pattern: Inside bar",
           "points": 2,
           "max": 2
+        }
+      ],
+      "riskRating": "Medium",
+      "grade": "B",
+      "failedFilters": [
+        "volume below 1.5x average"
+      ],
+      "aiExplanation": "RS Rank 82\nEMA20 > EMA50 > EMA200 aligned\nWeekly chart also trending up\n90% of 52w high\nSteady buying: buying volume rising, money flowing in, trading above its average cost basis\nSector among market leaders\nBase tightening nicely (27% down to 11% range), quiet for 11 sessions\nRSI 68 in sweet spot\nHistory: 17 breakouts past year - 41% reached +4% before -3%, 24% hit -3% first (averaged +4.7% when it worked, -4.6% when it stopped out)\nPattern: Inside bar",
+      "watchUntil": "2026-12-07",
+      "triggerAbove": 166.85,
+      "invalidBelow": 150.97,
+      "status": "WATCH",
+      "marketMood": "Neutral",
+      "scoreChangeFromPrior": {
+        "priorScore": 72,
+        "priorDate": "2026-11-25",
+        "totalDelta": 0,
+        "factorDeltas": []
+      },
+      "watchTrend": "Unchanged",
+      "recentNews": [
+        {
+          "title": "NSE receives RBI's approval to launch corporate bond index futures",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOV21BT29DYWd0czBqbWdWeVFyRFFkeG5DS05ZMHpiQ08wR0NvVEJlcURpTEVCcUVMZXhmNnVMTE9IanlNWGR0ZzNENW9hRVdmTTVIdjNUdWJBUmhNUGN6Wi02cFdzUms3OFRPX3VmaGx2dkZsMzNEdTh4ZzRKSmk2Y2g4RFBhTkNsNXZ3dG1OWW1oYWZFcVNPZHVuY3FEN0dJS1lYYklobE00c3JlLUh6c0NvcERPR2RDTXlGbENPQmhkYnY2bjFzRmlFTUN5UdIB0wFBVV95cUxQUWRQRHQzeGROLURINm1vT0xNY0lRYm1BcmJHVG5BWUxYUmpDNUtCc04wcmlEcGxfMWZPQWNjSG4yOFNxWkFSdUNmcVZsUGIzdEhNR3JhcVNvWWFfX1Vsdnh2bnc5MU95NkVwOWxVdFA4emdmQ2VDSTgxeEFUU0VsbDVOLTZQUTZ6MklPQnlQa0xsYjFFTkZuN185RGJmbThJbUJxOUxaUm5UN3BfanhhREctQlhmTGdlejFEZGpjSWJqZTBqWDVYS2hXY0ZfR1ZQYXdJ?oc=5",
+          "source": "Business Standard",
+          "date": "2026-11-26"
+        },
+        {
+          "title": "Trade Spotlight: How should you trade Coforge, Torrent Pharma, Siemens Energy, Union Bank of India,...",
+          "link": "https://news.google.com/rss/articles/CBMipgJBVV95cUxNdXJzTXB1TUxVaTZSVVBxOC1ZOEFRWlB4bHZDdnZqWUE2eG9NN0RSMXk1QkpvVG1UZm1Vam5IeVFMU1hiZzJaMllCVTdabHA4Y0M4MnIwSkFDbFRsdDd1bHV2SmEwQ0ItUjZmaXN3WHZrOV9TNVp3VjlCaDE5NkpwTDBpNzZOalFzR3hDbGFGNlhwOENlUXFiLVpFN0ZxVVcwbU5aN0I4MHQ3NFNLVVBIbEZmdUczZG5JLUdRX3VPTGFXVXFmTE40NFFrXzlyb01nTjFzTGgyejBoZXV0YU5oVDJ6d0NiN25SdjcwOGVqbjJXREREaEE1U1pLTy1mWVBBdGVfZGpiQmMtbC10VGVzTXdtNGo1d1VOTXJjZjJzMU9wazVTeWfSAasCQVVfeXFMUFpTM3NCb3RWbkJTWllZdjcxc29idnV2eU1kVF9qcm9Rbm9FLTNVY3BDeWQwaFd2YVBnY2kyMWJsX0hSYVhZQ0JVcHphQmNpYW9wSjlnQ1hIazR3MTFfOFVUR2tsYTBUNmhHNnlySFM0c2hibUR4MThNRUUzRnlUU2d0a1J3bXZnUFdfYkRHTENHR1VpV3g3c2xHQ3BCcEpYUDlSb28zOXBhVDVRMmcwVXdtTVJjOWJya2xjRUpKNm9tb1hZVUx6bENrMWxHUFcxdWI3VTZmSTBEVDF0UFZDLVYtdVR5UkM5d1V6NWlROVVMOG5oT1ppaFgwQW1LbEhGTlY5b01fV08tMDc2YXZqYXk1YUdkMGhxenNUaF9wOUVObnNCRW5GSnRtWDA?oc=5",
+          "source": "Moneycontrol.com",
+          "date": "2026-11-25"
+        },
+        {
+          "title": "NSE market cap crosses Rs 5.76 lakh crore, shares rally over 27% in two months, 9th most valued company",
+          "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPMUhPQnotX1c2UXJFR2l2SVMwVlN2aG5IZms4LUozb3Z3czNZQkxkSkFWNDFJT2JSXzBTU3JmSDM4VDJRM3pBRzNhMUJwQUhTY0lqVDRJdE5PaTVVNzBoekZ5Y2xwQnhrNFpTaU1RbVRQR2owVmhZREZ3S0VuanM3SkpRTWZiUU9KVm5sN3ZaSEQ1S0lNMmRzSlRvZ3duOG5vMVMzeXRaMm9ad1ZvQzRhNkRtWC0xT2pHcHdlOGZmb2NIVEIyODQ3cXJ0YVd2VUJxSEpjX2VLU2tmT1k?oc=5",
+          "source": "https://www.indiagazette.com/",
+          "date": "2026-11-25"
+        }
+      ]
+    },
+    {
+      "id": "PWL-2026-11-26",
+      "date": "2026-11-26",
+      "symbol": "PWL",
+      "companyName": "Physicswallah Ltd.",
+      "sector": "Consumer Services",
+      "closePrice": 136.5,
+      "projectedEntry": 141.1,
+      "buyZone": "139.7 - 142.5",
+      "stopLoss": 124.89,
+      "target": 170.49,
+      "target1": 170.49,
+      "target2": 188.12,
+      "riskReward": 1.81,
+      "target1Pct": 20.8,
+      "potentialPct": 33.3,
+      "resistance": 141.1,
+      "distToResistancePct": 3.37,
+      "triggerReadiness": 0,
+      "emaSpreadPct": 4.96,
+      "williamsR": -30.8,
+      "avgRejectionPct": 10.3,
+      "daysSinceLastTouch": 0,
+      "williamsRLabel": "Neutral",
+      "macdHist": 0.902,
+      "macdRising": false,
+      "emaConvergenceLabel": "Compressing",
+      "ret1mo": 3.0,
+      "ret3mo": 17.4,
+      "ret6mo": 48.3,
+      "volumeGapText": "Volume at 0.3x - needs 1.5x to confirm",
+      "estDaysToTrigger": 1,
+      "nearestSupport": 126.15,
+      "rvol": 0.27,
+      "ema20Level": 133.01,
+      "atrValue": 5.88,
+      "atrPct": 4.165690367845977,
+      "adxValue": 20.1,
+      "adxLabel": "Moderate trend",
+      "distFrom52wHighPct": -11.5,
+      "near52wLabel": "Below ATH",
+      "near52wStars": 2,
+      "avgDailyValueCr": 165.0,
+      "closingRangePct": 34,
+      "horizon": "1m",
+      "horizonLabel": "1 month",
+      "estDays": 9,
+      "estDaysRange": "9-25",
+      "maxHoldDays": 22,
+      "holdingPeriod": "1 month",
+      "breakoutScore": 71,
+      "confidenceScore": 71,
+      "percentile": 91,
+      "rsRankAtSignal": 90,
+      "adxAtSignal": 20.1,
+      "volRatioAtSignal": 0.27,
+      "rawRank": 10,
+      "scoredCount": 103,
+      "gradeLabel": "B",
+      "setupType": "Base breakout setup",
+      "sectorStrong": false,
+      "breakoutHistory": {
+        "n": 7,
+        "winRate": 57,
+        "stopRate": 43,
+        "neitherRate": 0,
+        "avg5d": 4.0,
+        "avgWinMove": 8.1,
+        "avgStopMove": -5.0,
+        "medianWinMove": 7.3,
+        "bestWinMove": 13.0,
+        "worstStopMove": -7.9,
+        "fastestWinDays": 1,
+        "typicalWinDays": 1,
+        "slowestWinDays": 2,
+        "periodStart": "2025-11-18",
+        "periodEnd": "2026-11-26",
+        "stability": "Stable",
+        "winQ25": 6.6,
+        "winQ75": 8.9,
+        "recentEvents": [
+          {
+            "date": "2026-10-08",
+            "outcome": "stop",
+            "movePct": -3.87
+          },
+          {
+            "date": "2026-09-11",
+            "outcome": "stop",
+            "movePct": -7.88
+          },
+          {
+            "date": "2026-07-06",
+            "outcome": "win",
+            "movePct": 13.01
+          },
+          {
+            "date": "2026-07-02",
+            "outcome": "stop",
+            "movePct": -3.18
+          },
+          {
+            "date": "2026-06-19",
+            "outcome": "win",
+            "movePct": 7.19
+          },
+          {
+            "date": "2026-04-15",
+            "outcome": "win",
+            "movePct": 7.49
+          }
+        ]
+      },
+      "rsRank": 90.0,
+      "summary": "B (71/100): trading 3.4% below its pivot Rs141.1 after a 22-day base. Volume 0.3x average (P14), RS Rank 90, weekly and daily trends aligned. About 33.3% upside to T2 at 1.81:1 risk-reward, target expected in ~9 trading days once it triggers.",
+      "scoreBreakdown": [
+        {
+          "label": "RS Rank 90",
+          "points": 12.8,
+          "max": 17,
+          "key": "rsrank"
+        },
+        {
+          "label": "EMA20 > EMA50 > EMA200 aligned",
+          "points": 14.0,
+          "max": 14,
+          "key": "ema"
+        },
+        {
+          "label": "Weekly chart also trending up",
+          "points": 11.0,
+          "max": 11,
+          "key": "weekly"
+        },
+        {
+          "label": "86% of 52w high",
+          "points": 3.3,
+          "max": 11,
+          "key": "prox52"
+        },
+        {
+          "label": "Steady buying: buying volume rising, trading above its average cost basis",
+          "points": 8.4,
+          "max": 12,
+          "key": "accum"
+        },
+        {
+          "label": "Sector not leading",
+          "points": 0.0,
+          "max": 9,
+          "key": "sector"
+        },
+        {
+          "label": "Each pullback held higher than the last",
+          "points": 8.0,
+          "max": 8,
+          "key": "hhhl"
+        },
+        {
+          "label": "Base tightening nicely (17% down to 11% range), quiet for 22 sessions",
+          "points": 2.7,
+          "max": 6,
+          "key": "vcp"
+        },
+        {
+          "label": "RSI 57 in sweet spot",
+          "points": 4.0,
+          "max": 4,
+          "key": "rsi"
+        },
+        {
+          "label": "History: 7 breakouts past year - 57% reached +4% before -3%, 43% hit -3% first (averaged +8.1% when it worked, -5.0% when it stopped out)",
+          "points": 4.8,
+          "max": 8,
+          "key": "history"
+        },
+        {
+          "label": "Pattern: NR7, Inside bar",
+          "points": 2,
+          "max": 2
+        }
+      ],
+      "riskRating": "High",
+      "grade": "B",
+      "failedFilters": [
+        "volume below 1.5x average"
+      ],
+      "aiExplanation": "RS Rank 90\nEMA20 > EMA50 > EMA200 aligned\nWeekly chart also trending up\n86% of 52w high\nSteady buying: buying volume rising, trading above its average cost basis\nEach pullback held higher than the last\nBase tightening nicely (17% down to 11% range), quiet for 22 sessions\nRSI 57 in sweet spot\nHistory: 7 breakouts past year - 57% reached +4% before -3%, 43% hit -3% first (averaged +8.1% when it worked, -5.0% when it stopped out)\nPattern: NR7, Inside bar",
+      "watchUntil": "2026-12-07",
+      "triggerAbove": 141.1,
+      "invalidBelow": 124.89,
+      "status": "WATCH",
+      "marketMood": "Neutral",
+      "scoreChangeFromPrior": {
+        "priorScore": 70,
+        "priorDate": "2026-11-20",
+        "totalDelta": 1,
+        "factorDeltas": [
+          {
+            "label": "Sector not leading",
+            "delta": -9.0
+          },
+          {
+            "label": "Each pullback held higher than the last",
+            "delta": 8.0
+          }
+        ]
+      },
+      "watchTrend": "Unchanged",
+      "recentNews": [
+        {
+          "title": "PHYSICSWALLAH LIMITED Share Price - Live NSE: PWL Stock Price & Chart",
+          "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5heDNtWlVUVDZ6LUdZZ0g3TUhNdzdTcWQzQzBka1FBSk9XRkdhcC01dlVNM0FJdWFWYXF0ckJ4T2wxTkxZc0FYZGNRWk04OVM5eUdpbkxPVDNmMVlqbXlDQ0pVUmRWMTFfUHo3Qw?oc=5",
+          "source": "Upstox",
+          "date": "2026-11-25"
+        },
+        {
+          "title": "PWL Stock Price and Chart — NSE:PWL",
+          "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1OdjQ4ekRuVDFpZE5EaVQtcWVMc0ZlMEtrUkVhWjFLQmI5VHBzUmJkck40UGZIZHRsbmZQb2FWT2xtMEtQdV9MV2xVZC15eThpM0FMNVExRQ?oc=5",
+          "source": "TradingView",
+          "date": "2026-11-20"
+        },
+        {
+          "title": "Physicswallah (PWL) Share Price Rises 2.09% as PWL Traded at Rs 139.45",
+          "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE4yeE16c1h5ZEdDTWs1d25ER3hhbkpmSTBtLXZ2NWZ4RWtiNUh5d3oteHVEZGFNU0xRSWhDYTdob0ZRZjZvRDFZZWZETUZoWWxfeXppOGtVUmJLNDBNekRUcjRNM3VvZl9vMkZkZW4xMkc4Qzd0dFZGZ29wazdObEk?oc=5",
+          "source": "Univest",
+          "date": "2026-11-23"
+        }
+      ]
+    }
+  ],
+  "priorScores": {
+    "MAHABANK": {
+      "date": "2026-11-26",
+      "score": 81,
+      "breakdown": [
+        {
+          "label": "RS Rank 93 - market leader",
+          "points": 17.0,
+          "max": 17,
+          "key": "rsrank"
+        },
+        {
+          "label": "EMA20 > EMA50 > EMA200 aligned",
+          "points": 14.0,
+          "max": 14,
+          "key": "ema"
+        },
+        {
+          "label": "Weekly chart also trending up",
+          "points": 11.0,
+          "max": 11,
+          "key": "weekly"
+        },
+        {
+          "label": "Near 52w high (94%)",
+          "points": 6.6,
+          "max": 11,
+          "key": "prox52"
+        },
+        {
+          "label": "Steady buying: buying volume rising, money flowing in, trading above its average cost basis",
+          "points": 12.0,
+          "max": 12,
+          "key": "accum"
+        },
+        {
+          "label": "Sector among market leaders",
+          "points": 9.0,
+          "max": 9,
+          "key": "sector"
+        },
+        {
+          "label": "No clear rising pattern yet",
+          "points": 0.0,
+          "max": 8,
+          "key": "hhhl"
+        },
+        {
+          "label": "Base tightening nicely (30% down to 12% range), quiet for 13 sessions",
+          "points": 2.7,
+          "max": 6,
+          "key": "vcp"
+        },
+        {
+          "label": "RSI 60 in sweet spot",
+          "points": 4.0,
+          "max": 4,
+          "key": "rsi"
+        },
+        {
+          "label": "History: 15 breakouts past year - 60% reached +4% before -3%, 40% hit -3% first (averaged +5.3% when it worked, -3.6% when it stopped out)",
+          "points": 4.8,
+          "max": 8,
+          "key": "history"
+        }
+      ]
+    },
+    "PPLPHARMA": {
+      "date": "2026-11-26",
+      "score": 75,
+      "breakdown": [
+        {
+          "label": "RS Rank 92 - market leader",
+          "points": 17.0,
+          "max": 17,
+          "key": "rsrank"
+        },
+        {
+          "label": "EMA20 > EMA50 > EMA200 aligned",
+          "points": 14.0,
+          "max": 14,
+          "key": "ema"
+        },
+        {
+          "label": "Weekly chart also trending up",
+          "points": 11.0,
+          "max": 11,
+          "key": "weekly"
+        },
+        {
+          "label": "Near 52w high (92%)",
+          "points": 6.6,
+          "max": 11,
+          "key": "prox52"
+        },
+        {
+          "label": "Steady buying: buying volume rising, money flowing in, trading above its average cost basis",
+          "points": 12.0,
+          "max": 12,
+          "key": "accum"
+        },
+        {
+          "label": "Sector among market leaders",
+          "points": 9.0,
+          "max": 9,
+          "key": "sector"
+        },
+        {
+          "label": "No clear rising pattern yet",
+          "points": 0.0,
+          "max": 8,
+          "key": "hhhl"
+        },
+        {
+          "label": "No real tightening yet",
+          "points": 0.0,
+          "max": 6,
+          "key": "vcp"
+        },
+        {
+          "label": "RSI 55 in sweet spot",
+          "points": 4.0,
+          "max": 4,
+          "key": "rsi"
+        },
+        {
+          "label": "History: 12 breakouts past year - 33% reached +4% before -3%, 67% hit -3% first (averaged +6.6% when it worked, -4.2% when it stopped out)",
+          "points": 1.2,
+          "max": 8,
+          "key": "history"
         }
       ]
     },
@@ -92332,11 +94511,11 @@
       ]
     },
     "MOTHERSON": {
-      "date": "2026-11-25",
-      "score": 87,
+      "date": "2026-11-26",
+      "score": 88,
       "breakdown": [
         {
-          "label": "RS Rank 84",
+          "label": "RS Rank 81",
           "points": 12.8,
           "max": 17,
           "key": "rsrank"
@@ -92354,7 +94533,7 @@
           "key": "weekly"
         },
         {
-          "label": "At/near new 52w high (96%)",
+          "label": "At/near new 52w high (95%)",
           "points": 11.0,
           "max": 11,
           "key": "prox52"
@@ -92378,13 +94557,13 @@
           "key": "hhhl"
         },
         {
-          "label": "Base tightening nicely (13% down to 8% range), quiet for 61 sessions",
-          "points": 3.6,
+          "label": "Base tightening nicely (14% down to 8% range), quiet for 62 sessions",
+          "points": 5.4,
           "max": 6,
           "key": "vcp"
         },
         {
-          "label": "RSI 55 in sweet spot",
+          "label": "RSI 53 in sweet spot",
           "points": 4.0,
           "max": 4,
           "key": "rsi"
@@ -92464,83 +94643,12 @@
       ]
     },
     "IDFCFIRSTB": {
-      "date": "2026-11-25",
-      "score": 80,
+      "date": "2026-11-26",
+      "score": 75,
       "breakdown": [
         {
-          "label": "RS Rank 80",
-          "points": 12.8,
-          "max": 17,
-          "key": "rsrank"
-        },
-        {
-          "label": "EMA20 > EMA50 > EMA200 aligned",
-          "points": 14.0,
-          "max": 14,
-          "key": "ema"
-        },
-        {
-          "label": "Weekly chart also trending up",
-          "points": 11.0,
-          "max": 11,
-          "key": "weekly"
-        },
-        {
-          "label": "At/near new 52w high (98%)",
-          "points": 11.0,
-          "max": 11,
-          "key": "prox52"
-        },
-        {
-          "label": "Steady buying: buying volume rising, money flowing in, trading above its average cost basis",
-          "points": 12.0,
-          "max": 12,
-          "key": "accum"
-        },
-        {
-          "label": "Sector among market leaders",
-          "points": 9.0,
-          "max": 9,
-          "key": "sector"
-        },
-        {
-          "label": "No clear rising pattern yet",
-          "points": 0.0,
-          "max": 8,
-          "key": "hhhl"
-        },
-        {
-          "label": "Base tightening nicely (21% down to 11% range), quiet for 14 sessions",
-          "points": 2.7,
-          "max": 6,
-          "key": "vcp"
-        },
-        {
-          "label": "RSI 68 in sweet spot",
-          "points": 4.0,
-          "max": 4,
-          "key": "rsi"
-        },
-        {
-          "label": "History: 17 breakouts past year - 18% reached +4% before -3%, 29% hit -3% first (averaged +4.6% when it worked, -3.4% when it stopped out)",
-          "points": 1.2,
-          "max": 8,
-          "key": "history"
-        },
-        {
-          "label": "Pattern: Inside bar",
-          "points": 2,
-          "max": 2
-        }
-      ]
-    },
-    "UNIONBANK": {
-      "date": "2026-11-25",
-      "score": 92,
-      "breakdown": [
-        {
-          "label": "RS Rank 93 - market leader",
-          "points": 17.0,
+          "label": "RS Rank 74",
+          "points": 8.5,
           "max": 17,
           "key": "rsrank"
         },
@@ -92575,43 +94683,43 @@
           "key": "sector"
         },
         {
-          "label": "Each pullback held higher than the last",
-          "points": 8.0,
+          "label": "No clear rising pattern yet",
+          "points": 0.0,
           "max": 8,
           "key": "hhhl"
         },
         {
-          "label": "Base tightening nicely (24% down to 11% range), quiet for 12 sessions",
+          "label": "Base tightening nicely (22% down to 10% range), quiet for 15 sessions",
           "points": 2.7,
           "max": 6,
           "key": "vcp"
         },
         {
-          "label": "RSI 69 in sweet spot",
+          "label": "RSI 66 in sweet spot",
           "points": 4.0,
           "max": 4,
           "key": "rsi"
         },
         {
-          "label": "History: 17 breakouts past year - 24% reached +4% before -3%, 41% hit -3% first (averaged +5.5% when it worked, -5.4% when it stopped out)",
+          "label": "History: 17 breakouts past year - 18% reached +4% before -3%, 29% hit -3% first (averaged +4.6% when it worked, -3.4% when it stopped out)",
           "points": 1.2,
           "max": 8,
           "key": "history"
         },
         {
-          "label": "Pattern: Inside bar",
+          "label": "Pattern: NR7",
           "points": 2,
           "max": 2
         }
       ]
     },
-    "WELSPUNLIV": {
-      "date": "2026-11-25",
-      "score": 92,
+    "UNIONBANK": {
+      "date": "2026-11-26",
+      "score": 88,
       "breakdown": [
         {
-          "label": "RS Rank 100 - market leader",
-          "points": 17.0,
+          "label": "RS Rank 90",
+          "points": 12.8,
           "max": 17,
           "key": "rsrank"
         },
@@ -92628,7 +94736,7 @@
           "key": "weekly"
         },
         {
-          "label": "At/near new 52w high (99%)",
+          "label": "At/near new 52w high (96%)",
           "points": 11.0,
           "max": 11,
           "key": "prox52"
@@ -92652,13 +94760,84 @@
           "key": "hhhl"
         },
         {
-          "label": "Base tightening nicely (27% down to 13% range), quiet for 15 sessions",
+          "label": "Base tightening nicely (25% down to 10% range), quiet for 13 sessions",
           "points": 2.7,
           "max": 6,
           "key": "vcp"
         },
         {
-          "label": "RSI 67 in sweet spot",
+          "label": "RSI 64 in sweet spot",
+          "points": 4.0,
+          "max": 4,
+          "key": "rsi"
+        },
+        {
+          "label": "History: 17 breakouts past year - 24% reached +4% before -3%, 41% hit -3% first (averaged +5.5% when it worked, -5.4% when it stopped out)",
+          "points": 1.2,
+          "max": 8,
+          "key": "history"
+        },
+        {
+          "label": "Pattern: Inside bar",
+          "points": 2,
+          "max": 2
+        }
+      ]
+    },
+    "WELSPUNLIV": {
+      "date": "2026-11-26",
+      "score": 90,
+      "breakdown": [
+        {
+          "label": "RS Rank 100 - market leader",
+          "points": 17.0,
+          "max": 17,
+          "key": "rsrank"
+        },
+        {
+          "label": "EMA20 > EMA50 > EMA200 aligned",
+          "points": 14.0,
+          "max": 14,
+          "key": "ema"
+        },
+        {
+          "label": "Weekly chart also trending up",
+          "points": 11.0,
+          "max": 11,
+          "key": "weekly"
+        },
+        {
+          "label": "At/near new 52w high (100%)",
+          "points": 11.0,
+          "max": 11,
+          "key": "prox52"
+        },
+        {
+          "label": "Steady buying: buying volume rising, money flowing in, trading above its average cost basis",
+          "points": 12.0,
+          "max": 12,
+          "key": "accum"
+        },
+        {
+          "label": "Sector among market leaders",
+          "points": 9.0,
+          "max": 9,
+          "key": "sector"
+        },
+        {
+          "label": "Each pullback held higher than the last",
+          "points": 8.0,
+          "max": 8,
+          "key": "hhhl"
+        },
+        {
+          "label": "Base tightening nicely (27% down to 13% range), quiet for 16 sessions",
+          "points": 2.7,
+          "max": 6,
+          "key": "vcp"
+        },
+        {
+          "label": "RSI 68 in sweet spot",
           "points": 4.0,
           "max": 4,
           "key": "rsi"
@@ -92668,11 +94847,6 @@
           "points": 1.2,
           "max": 8,
           "key": "history"
-        },
-        {
-          "label": "Pattern: NR7, Inside bar",
-          "points": 2,
-          "max": 2
         }
       ]
     },
@@ -92946,11 +95120,11 @@
       ]
     },
     "PWL": {
-      "date": "2026-11-20",
-      "score": 70,
+      "date": "2026-11-26",
+      "score": 71,
       "breakdown": [
         {
-          "label": "RS Rank 81",
+          "label": "RS Rank 90",
           "points": 12.8,
           "max": 17,
           "key": "rsrank"
@@ -92968,7 +95142,7 @@
           "key": "weekly"
         },
         {
-          "label": "85% of 52w high",
+          "label": "86% of 52w high",
           "points": 3.3,
           "max": 11,
           "key": "prox52"
@@ -92980,25 +95154,25 @@
           "key": "accum"
         },
         {
-          "label": "Sector among market leaders",
-          "points": 9.0,
+          "label": "Sector not leading",
+          "points": 0.0,
           "max": 9,
           "key": "sector"
         },
         {
-          "label": "No clear rising pattern yet",
-          "points": 0.0,
+          "label": "Each pullback held higher than the last",
+          "points": 8.0,
           "max": 8,
           "key": "hhhl"
         },
         {
-          "label": "Base tightening nicely (20% down to 10% range), quiet for 18 sessions",
+          "label": "Base tightening nicely (17% down to 11% range), quiet for 22 sessions",
           "points": 2.7,
           "max": 6,
           "key": "vcp"
         },
         {
-          "label": "RSI 59 in sweet spot",
+          "label": "RSI 57 in sweet spot",
           "points": 4.0,
           "max": 4,
           "key": "rsi"
@@ -93008,6 +95182,11 @@
           "points": 4.8,
           "max": 8,
           "key": "history"
+        },
+        {
+          "label": "Pattern: NR7, Inside bar",
+          "points": 2,
+          "max": 2
         }
       ]
     },
@@ -93347,11 +95526,11 @@
       ]
     },
     "PNB": {
-      "date": "2026-11-25",
-      "score": 74,
+      "date": "2026-11-26",
+      "score": 88,
       "breakdown": [
         {
-          "label": "RS Rank 95 - market leader",
+          "label": "RS Rank 94 - market leader",
           "points": 17.0,
           "max": 17,
           "key": "rsrank"
@@ -93369,7 +95548,7 @@
           "key": "weekly"
         },
         {
-          "label": "Near 52w high (95%)",
+          "label": "Near 52w high (94%)",
           "points": 6.6,
           "max": 11,
           "key": "prox52"
@@ -93387,20 +95566,20 @@
           "key": "sector"
         },
         {
-          "label": "No clear rising pattern yet",
-          "points": 0.0,
+          "label": "Each pullback held higher than the last",
+          "points": 8.0,
           "max": 8,
           "key": "hhhl"
         },
         {
-          "label": "Trading in a tight range (16%)",
-          "points": 1.2,
+          "label": "Base tightening nicely (29% down to 13% range), quiet for 10 sessions",
+          "points": 2.7,
           "max": 6,
           "key": "vcp"
         },
         {
-          "label": "RSI 71 acceptable",
-          "points": 2.0,
+          "label": "RSI 68 in sweet spot",
+          "points": 4.0,
           "max": 4,
           "key": "rsi"
         },
@@ -93409,6 +95588,11 @@
           "points": 1.2,
           "max": 8,
           "key": "history"
+        },
+        {
+          "label": "Pattern: NR7, Inside bar",
+          "points": 2,
+          "max": 2
         }
       ]
     },
@@ -93484,8 +95668,8 @@
       ]
     },
     "GROWW": {
-      "date": "2026-11-25",
-      "score": 75,
+      "date": "2026-11-26",
+      "score": 73,
       "breakdown": [
         {
           "label": "RS Rank 89",
@@ -93506,7 +95690,7 @@
           "key": "weekly"
         },
         {
-          "label": "Near 52w high (93%)",
+          "label": "Near 52w high (94%)",
           "points": 6.6,
           "max": 11,
           "key": "prox52"
@@ -93530,13 +95714,13 @@
           "key": "hhhl"
         },
         {
-          "label": "Base tightening nicely (26% down to 9% range), quiet for 15 sessions",
+          "label": "Base tightening nicely (25% down to 8% range), quiet for 16 sessions",
           "points": 2.7,
           "max": 6,
           "key": "vcp"
         },
         {
-          "label": "RSI 56 in sweet spot",
+          "label": "RSI 59 in sweet spot",
           "points": 4.0,
           "max": 4,
           "key": "rsi"
@@ -93546,11 +95730,6 @@
           "points": 1.2,
           "max": 8,
           "key": "history"
-        },
-        {
-          "label": "Pattern: NR7, Inside bar",
-          "points": 2,
-          "max": 2
         }
       ]
     },
@@ -93900,7 +96079,7 @@
       ]
     },
     "BANKINDIA": {
-      "date": "2026-11-25",
+      "date": "2026-11-26",
       "score": 72,
       "breakdown": [
         {
@@ -93946,13 +96125,13 @@
           "key": "hhhl"
         },
         {
-          "label": "Base tightening nicely (27% down to 13% range), quiet for 10 sessions",
+          "label": "Base tightening nicely (27% down to 11% range), quiet for 11 sessions",
           "points": 2.7,
           "max": 6,
           "key": "vcp"
         },
         {
-          "label": "RSI 67 in sweet spot",
+          "label": "RSI 68 in sweet spot",
           "points": 4.0,
           "max": 4,
           "key": "rsi"
@@ -98912,6 +101091,11 @@
           "date": "2026-11-25",
           "close": 252.34,
           "changePct": -1.81
+        },
+        {
+          "date": "2026-11-26",
+          "close": 251.3,
+          "changePct": -2.22
         }
       ]
     },
@@ -98944,6 +101128,11 @@
           "date": "2026-11-25",
           "close": 164.85,
           "changePct": -6.07
+        },
+        {
+          "date": "2026-11-26",
+          "close": 170.72,
+          "changePct": -2.72
         }
       ]
     },
@@ -98976,6 +101165,11 @@
           "date": "2026-11-25",
           "close": 217.48,
           "changePct": -1.37
+        },
+        {
+          "date": "2026-11-26",
+          "close": 220.01,
+          "changePct": -0.22
         }
       ]
     },
@@ -99008,6 +101202,11 @@
           "date": "2026-11-25",
           "close": 135.66,
           "changePct": -0.24
+        },
+        {
+          "date": "2026-11-26",
+          "close": 136.38,
+          "changePct": 0.29
         }
       ]
     },
@@ -99043,6 +101242,11 @@
           "date": "2026-11-25",
           "close": 213.5,
           "changePct": 1.67
+        },
+        {
+          "date": "2026-11-26",
+          "close": 210.2,
+          "changePct": 0.1
         }
       ]
     },
@@ -99077,6 +101281,11 @@
           "date": "2026-11-25",
           "close": 166.26,
           "changePct": 0.5
+        },
+        {
+          "date": "2026-11-26",
+          "close": 164.61,
+          "changePct": -0.5
         }
       ]
     },
@@ -99111,6 +101320,11 @@
           "date": "2026-11-25",
           "close": 276.57,
           "changePct": 9.26
+        },
+        {
+          "date": "2026-11-26",
+          "close": 280.35,
+          "changePct": 10.75
         }
       ]
     },
@@ -99146,6 +101360,11 @@
           "date": "2026-11-25",
           "close": 98.71,
           "changePct": 0.75
+        },
+        {
+          "date": "2026-11-26",
+          "close": 94.2,
+          "changePct": -3.86
         }
       ]
     },
@@ -99181,6 +101400,11 @@
           "date": "2026-11-25",
           "close": 232.54,
           "changePct": -2.82
+        },
+        {
+          "date": "2026-11-26",
+          "close": 235.6,
+          "changePct": -1.55
         }
       ]
     },
@@ -99215,6 +101439,11 @@
           "date": "2026-11-25",
           "close": 148.61,
           "changePct": -4.03
+        },
+        {
+          "date": "2026-11-26",
+          "close": 147.5,
+          "changePct": -4.75
         }
       ]
     },
@@ -99242,6 +101471,11 @@
           "date": "2026-11-25",
           "close": 276.57,
           "changePct": 4.84
+        },
+        {
+          "date": "2026-11-26",
+          "close": 280.35,
+          "changePct": 6.27
         }
       ]
     },
@@ -99269,6 +101503,11 @@
           "date": "2026-11-25",
           "close": 135.66,
           "changePct": -0.43
+        },
+        {
+          "date": "2026-11-26",
+          "close": 136.38,
+          "changePct": 0.1
         }
       ]
     },
@@ -99298,6 +101537,11 @@
           "date": "2026-11-25",
           "close": 276.43,
           "changePct": -3.68
+        },
+        {
+          "date": "2026-11-26",
+          "close": 274.61,
+          "changePct": -4.32
         }
       ]
     },
@@ -99327,6 +101571,11 @@
           "date": "2026-11-25",
           "close": 124.75,
           "changePct": -5.28
+        },
+        {
+          "date": "2026-11-26",
+          "close": 127.0,
+          "changePct": -3.57
         }
       ]
     },
@@ -99356,6 +101605,11 @@
           "date": "2026-11-25",
           "close": 186.5,
           "changePct": 1.14
+        },
+        {
+          "date": "2026-11-26",
+          "close": 186.1,
+          "changePct": 0.92
         }
       ]
     },
@@ -99386,6 +101640,11 @@
           "date": "2026-11-25",
           "close": 213.5,
           "changePct": -2.44
+        },
+        {
+          "date": "2026-11-26",
+          "close": 210.2,
+          "changePct": -3.95
         }
       ]
     },
@@ -99415,6 +101674,11 @@
           "date": "2026-11-25",
           "close": 166.26,
           "changePct": -0.16
+        },
+        {
+          "date": "2026-11-26",
+          "close": 164.61,
+          "changePct": -1.15
         }
       ]
     },
@@ -99445,6 +101709,11 @@
           "date": "2026-11-25",
           "close": 98.71,
           "changePct": -0.74
+        },
+        {
+          "date": "2026-11-26",
+          "close": 94.2,
+          "changePct": -5.28
         }
       ]
     },
@@ -99475,6 +101744,11 @@
           "date": "2026-11-25",
           "close": 148.61,
           "changePct": -4.33
+        },
+        {
+          "date": "2026-11-26",
+          "close": 147.5,
+          "changePct": -5.04
         }
       ]
     },
@@ -99504,6 +101778,11 @@
           "date": "2026-11-25",
           "close": 217.48,
           "changePct": -3.23
+        },
+        {
+          "date": "2026-11-26",
+          "close": 220.01,
+          "changePct": -2.11
         }
       ]
     },
@@ -99533,6 +101812,11 @@
           "date": "2026-11-25",
           "close": 252.34,
           "changePct": -2.92
+        },
+        {
+          "date": "2026-11-26",
+          "close": 251.3,
+          "changePct": -3.32
         }
       ]
     },
@@ -99563,6 +101847,11 @@
           "date": "2026-11-25",
           "close": 232.54,
           "changePct": -2.71
+        },
+        {
+          "date": "2026-11-26",
+          "close": 235.6,
+          "changePct": -1.43
         }
       ]
     },
@@ -99592,6 +101881,11 @@
           "date": "2026-11-25",
           "close": 164.85,
           "changePct": -2.43
+        },
+        {
+          "date": "2026-11-26",
+          "close": 170.72,
+          "changePct": 1.05
         }
       ]
     },
@@ -99609,6 +101903,11 @@
           "date": "2026-11-25",
           "close": 87.47,
           "changePct": 2.42
+        },
+        {
+          "date": "2026-11-26",
+          "close": 86.71,
+          "changePct": 1.53
         }
       ]
     },
@@ -99628,6 +101927,11 @@
           "date": "2026-11-25",
           "close": 276.57,
           "changePct": 2.15
+        },
+        {
+          "date": "2026-11-26",
+          "close": 280.35,
+          "changePct": 3.54
         }
       ]
     },
@@ -99647,6 +101951,11 @@
           "date": "2026-11-25",
           "close": 213.5,
           "changePct": 2.55
+        },
+        {
+          "date": "2026-11-26",
+          "close": 210.2,
+          "changePct": 0.96
         }
       ]
     },
@@ -99666,6 +101975,11 @@
           "date": "2026-11-25",
           "close": 166.26,
           "changePct": 0.3
+        },
+        {
+          "date": "2026-11-26",
+          "close": 164.61,
+          "changePct": -0.69
         }
       ]
     },
@@ -99686,6 +102000,11 @@
           "date": "2026-11-25",
           "close": 98.71,
           "changePct": 1.18
+        },
+        {
+          "date": "2026-11-26",
+          "close": 94.2,
+          "changePct": -3.44
         }
       ]
     },
@@ -99705,6 +102024,11 @@
           "date": "2026-11-25",
           "close": 288.45,
           "changePct": -3.33
+        },
+        {
+          "date": "2026-11-26",
+          "close": 291.15,
+          "changePct": -2.43
         }
       ]
     },
@@ -99725,6 +102049,11 @@
           "date": "2026-11-25",
           "close": 232.54,
           "changePct": -1.84
+        },
+        {
+          "date": "2026-11-26",
+          "close": 235.6,
+          "changePct": -0.54
         }
       ]
     },
@@ -99745,6 +102074,11 @@
           "date": "2026-11-25",
           "close": 148.61,
           "changePct": -0.76
+        },
+        {
+          "date": "2026-11-26",
+          "close": 147.5,
+          "changePct": -1.5
         }
       ]
     },
@@ -99757,7 +102091,13 @@
       "breakoutScore": 80,
       "failedFilters": [],
       "entryClose": 87.47,
-      "days": []
+      "days": [
+        {
+          "date": "2026-11-26",
+          "close": 86.71,
+          "changePct": -0.87
+        }
+      ]
     },
     {
       "id": "UNIONBANK-2026-11-25",
@@ -99770,7 +102110,13 @@
         "volume below 1.5x average"
       ],
       "entryClose": 213.5,
-      "days": []
+      "days": [
+        {
+          "date": "2026-11-26",
+          "close": 210.2,
+          "changePct": -1.55
+        }
+      ]
     },
     {
       "id": "WELSPUNLIV-2026-11-25",
@@ -99783,7 +102129,13 @@
         "volume below 1.5x average"
       ],
       "entryClose": 276.34,
-      "days": []
+      "days": [
+        {
+          "date": "2026-11-26",
+          "close": 280.35,
+          "changePct": 1.45
+        }
+      ]
     },
     {
       "id": "MOTHERSON-2026-11-25",
@@ -99796,7 +102148,13 @@
         "volume below 1.5x average"
       ],
       "entryClose": 166.26,
-      "days": []
+      "days": [
+        {
+          "date": "2026-11-26",
+          "close": 164.61,
+          "changePct": -0.99
+        }
+      ]
     },
     {
       "id": "MAHABANK-2026-11-25",
@@ -99810,7 +102168,13 @@
         "volume below 1.5x average"
       ],
       "entryClose": 98.71,
-      "days": []
+      "days": [
+        {
+          "date": "2026-11-26",
+          "close": 94.2,
+          "changePct": -4.57
+        }
+      ]
     },
     {
       "id": "GROWW-2026-11-25",
@@ -99824,7 +102188,13 @@
         "volume below 1.5x average"
       ],
       "entryClose": 216.74,
-      "days": []
+      "days": [
+        {
+          "date": "2026-11-26",
+          "close": 220.01,
+          "changePct": 1.51
+        }
+      ]
     },
     {
       "id": "PNB-2026-11-25",
@@ -99838,7 +102208,13 @@
         "volume below 1.5x average"
       ],
       "entryClose": 148.61,
-      "days": []
+      "days": [
+        {
+          "date": "2026-11-26",
+          "close": 147.5,
+          "changePct": -0.75
+        }
+      ]
     },
     {
       "id": "BELRISE-2026-11-25",
@@ -99851,7 +102227,13 @@
         "volume below 1.5x average"
       ],
       "entryClose": 241.5,
-      "days": []
+      "days": [
+        {
+          "date": "2026-11-26",
+          "close": 241.07,
+          "changePct": -0.18
+        }
+      ]
     },
     {
       "id": "BANKINDIA-2026-11-25",
@@ -99864,18 +102246,156 @@
         "volume below 1.5x average"
       ],
       "entryClose": 159.89,
+      "days": [
+        {
+          "date": "2026-11-26",
+          "close": 160.29,
+          "changePct": 0.25
+        }
+      ]
+    },
+    {
+      "id": "WELSPUNLIV-2026-11-26",
+      "symbol": "WELSPUNLIV",
+      "date": "2026-11-26",
+      "grade": "B",
+      "gradeLabel": "A+",
+      "breakoutScore": 90,
+      "failedFilters": [
+        "volume below 1.5x average"
+      ],
+      "entryClose": 279.4,
+      "days": []
+    },
+    {
+      "id": "MOTHERSON-2026-11-26",
+      "symbol": "MOTHERSON",
+      "date": "2026-11-26",
+      "grade": "B",
+      "gradeLabel": "A",
+      "breakoutScore": 88,
+      "failedFilters": [
+        "volume below 1.5x average"
+      ],
+      "entryClose": 164.61,
+      "days": []
+    },
+    {
+      "id": "PNB-2026-11-26",
+      "symbol": "PNB",
+      "date": "2026-11-26",
+      "grade": "B",
+      "gradeLabel": "A",
+      "breakoutScore": 88,
+      "failedFilters": [
+        "volume below 1.5x average"
+      ],
+      "entryClose": 147.5,
+      "days": []
+    },
+    {
+      "id": "UNIONBANK-2026-11-26",
+      "symbol": "UNIONBANK",
+      "date": "2026-11-26",
+      "grade": "B",
+      "gradeLabel": "A",
+      "breakoutScore": 88,
+      "failedFilters": [
+        "volume below 1.5x average"
+      ],
+      "entryClose": 210.2,
+      "days": []
+    },
+    {
+      "id": "MAHABANK-2026-11-26",
+      "symbol": "MAHABANK",
+      "date": "2026-11-26",
+      "grade": "B",
+      "gradeLabel": "A",
+      "breakoutScore": 81,
+      "failedFilters": [
+        "volume below 1.5x average"
+      ],
+      "entryClose": 94.2,
+      "days": []
+    },
+    {
+      "id": "IDFCFIRSTB-2026-11-26",
+      "symbol": "IDFCFIRSTB",
+      "date": "2026-11-26",
+      "grade": "B",
+      "gradeLabel": "B",
+      "breakoutScore": 75,
+      "failedFilters": [
+        "volume below 1.5x average"
+      ],
+      "entryClose": 86.71,
+      "days": []
+    },
+    {
+      "id": "PPLPHARMA-2026-11-26",
+      "symbol": "PPLPHARMA",
+      "date": "2026-11-26",
+      "grade": "B",
+      "gradeLabel": "B",
+      "breakoutScore": 75,
+      "failedFilters": [
+        "MACD not bullish or improving",
+        "volume below 1.5x average"
+      ],
+      "entryClose": 234.7,
+      "days": []
+    },
+    {
+      "id": "GROWW-2026-11-26",
+      "symbol": "GROWW",
+      "date": "2026-11-26",
+      "grade": "B",
+      "gradeLabel": "B",
+      "breakoutScore": 73,
+      "failedFilters": [
+        "MACD not bullish or improving",
+        "volume below 1.5x average"
+      ],
+      "entryClose": 220.01,
+      "days": []
+    },
+    {
+      "id": "BANKINDIA-2026-11-26",
+      "symbol": "BANKINDIA",
+      "date": "2026-11-26",
+      "grade": "B",
+      "gradeLabel": "B",
+      "breakoutScore": 72,
+      "failedFilters": [
+        "volume below 1.5x average"
+      ],
+      "entryClose": 160.29,
+      "days": []
+    },
+    {
+      "id": "PWL-2026-11-26",
+      "symbol": "PWL",
+      "date": "2026-11-26",
+      "grade": "B",
+      "gradeLabel": "B",
+      "breakoutScore": 71,
+      "failedFilters": [
+        "volume below 1.5x average"
+      ],
+      "entryClose": 136.5,
       "days": []
     }
   ],
   "lastScan": {
-    "date": "2026-11-25",
+    "date": "2026-11-26",
     "mood": "Neutral",
-    "quoteTime": "15:29",
-    "dataDate": "2026-11-25",
+    "quoteTime": "15:28",
+    "dataDate": "2026-11-26",
     "nifty": {
-      "level": 25349.65,
-      "changePts": -450.95,
-      "changePct": -1.75,
+      "level": 25819.25,
+      "changePts": 469.6,
+      "changePct": 1.85,
       "aboveEma20": true,
       "aboveEma50": true,
       "technicalRead": "Trading above both its 20-day and 50-day average - the near-term trend is constructive."
@@ -99883,75 +102403,75 @@
     "sectorRanking": [
       {
         "sector": "Realty",
-        "avgReturn20d": 15.61
+        "avgReturn20d": 17.41
       },
       {
         "sector": "Fast Moving Consumer Goods",
-        "avgReturn20d": 11.44
+        "avgReturn20d": 9.77
       },
       {
         "sector": "Construction Materials",
-        "avgReturn20d": 10.5
-      },
-      {
-        "sector": "Financial Services",
-        "avgReturn20d": 10.25
-      },
-      {
-        "sector": "Consumer Durables",
-        "avgReturn20d": 9.82
+        "avgReturn20d": 9.55
       },
       {
         "sector": "Automobile and Auto Components",
-        "avgReturn20d": 9.13
+        "avgReturn20d": 9.54
+      },
+      {
+        "sector": "Financial Services",
+        "avgReturn20d": 8.89
       },
       {
         "sector": "Textiles",
-        "avgReturn20d": 7.13
+        "avgReturn20d": 8.24
+      },
+      {
+        "sector": "Consumer Durables",
+        "avgReturn20d": 7.9
       },
       {
         "sector": "Healthcare",
-        "avgReturn20d": 6.93
+        "avgReturn20d": 6.75
       },
       {
         "sector": "Consumer Services",
-        "avgReturn20d": 6.27
+        "avgReturn20d": 5.95
       },
       {
         "sector": "Oil Gas & Consumable Fuels",
-        "avgReturn20d": 5.24
-      },
-      {
-        "sector": "Construction",
-        "avgReturn20d": 4.99
-      },
-      {
-        "sector": "Services",
-        "avgReturn20d": 4.35
+        "avgReturn20d": 4.81
       },
       {
         "sector": "Chemicals",
-        "avgReturn20d": 3.54
+        "avgReturn20d": 4.33
       },
       {
-        "sector": "Power",
-        "avgReturn20d": 3.29
+        "sector": "Construction",
+        "avgReturn20d": 3.66
       },
       {
-        "sector": "Metals & Mining",
-        "avgReturn20d": 0.52
+        "sector": "Services",
+        "avgReturn20d": 3.07
       },
       {
         "sector": "Information Technology",
-        "avgReturn20d": 0.5
+        "avgReturn20d": 0.95
+      },
+      {
+        "sector": "Metals & Mining",
+        "avgReturn20d": 0.18
+      },
+      {
+        "sector": "Power",
+        "avgReturn20d": -0.25
       },
       {
         "sector": "Capital Goods",
-        "avgReturn20d": -0.62
+        "avgReturn20d": -0.42
       },
       {
         "sector": "Telecommunication",
-        "avgReturn20d": -0.71
+        "avgReturn20d": -2.08
       },
       {
         "sector": "",
@@ -99960,10 +102480,10 @@
     ],
     "nextFoExpiry": "2026-11-26",
     "aiTokens": null,
-    "passed": 1,
-    "shown": 9,
+    "passed": 0,
+    "shown": 10,
     "topSector": "Realty",
     "weakSector": "",
-    "at": "2026-11-25T22:29:59"
+    "at": "2026-11-26T22:17:56"
   }
 }
